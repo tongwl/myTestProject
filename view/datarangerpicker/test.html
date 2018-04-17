@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <script src="jquery.min.js"></script>
+    <script src="moment/min/moment-with-locales.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap-daterangepicker/daterangepicker.js"></script>
+</head>
+<body>
+<input type="text" id="test">
+<script>
+    $('#test').daterangepicker({
+        "startDate": "07/01/2017",
+        "endDate": "07/07/2017"
+    }, function(start, end, label) {
+        console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+    });
+
+    $('#test').on('focus',function(){
+        $('#test').blur();
+    });
+</script>
+</body>
+</html>

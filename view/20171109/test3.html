@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+<script>
+    var app=angular.module("app",[]);
+    app.value("username","tongwl").config(function(usernameProvider){
+        console.log(username);
+    });
+</script>
+</body>
+</html>

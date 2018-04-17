@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <ol>
+            <li v-for="item in items" :key="item.id">{{item.name}}</li>
+        </ol>
+        <button v-on:click.prevent="addItem">点击</button>
+        <button v-on:click.prevent="sayHello('hello')">hello</button>
+    </div>
+<script>
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            items:[
+                {name:"tongwl"},
+                {name:"zhenzhen"}
+            ]
+        },
+        methods:{
+            addItem(){
+                this.items.push({name:"wawa"});
+            },
+            sayHello(message){
+                console.log(message);
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

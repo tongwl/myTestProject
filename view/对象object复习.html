@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象object复习</title>
+</head>
+<body>
+    <script>
+
+        var obj=new Object();
+
+        //定义obj的父原型链对象
+        obj.__proto__={
+            className:"8班",
+            gradeName:"3年级"
+        }
+
+
+
+        Object.defineProperties(obj,{
+            name:{
+                value:"tongwl",
+                writable:false,
+                enumerable:true,
+                configurable:false
+            },
+            age:{
+                value:18,
+                writable:true,
+                enumerable:false,
+                configurable:true
+            }
+        });
+
+        console.log(Object.keys(obj)); //输出：["name"]
+
+        for(var k in obj){
+            console.log(k); //分别打印出：name className gradeName
+        }
+
+        console.log(Object.getOwnPropertyNames(obj));//输出：["name", "age"]
+
+
+
+
+
+
+
+        /*console.log(obj.name,obj.age);//tongwl 18
+
+        //防止扩展
+        Object.preventExtensions(obj);
+
+        obj.className="xiaoxue3";
+        Object.defineProperty(obj,"gradeName",{
+            value:"3年级",
+            writable:true,
+            enumerable:true,
+            configurable:true
+        });*/
+
+
+        //定义或修改一个属性
+        /*Object.defineProperty(obj,"name",{
+            value:"tongwl",
+            writable:true,
+            enumerable:true,
+            configurable:false
+        });*/
+
+
+        //Object.prototype.hasOwnProperty(prop);
+        //Object.defineProperty(obj,prop,descriptor);
+        //Object.defineProperties(obj,props);
+        //Object.preventExtensions(obj);
+        //Object.keys(obj);
+        //Object.getOwnPropertyNames(obj);
+        //for ... in  obj
+        //Object.setPrototypeOf(child,fatherProto);
+        //obj.__proto__=fatherProto;
+        //Object.getPrototypeOf(child)
+        Object.prototype.isPrototypeOf(child)
+    </script>
+</body>
+</html>

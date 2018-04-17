@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name){
+        this.name=name;
+        this.age=18;
+    }
+
+    Student.prototype.sayHello=function(){
+        console.log(this.name+" say:"+this.age);
+    }
+
+    var lilei=Object.create(Student.prototype,{className:{
+        value:"3年二班",
+        writable:true,
+        enumerable:false,
+        configurable:true
+    }});
+    lilei.age=20;
+    //lilei.sayHello();
+
+
+    for(var key in lilei){
+        console.log(key);
+    }
+
+</script>
+</body>
+</html>

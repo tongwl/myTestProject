@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var data = [{"srarttime":"2017-09-25 00:00:00"},{"srarttime":"2017-09-24 00:00:00"},{"srarttime":"2017-09-26 00:00:00"}];
+    var str = "";
+    for(var o in data){
+        var date = data[o].srarttime;
+        var s = date.replace("-0","-");
+        var sr = s.substr(0,10);
+        str +=  "'" + sr.replace(/(^\s*)|(\s*$)/g,"") +"' : "+ "' ',";
+
+    }
+
+    var obj = {str};
+    console.log(obj);
+
+    var obj2 ={'2017-9-25' : ' ','2017-9-24' : ' ','2017-9-26' : ' ',}
+    console.log(obj2);
+</script>
+</body>
+</html>

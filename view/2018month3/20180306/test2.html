@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        {{username}}:{{password}}
+    </div>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope","myService","$q","$http",function($scope,myService,$q,$http){
+        var userPromise=myService.getUser();
+        userPromise.then(function(response){
+            $scope.username=response.username;
+            $scope.password=response.password;
+        },function(error){
+            console.log(error);
+        }).catch(function(e){
+
+        }).finally(function(value){
+
+        });
+
+
+        var promises=$q.all([
+            $http({
+                "method":"GET",
+                "url":"test.json"
+            }),
+            $http({
+                "method":"GET",
+                "url":"test2.json"
+            })
+        ]);
+
+        promises.then(function(response){
+            console.log(response);
+        },function(error){
+
+        }).catch(function(e){
+
+        });
+
+        function test(){
+            return "hahahahah";
+        }
+
+        $q.when(test()).then(function(response){
+            console.log(response);
+        });
+
+
+    }]);
+
+    app.factory("myFactory",[function(){
+        return {
+            username:"tongwl"
+        };
+    }]);
+
+    app.service("myService",[function(){
+        this.username="tongwl";
+    }]);
+
+
+    app.factory("myService",["$http","$q",function($http,$q){
+        return {
+            getUser:function(){
+                var  deferred=$q.defer();
+
+                $http({
+                    method:"GET",
+                    url:"test.json"
+                }).success(function(response){
+                    deferred.resolve(response);
+                }).error(function(error){
+                    deferred.reject(error);
+                });
+
+                console.log(deferred.promise);
+
+                return deferred.promise;
+            }
+        };
+    }]);
+</script>
+</body>
+</html>

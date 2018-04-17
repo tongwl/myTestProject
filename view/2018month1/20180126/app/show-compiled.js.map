@@ -1,0 +1,1 @@
+{"version":3,"sources":["show.js"],"names":[],"mappings":"AAAA,SAAS,IAAT,CAAc,OAAd,EAAsB;AAClB,WAAO,QAAP,CAAgB,cAAhB,CAA+B,KAA/B,EAAsC,SAAtC,GAAgD,aAAW,OAA3D;AACH;;AAED,OAAO,OAAP,GAAe,IAAf","file":"show-compiled.js","sourcesContent":["function show(content){\r\n    window.document.getElementById('app').innerText=\"hello23,\"+content;\r\n}\r\n\r\nmodule.exports=show;"]}

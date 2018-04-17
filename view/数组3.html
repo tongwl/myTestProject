@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script>
+    /*
+    1.var ary = [1,25,16,32,43,26,13,28,19,7,4];
+    求数组的最大值(多种方法：其中有一种要用到splice练习)
+    */
+
+    //方法1
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return b-a;});
+    console.log(arr[0]);
+
+    //方法2
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return a-b;});
+    console.log(arr[arr.length-1]);
+
+    //方法3
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return b-a});
+    console.log(arr.splice(0,1)[0]);
+
+    //方法4
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return a-b});
+    console.log(arr.splice(-1)[0]);
+
+    //方法5
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return a-b});
+    console.log(arr.slice(-1)[0]);
+
+    //方法6
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    arr.sort(function(a,b){return b-a});
+    console.log(arr.slice(0,1)[0]);
+
+    //方法7
+    var arr=[1,25,16,32,43,26,13,28,19,7,4];
+    var max=arr[0];
+    for(var i=1;i<arr.length;i++){
+        max<arr[i]&&(max=arr[i]);
+    }
+    console.log(max);
+
+    //方法8
+    var arr=[1,2,3,4,5];
+    console.log(Math.max.apply(new Array(),arr));
+    Math.max.call(null,arr[0],arr[1],arr[2],arr[3],arr[4]);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var worker=new Worker("to.js");
+    setInterval(function(){
+        worker.postMessage(new Date().toLocaleString());
+    },1000);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hello-world></hello-world>
+<span hello-world>haha</span>
+
+<h1 class="hello-world"></h1>
+
+<!--directive:hello-world -->
+
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.directive("helloWorld",function(){
+        return {
+            restrict:"ECAM",
+            template:"<div>我是替换内容呀</div>",
+            replace:true
+        };
+    });
+</script>
+</body>
+</html>

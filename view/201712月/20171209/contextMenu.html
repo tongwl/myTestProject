@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        body{
+
+        }
+
+        #test{
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<script>
+    document.addEventListener("contextmenu",function(event){
+        event.preventDefault();
+        $('#test').remove();
+
+        var node=document.createElement("p");
+        var te=document.createTextNode("我是内容");
+        node.appendChild(te);
+        node.setAttribute("id","test");
+        node.style.left=event.clientX+"px";
+        node.style.top=event.clientY+"px";
+        document.body.appendChild(node);
+        $('#test').click(false);
+    },false);
+
+
+    $(document).click(function(){
+        $('#test').remove();
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <input type="checkbox" v-model="isRed">
+        <span v-if="isRed">红色</span>
+        <span v-else>其他颜色</span>
+
+
+        <template v-if="isRed">
+            <p>hahasha</p>
+            <p>hahashaasda</p>
+            <p>hahashaasdaasdas</p>
+        </template>
+
+        <template v-else>
+            sfsfsdfsdf
+        </template>
+
+
+        <input type="text" v-model="color">
+
+        <p v-if="color=='red'">我是红色</p>
+        <p v-else-if="color=='blue'">我是蓝色</p>
+        <p v-else>我是其他颜色</p>
+    </div>
+
+    <script>
+        var app=new Vue({
+            el:"#d1",
+            data:{
+                isRed:true,
+                color:"red"
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof用法</title>
+</head>
+<body>
+<script>
+
+    //typeof是用来判断数据类型的，返回的是一个string类型的字符串
+    //语法有两种：typeof(value)、typeof value
+    //如果value是undefined类型，返回 "undefined"  注意这是一个字符串
+    //如果value是string类型，返回 "string"
+
+
+
+    var content; //如果只定义了content,并没有给content赋值，那么该值为undefined
+    console.log(typeof(content));//undefined
+    console.log(typeof content);//undefined
+
+    var str="";//这是一个空字符串，也是一个字符串
+    console.log(typeof str); //string
+
+    //var null=null;  这句话是错误的，因为变量的命名不能用js里面的关键字(保留字)，比如var  null  for等，自己去查哪些关键字
+    var null1=null;
+    console.log(typeof null1); //object
+
+</script>
+</body>
+</html>

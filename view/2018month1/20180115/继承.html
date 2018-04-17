@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class People{
+        constructor(username){
+            this.username=username;
+        }
+
+        say(content){
+            console.log(this.username+" say "+content);
+        }
+    }
+
+    class Docket extends People{
+        constructor(uname,floor){
+            super();
+            this.username=uname;
+            this.floor=floor;
+        }
+
+        whereYa(){
+            console.log(this.uname +"is on floor "+this.floor);
+        }
+
+    }
+
+
+    class Student extends People{
+        constructor(username,className){
+            super();
+            this.username=username;
+            this.className=className;
+        }
+
+        info(){
+            console.log(this.username+" is in "+this.className);
+        }
+    }
+
+
+    var dady=new Docket("david",3);
+    dady.say("hello");
+
+    var son=new Student("");
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <hello well good></hello>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+
+    app.directive("well",function(){
+        return {
+            restrict:"A",
+            priority:4,
+            terminal:true,
+            link:function(){
+                console.log(2);
+            }
+        };
+    });
+
+    //定义指令
+    app.directive('hello',function(){
+        return {
+            restrict:"E",
+            priority:4,
+            link:function(){
+                console.log(4);
+            }
+        };
+    });
+
+
+    app.directive("good",function(){
+        return {
+            restrict:"A",
+            priority:3,
+            terminal:false,
+            link:function(){
+                console.log(3);
+            }
+        };
+    });
+
+
+</script>
+</body>
+</html>

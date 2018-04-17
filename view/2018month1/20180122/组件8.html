@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <h2>我是不会被取代的</h2>
+
+        <child><h1>hahahahasdfsdsdfds</h1></child>
+    </div>
+    <script>
+        Vue.component('child',{
+            template:'<div>hahahaha  <slot></slot></div>'
+        });
+
+        new Vue({
+            el:"#d1"
+        });
+    </script>
+</body>
+</html>

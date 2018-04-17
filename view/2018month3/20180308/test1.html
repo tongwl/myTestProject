@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>响应式页面</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+        .row >div{
+            /*border:1px solid #f00;*/
+        }
+
+        .container{
+            border:1px solid #f00;
+            height:300px;
+        }
+
+        .container-fluid{
+            border:1px solid #000;
+            height:300px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form>
+
+            <button class="btn btn-lg">按钮</button>
+            <button class="btn btn-md btn-primary">按钮</button>
+            <button class="btn btn-sm btn-default">按钮</button>
+            <button class="btn btn-xs btn-success">按钮</button>
+            <button class="btn btn-lg btn-info">按钮</button>
+            <button class="btn btn-lg btn-warning">按钮</button>
+            <button class="btn btn-lg btn-danger">按钮</button>
+            <button class="btn btn-lg btn-link">按钮</button>
+
+            <span class="label label-primary">按钮</span>
+            <span class="label label-default">按钮</span>
+            <span class="label label-success">按钮</span>
+            <span class="label label-info">按钮</span>
+            <span class="label label-warning">按钮</span>
+            <span class="label label-danger">按钮</span>
+
+            <p class="alert alert-success">
+                <b>警告</b> 胜多负少的是的是的是的水电费是的但是
+            </p>
+            <p class="alert alert-info">
+                <b>警告</b> 胜多负少的是的是的是的水电费是的但是
+            </p>
+            <p class="alert alert-warning">
+                <b>警告</b> 胜多负少的是的是的是的水电费是的但是
+            </p>
+            <p class="alert alert-success">
+                <b>警告</b> 胜多负少的是的是的是的水电费是的但是
+            </p>
+
+            <div class="form-group">
+                <input type="text" class="input-lg form-control">
+                <input type="text" class="input-sm">
+            </div>
+
+            <div class="form-group">
+                <label for="username1">姓名</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password1">密码</label>
+                <input type="text" class="form-control">
+            </div>
+        </form>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="username2">姓名</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password2">密码</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="form-inline">
+                <label for="">密码2</label>
+                <div class="input-group">
+                    <div class="input-group-addon">haha</div>
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">呵呵</div>
+                </div>
+
+            </div>
+        </form>
+
+        <form class="form-horizontal">
+            <div class="form-group has-success">
+                <label for="" class="control-label col-lg-3">哈哈</label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </form>
+
+
+        <table class="table table-bordered table-hover">
+            <tr class="success">
+                <td>1111111</td>
+                <td>1111111</td>
+                <td>1111111</td>
+                <td>1111111</td>
+                <td>1111111</td>
+            </tr>
+            <tr>
+                <td class="active">1111111</td>
+                <td class="success">1111111</td>
+                <td class="info">1111111</td>
+                <td class="danger">1111111</td>
+                <td class="warning">1111111</td>
+            </tr>
+        </table>
+
+        <div class="row text-center" style="border:1px solid #f00;">
+            我在那边
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <div class="row">
+            <h1>主标题 <small>副标题</small></h1>
+            <h2>主标题 <small>副标题</small></h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">哈哈</div>
+            <div class="col-lg-6">哈哈</div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">哈哈</div>
+            <div class="col-xs-6">哈哈</div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-3">3</div>
+            <div class="col-md-6">6</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-md-push-9">3</div>
+            <div class="col-md-9 col-md-pull-3">6</div>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        //console.log(document.documentElement);
+        console.log(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+    </script>
+</body>
+</html>

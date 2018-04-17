@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <input type="text" v-model="question">
+        <p>{{answer}}</p>
+    </div>
+
+    <script>
+        let app=new Vue({
+            el:"#d1",
+            data:{
+                question:null,
+                answer:'I cannot get ansuwer untill you ask a question'
+            },
+            watch:{
+                question(_new){
+                    console.log(_new);
+                }
+            }
+        });
+
+        //app.$watch("question",() => console.log("监视question成功"));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>directive5</title>
+</head>
+<body>
+    <outer-directive>
+        <inner-directive></inner-directive>
+    </outer-directive>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.directive("outerDirective",function(){
+        return {
+            restrict:"AE",
+            scope:{},
+            controller:function($scope,$compile,$http){
+                this.addChild=function(nestedDirective){//this指代controller
+                    console.log('Got the message from nested directive' + nestedDirective.message);
+                }
+            },
+        };
+    });
+
+    app.directive("innerDirective",function(){
+        return {
+            restrict:"AE",
+            scope:{},
+            require:"^?outerDirective",
+            link:function(scope,ele,attr,ctrl){
+                scope.message="hehehe";
+                ctrl.addChild(scope);
+            }
+        };
+
+    });
+</script>
+</body>
+</html>

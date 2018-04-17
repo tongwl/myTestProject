@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+    <style>
+        .tongwl{
+            font-style:italic;
+        }
+
+        .twl{
+            font-size:24px;
+        }
+
+        .szz{
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <ul>
+            <li ng-repeat="user in users" ng-class="{tongwl:$first,twl:$middle,szz:$last}">{{user.name}}</li>
+        </ul>
+
+        <ul>
+            <li ng-repeat-start="user in users">{{user.name}}</li>
+            <li ng-repeat-end>{{user.age}}</li>
+        </ul>
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.users=[{
+            name:"tongwl",
+            age:18
+        },{
+            name:"twl",
+            age:16
+        },{
+            name:"szz",
+            age:20
+        }
+        ];
+    }]);
+</script>
+</body>
+</html>

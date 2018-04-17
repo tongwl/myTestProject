@@ -1,0 +1,17 @@
+{
+  "name": "changeLess",
+  "authors": [
+    "tongwl"
+  ],
+  "description": "less to css",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

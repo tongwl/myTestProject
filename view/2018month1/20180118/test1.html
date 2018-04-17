@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+
+        <table>
+            <tr is="my-row" message="tttt"></tr>
+        </table>
+    </div>
+    <script>
+
+        /*Vue.component('my-component',{
+            template:"<div>A custom component</div>"
+        });*/
+
+        var app=new Vue({
+            el:"#app",
+            components:{
+                'my-component':{
+                    template:"<div>A custom component2222</div>"
+                },
+                'my-row':{
+                    template:"<tr><td>{{username}}</td><td>2222222222222</td></tr>"
+                }
+            },
+            props:['message'],
+            data:{
+                username:"tongwl"
+            }
+        });
+    </script>
+</body>
+</html>

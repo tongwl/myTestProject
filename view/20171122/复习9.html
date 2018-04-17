@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var father={
+        className:"软件092"
+    };
+
+    var obj={};
+    obj.uname="haha";
+
+    console.log(Object.getOwnPropertyDescriptor(obj,"uname"));
+    console.log(Object.getPrototypeOf(obj)===Object.prototype);
+
+    Object.setPrototypeOf(obj,father);
+    console.log(obj.className);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="bower_components/angular/angular.js"></script> <!-- v1.3.15 -->
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        {{username}}
+        <input type="text" ng-model="wawa" ng-value="ceshi">
+        <input type="button" value="点击" ng-click="test()">
+    </div>
+<script>
+    var app=angular.module("myApp",["ngResource"]);
+
+    app.config(["$resourceProvider",function($resource){
+        $resource.defaults.stripTrailingSlashes=true;
+    }]);
+    app.controller("ctrl",["$scope","$resource",function($scope,$resource){
+        $scope.username="tongwl";
+
+        $scope.ceshi=123;  //ng-value
+        $scope.wawa='wawaawaaw';
+
+        $scope.test=function(){
+            $scope.wawa='gsdfsdfs';
+            $scope.ceshi="sddddddddddd";
+        }
+
+        var user=$resource("user.jsonmuma",{username:'@user'});
+        user.get({user:"tongwl"},function(response){
+            console.log(response);
+        },function(err){
+            console.log("error");
+            console.log(err);
+        });
+
+        window.setTimeout(function(){
+            $scope.username="haha";
+        },3000);
+
+    }]);
+
+    angular.element(document).ready(function(){
+        angular.bootstrap(document,["myApp"]);
+    });
+</script>
+</body>
+</html>

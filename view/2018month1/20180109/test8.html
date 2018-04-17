@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .bgBlue{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <p>22222</p>
+    <div id="d1">
+        <p id="p1" class="red">111</p>
+        <p id="p2">222</p>
+        <p id="p3">333</p>
+    </div>
+
+    <input type="checkbox" id="c1" checked="haha">
+
+    <button id="btn">点击</button>
+    <button id="btn2">点击</button>
+
+    <script>
+
+        var i=1;
+        btn.addEventListener("click",function(event){
+            i++;
+            event.preventDefault();
+            event.returnValue=false;
+
+            var newNode=p1.cloneNode(true);
+            newNode.removeAttribute("id");
+            d1.appendChild(newNode);
+
+            /*var newP=document.createElement('p');
+            newP.setAttribute("id","newPP");
+            var newText=document.createTextNode(`我是新创建的${i}`);
+            newP.appendChild(newText);
+            if(window.p1){
+                d1.replaceChild(newP,p1);
+            }else{
+                d1.replaceChild(newP,newPP);
+            }*/
+            //d1.insertBefore(newP,p1);
+            //d1.appendChild(newP);
+
+            //console.log(c1.getAttribute('checked'));
+            //console.log(c1.checked);
+            //console.log(p1.removeAttribute('class'));
+            //console.log(p1.hasAttribute('class'));
+            //p1.setAttribute('class',p1.getAttribute('class')+" bgBlue");
+            //console.log(p1.getAttribute("class"));
+        },false);
+        /*console.log(d1.querySelector('p'));
+
+        var ps=document.getElementsByTagName("p");
+        var pss=document.querySelectorAll('p');
+
+        btn.addEventListener("click",function(event){
+            event.preventDefault();
+            event.returnValue=false;
+            var newP=document.createElement('p');
+            newP.innerHTML="haha";
+            d1.appendChild(newP);
+        },false);
+
+        btn2.addEventListener("click",function(event){
+            event.preventDefault();
+            event.returnValue=false;
+            console.log(ps);
+            console.log(pss);
+        });*/
+
+        /*console.log(p1.parentNode);
+        console.log(d1.childNodes);
+        console.log(d1.firstChild);
+        console.log(d1.lastChild);
+        console.log(p1.previousSibling);
+        console.log(p1.nextSibling);*/
+
+        /*console.log(p1.parentElement);
+        console.log(d1.children);
+        console.log(d1.firstElementChild);
+        console.log(d1.lastElementChild);*/
+
+        //console.log(p1.offsetParent);
+
+
+    </script>
+</body>
+</html>

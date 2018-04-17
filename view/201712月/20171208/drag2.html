@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="1.jpg" alt="" id="img1" width="100"/>
+<div id="d1" style="width: 500px;height:500px;border: 1px solid #f00;"></div>
+<script>
+    img1.addEventListener("dragstart",function(event){
+        console.log("drag start");
+        event.dataTransfer.setData("text/html","tongwl");
+    },false);
+
+    img1.ondrag=function(){
+        console.log("draging...");
+    }
+
+    img1.addEventListener("dragend",function(event){
+        console.log("drag end");
+        console.log(event.dataTransfer.getData("text/html"));
+    },false);
+
+    d1.addEventListener("dragenter",function(event){
+        console.log("drag enter");
+        console.log(event.dataTransfer.getData("text/html"));
+    });
+
+    d1.addEventListener("dragover",function(event){
+        event.preventDefault();
+        console.log("drag over");
+        console.log(event.dataTransfer.getData("text/html"));
+    });
+
+    d1.addEventListener("drop",function(event){
+        console.log("drop");
+        console.log(event.dataTransfer.getData("text/html"));
+    },false);
+
+
+</script>
+</body>
+</html>

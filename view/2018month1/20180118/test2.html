@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr is="my-component" message="hello2323"></tr>
+        </table>
+    </div>
+<script>
+
+    Vue.component("my-component",{
+        template:"<tr>{{message}}<td></td><td>222222222222</td></tr>",
+        props:['message']
+    });
+    var app=new Vue({
+        el:"#app"
+    });
+</script>
+</body>
+</html>

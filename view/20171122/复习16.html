@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={};
+    Object.defineProperty(obj,"haha",{
+        value:1,
+        enumerable:true
+    });
+
+    obj.hasOwnProperty("haha");
+
+    obj.propertyIsEnumerable("haha");
+
+    console.log(obj.hasOwnProperty("haha"));
+    console.log(obj.propertyIsEnumerable("haha"));
+
+</script>
+</body>
+</html>

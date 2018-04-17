@@ -1,0 +1,26 @@
+.box{
+    width:120px;
+    height:120px;
+    border-radius:5px;
+    box-shadow:3px 8px 5px 0 #999;
+    background:#eee;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.box .item{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.box .item > div{
+    width:40px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    border-radius:50%;
+    background:#f00;
+    color:#fff;
+}

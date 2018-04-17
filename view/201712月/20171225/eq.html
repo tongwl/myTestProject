@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div>
+    <p>11111111</p>
+    <p>11111111</p>
+    <p>11111111</p>
+</div>
+
+<div>
+    <p>2222222</p>
+    <p>2222222</p>
+    <p>2222222</p>
+</div>
+<script>
+    $('div p').eq(4).css('color','red');
+    console.log($('div p').last().css('color','blue'));
+</script>
+</body>
+</html>

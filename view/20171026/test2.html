@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+    }
+
+    Person.prototype.id=1002;
+    Person.prototype.sayName=function(){
+        alert(this.name);
+    }
+
+    function Boy(name,age,sex){
+        Person.call(this,name,age);
+    }
+
+    Boy.prototype=new Person();//没有参数
+    var b=new Boy("张三",20,"男");
+    //b.sayName();
+    alert(Object.prototype.isPrototypeOf(Boy.prototype)); //  返回false
+</script>
+</body>
+</html>

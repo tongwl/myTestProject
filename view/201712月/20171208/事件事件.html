@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            keys.addEventListener("click",calc,false);
+        }
+
+        function calc(event){
+            var target=event.target || e.srcElement;
+            if(target.nodeName=='BUTTON'){
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="keys">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <br/>
+        <button>C</button>
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+    </div>
+    <textarea id="t1" cols="30" rows="10" style="resize:none;"></textarea>
+</body>
+</html>

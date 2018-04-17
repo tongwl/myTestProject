@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECMA5的严格模式</title>
+</head>
+<body>
+    <div style="" id="d1"></div>
+    <script>
+        //"use strict"
+
+        /*eval("var i=2;");
+        console.log(i);*/
+
+        /*function f(){
+            return this;
+        }*/
+
+        var d1=document.getElementById("d1");
+        console.log(window.getComputedStyle(d1).getPropertyValue('max-height'));
+
+
+
+    </script>
+</body>
+</html>

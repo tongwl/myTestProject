@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+        /*[class]{
+            color:#f00;
+        }*/
+
+        /*[class=qwert]{
+            color:#f00;
+        }*/
+
+        /*[class*="qwert"]{
+            color:#f00;
+        }*/
+
+        /*[class^=qwe]{
+            color:#00f;
+        }*/
+
+        /*[class~=qwert]{
+            color:#0f0;
+        }*/
+
+        /*[class$=t]{
+            color:#ff0;
+        }*/
+
+        /*[class^=q][class$=t]{
+            color:#0ff;
+        }*/
+
+        [class|=qwe]{
+            color:#f0f;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="qwert">11111111111</div>
+    <div class="wqwertw">11111111111</div>
+    <div class="qwert">11111111111</div>
+    <div class="1qwert2">11111111111</div>
+    <div class="1qwert2">11111111111</div>
+    <div class="eqwert3">11111111111</div>
+    <div class="qw-ert3">11111111111</div>
+    <div class="qwe-rt">11111111111</div>
+    <div class="qwe-rtt">11111111111</div>
+    <div class="qwert sf">11111111111</div>
+</body>
+</html>

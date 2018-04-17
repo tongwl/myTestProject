@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function haha(num){
+        var num=Number(num);
+        var mod=String(num).length%4;
+        var len2=parseInt(String(num).length/4);
+        if(len2==0){
+            return getSum(num);
+        }else{
+            var sum="";
+            if(mod!=0){
+                sum=getSum(String(num).slice(0,mod))+"万";
+            }
+            for(var i=0;i<len2;i++){
+                sum+=getSum(String(num).slice(mod+i*4,mod+i*4+4));
+                i<len2-1 && (sum+="万");
+            }
+            return sum;
+        }
+
+        function getSum(num){
+            var unit=["十","百","千","万"];
+            var chinese=["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+            var arr=num<100000?String(num).split(""):[String(num).slice(0,String(num).length-4)].concat(String(num).slice(-4).split(""));
+            var str="";
+            for(var i= 0,len=arr.length;i<len;i++){
+                if(arr[i]==0){
+                    str+=chinese[arr[i]];
+                }else{
+                    i==len-1?str+=chinese[arr[i]]:str+=chinese[arr[i]]+unit[len-2-i]
+                }
+            }
+            var reg=/[零]+/g;
+            str=str.replace(reg,'零');
+            str.slice(-1)=='零' && (str=str.slice(0,str.length-1));
+            return str;
+        }
+    }
+
+    console.log(haha(77352003));
+</script>
+</body>
+</html>

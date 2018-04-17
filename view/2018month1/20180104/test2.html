@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <ul>
+            <span v-once>{{username}}</span>
+            <input type="text" v-model="username">
+            <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+            <div>{{haha}}</div>
+            <div><span v-html="haha"></span></div>
+        </ul>
+
+
+        <div v-bind:title="username">我是什么</div>
+
+        <div v-bind:title="show1+' haha ' +show2">显示什么</div>
+
+    </div>
+    <script>
+
+
+        Vue.component('todo-item',{
+            props:["todo"],
+            template:"<li>{{todo.text}}</li>"
+        });
+
+        var app=new Vue({
+            el:"#d1",
+            data:{
+                groceryList:[
+                    { id: 0, text: '蔬菜' },
+                    { id: 1, text: '奶酪' },
+                    { id: 2, text: '随便其它什么人吃的东西' }
+                ],
+                username:"tongwl",
+                haha:"<span style='color: red;'>这是红色的</span>",
+                show1:"show11",
+                show2:"show22"
+            },
+            created:function(){
+                console.log(this.groceryList[0].text);
+            }
+        });
+
+        //console.log(app._data==app.$data);
+        //console.log(Object.getOwnPropertyDescriptor(app.__proto__,"$data"));
+    </script>
+</body>
+</html>

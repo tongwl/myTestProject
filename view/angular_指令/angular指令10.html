@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+
+    <div ng-controller="ctrl">
+        <input type="text" ng-model="input">
+        <hello-world get-name="input"></hello-world>
+    </div>
+
+
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.controller('ctrl',function($scope){
+
+    });
+
+    //定义指令
+    app.directive('helloWorld',function(){
+        return {
+            restrict:"AE",
+            template:"<p>我的名字是:{{getName()}}</p>",
+            priority:1,
+            terminate:true,
+            replace:true,
+            scope:{
+                getName:"&"
+            }
+        };
+    });
+
+</script>
+
+
+</body>
+</html>

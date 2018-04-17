@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button">点击</button>
+    <script>
+        /*var xhr=new XMLHttpRequest();
+        //console.log(xhr.readyState);
+
+        xhr.open('POST','http://server.hui2020.com/TP5/public/',true);
+        //console.log(xhr.readyState);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-url/encoded');
+        xhr.send('act=getManageIndex&meeting_id=1603');
+        xhr.onreadystatechange=function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState==4){
+                console.log(xhr.responseText);
+            }
+        };*/
+    </script>
+
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            type:"POST",
+            url:"http://server.hui2020.com/TP5/public?act=getManageIndex",
+            data:{meeting_id:1603},
+            dataType:"json",
+            success:function(response){
+                console.log(response);
+            }
+        });
+    </script>
+</body>
+</html>

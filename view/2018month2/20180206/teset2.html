@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<input id='d' type="file" />
+<img id='pic1' src="E:/1.jpg" alt="" /><!--这样写报错-->
+<img id='pic' src="" alt="" />
+<script>
+    d.onchange=function(){
+        console.log(this.value);
+        //pic.src=this.value // 报错 Not allowed to load local resource: file:///C:/fakepath/0.jpg
+        //console.log(this.files);//类数组对象
+        var file=this.files[0];
+        var url=window.URL.createObjectURL(file);
+        console.log(url);
+        pic.src=url
+    }
+</script>
+<script>
+    /*var arr=[1,2,3];
+    var newArr=arr.concat();
+    var newArr1=arr.concat([]);
+    var newArr2=arr.concat('');
+    //console.log(newArr);
+    //console.log(newArr1);
+    //console.log(newArr2);
+    var arr1=[1,{name:'szz',age:18},2];
+    var newArr3=arr1.concat();
+    console.log(newArr3);
+    newArr3[1].name='twl';
+    console.log(newArr3);
+    console.log(arr1);*/
+</script>
+</body>
+</html>

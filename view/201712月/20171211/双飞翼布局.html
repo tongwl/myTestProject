@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        section{
+            overflow: hidden;
+        }
+
+        .main{
+            float:left;
+            width: 100%;
+        }
+
+        .main-inner{
+            height:400px;
+            margin:0 100px 0 200px;
+            background:#cff;
+        }
+
+        .left{
+            float:left;
+            width:200px;
+            height:100px;
+            margin-left:-100%;
+            background:#fcf;
+        }
+
+        .right{
+            float:left;
+            width:100px;
+            height:200px;
+            margin-left:-100px;
+            background:#ffc;
+        }
+    </style>
+</head>
+<body>
+    <header>我是头部</header>
+    <section>
+        <div class="main">
+            <div class="main-inner"></div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </section>
+    <footer>我是尾部</footer>
+</body>
+</html>

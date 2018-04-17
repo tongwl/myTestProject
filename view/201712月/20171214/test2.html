@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" id="btn">关闭</button>
+<script>
+    var worker=new Worker("test2.js");
+
+    worker.addEventListener("message",function(event){
+        var pp=document.createElement("p");
+        var content=document.createTextNode(event.data);
+        pp.appendChild(content);
+        document.body.appendChild(pp);
+    });
+
+    btn.addEventListener("click",function(){
+        worker.terminate();
+    },false);
+</script>
+</body>
+</html>

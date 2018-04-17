@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav></nav>
+<header></header>
+<aside></aside>
+<article></article>
+<footer></footer>
+<section></section>
+
+    <form id="testForm" novalidate>
+        <input type="email">
+        <input type="url">
+        <input type="number" min="1" max="100" step="5">
+        <input type="range" min="1" max="100" step="5">
+        <input type="date">
+        <input type="month">
+        <input type="week">
+        <input type="time">
+        <input type="datetime">
+        <input type="datetime-local">
+        <input type="tel">
+        <input type="search">
+        <input type="color">
+
+
+        <datalist id="d1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </datalist>
+
+        <input type="text" list="d1" autofocus placeholder="hahah">
+        <progress value="50" min="1" max="100"></progress>
+        <meter value="50" min="10" max="100" low="30" high="100" optimum="50"></meter>
+    </form>
+    <input type="submit" form="testForm">
+    <output>haha</output>
+    <time datatime="2017-10-30">生日</time>
+
+    <hgroup>
+        <h1>哈哈哈哈哈哈哈哈哈或或或或或</h1>
+        <h1>哈哈哈哈哈哈哈哈哈或或或或或</h1>
+        <h2>hhhhhhhhhhhhhhhhhhhhh</h2>
+    </hgroup>
+
+    <details>
+        <summary>摘要</summary>
+        <p>内容是事实上事实上事实上事实上所所所所</p>
+        <p>hh是事实上事实上事实上事实上所所所所所所所所所所所所所所所所所所所所所所</p>
+    </details>
+
+    <mark>标记</mark>
+
+    <figure>
+        <figcaption>内容</figcaption>
+        <img src="../20171202/1.jpg" alt="">
+    </figure>
+
+    <video width="200" height="200" autoplay loop controls preload="none" muted>
+        <source type="video/mp4" src="1.mp4"/>
+    </video>
+
+    <video width="300" height="300" poster="../20171202/1.jpg" loop controls muted>
+        <source src="1.mp4" type="video/mp4"/>
+    </video>
+
+    <video width="400" height="400" autoplay  controls loop poster="../20171202/1.jpg" muted>
+        <source src="1.mp4" type="video/mp4"/>
+    </video>
+
+    <button type="button" id="playBtn">play</button>
+    <button type="button" id="pauseBtn">pause</button>
+
+    <script>
+        var video1=document.getElementsByTagName("video")[0];
+        //console.log(HTMLVideoElement.prototype);
+        video1.onpause=function(){
+            console.log("paused");
+        }
+
+        video1.onplay=function(){
+            console.log("play");
+        }
+
+        video1.onplaying=function(){
+            console.log("playing after play");
+        }
+
+        playBtn.onclick=function(){
+            video1.play();
+        }
+
+        pauseBtn.onclick=function(){
+            video1.pause();
+        }
+
+
+    </script>
+</body>
+</html>

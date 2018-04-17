@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function curry(func){
+        var l=func.length; //func的3个参数
+        return function curried(){
+            var args=[].slice.call(arguments);
+            if(args.length<l){
+
+            }else{
+                return func.apply(this,args);
+            }
+        }
+    }
+
+    var curried=curry(function(a,b,c){
+        console.log([a,b,c]);
+    });
+
+</script>
+</body>
+</html>

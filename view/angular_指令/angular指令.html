@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <!--directive:hello -->
+    </div>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    //定义指令
+    app.directive("hello",function(){
+        return {
+            restrict:"AECM",
+            template:"<button type='button'>点我呀</button>",
+            replace:true, //是否取代原来的dom对象
+            priority:1,
+        };
+    });
+
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.username="tongwl";
+    }]);
+</script>
+</body>
+</html>

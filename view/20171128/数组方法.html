@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="haha">1</div>
+<div class="haha">2</div>
+<script>
+    var arr=[1,2,3,4,6,5];
+    /*console.log(arr.join());
+    console.log(arr.join(""));
+    console.log(arr.toString());
+    console.log(String(arr));*/
+
+    //console.log(arr.concat([[4,5,6]]));
+
+
+    //console.log(arr.slice(45));
+    //console.log(arr.splice(0,1));
+    //console.log(arr);
+
+    //arr.splice(-2,1);
+    //console.log(arr);
+
+    /*arr.reverse();
+    console.log(arr);*/
+
+    /*arr.sort(function(pre,next){
+        return -pre+next;
+    });
+
+    console.log(arr);*/
+
+    /*arr.push([7,8,9]);
+    console.log(arr);*/
+
+    /*arr.unshift(4,4,4);
+    console.log(arr);*/
+
+
+    /*arr.forEach(function(val,idx,arr){
+        arr[idx]=5;
+    });
+
+    console.log(arr);*/
+
+    /*var arr=[1,2,3,4,5,6];
+    var newArr=arr.map(function(val,idx,arr){
+        return val+=1;
+    });
+    console.log(newArr); //[2,3,4,5,6,7]*/
+
+    /*var newArr=arr.filter(function(val,idx,arr){
+     return val>3;
+     arr[idx]=12;
+     });
+
+     console.log(arr);
+     console.log(newArr);*/
+
+    /*var arr=[1,2,3,4,5,6];
+    var sum=arr.reduce(function(pre,next){
+        return pre+next;
+    },1);
+    console.log(sum);*/
+
+
+
+    /*var sum=arr.reduce(function(){
+
+    });*/
+
+
+    /*var arr=[{x:24},{y:48}];
+
+    function getMax(pre,cur){
+        return Math.max(pre.x,cur.y);
+    }
+
+    var max=arr.reduce(getMax);
+
+    console.log(max);*/
+
+
+    /*//将二维数组转换为一维数组
+    var arr=[[1,2],[3,4],[5,6]];
+    var newArr=arr.reduce(function(init,curr){
+        return init.concat(curr);
+    });
+
+    console.log(newArr);*/
+
+    //计算数组中每个元素出现的次数
+    /*var names=['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+    var countNames=names.reduce(function(init,current){
+        if(current in init){
+            init[current]++;
+        }else{
+            init[current]=1;
+        }
+        return init;
+    },{});
+
+
+
+
+    console.log(countNames);*/
+
+    function test(a){
+        console.log(arguments);
+    }
+
+    test(1);
+
+    var doms=document.getElementsByClassName("haha");
+
+    console.log(Object.prototype.toString(doms));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["run1.js"],"names":[],"mappings":"AAAA,QAAQ,sCAAR;AACA,SAAS,KAAT,CAAe,QAAQ,QAAR,CAAf","file":"run1-compiled.js","sourcesContent":["require('!style-loader!css-loader!./style.css');\r\ndocument.write(require('./run2'));"]}

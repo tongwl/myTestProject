@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal{
+        constructor(){
+            this.type="animal";
+        }
+
+        say(content){
+            console.log(this.type+" says "+content);
+        }
+    }
+
+    let animal=new Animal();
+    animal.say("haha");
+
+    class Cat extends Animal{
+        constructor(){
+            super();
+            this.type="CAT";
+        }
+    }
+</script>
+</body>
+</html>

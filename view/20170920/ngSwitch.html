@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <input type="text" ng-model="user">
+        <span ng-switch="user">
+            <span ng-switch-when="tongwl">童威立</span>
+            <span ng-switch-when="szz">宋真真</span>
+            <span ng-switch-when="slf">宋龙飞</span>
+            <span ng-switch-when="haha">哈哈</span>
+            <span ng-switch-default>其他人呀</span>
+        </span>
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.user="tongwl";
+    }]);
+</script>
+</body>
+</html>

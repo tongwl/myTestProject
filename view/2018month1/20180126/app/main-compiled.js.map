@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":[],"mappings":"AAAA,QAAQ,YAAR;AACA,MAAM,OAAK,QAAQ,WAAR,CAAX;AACA,KAAK,QAAL","file":"main-compiled.js","sourcesContent":["require('./main.css');\r\nconst show=require('./show.js');\r\nshow('tongwl');"]}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+
+<div ng-controller="demoController as demo">
+    {{demo.username}}
+</div>
+
+
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.controller('demoController',[function(){
+        this.username="tongwl";
+    }]);
+
+    //定义指令
+
+
+</script>
+
+
+</body>
+</html>

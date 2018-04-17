@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-include</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <div ng-include="'/text.html'"></div>
+        <div ng-include="'included.html'"></div>
+    </div>
+
+<script type="text/ng-template" id="/text.html">
+    <div>我就是内容1</div>
+    <div>我就是内容2</div>
+</script>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+
+    }]);
+</script>
+</body>
+</html>

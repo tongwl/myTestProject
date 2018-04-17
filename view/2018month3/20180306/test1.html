@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+
+<script>
+    var app=angular.module("app",[]);
+
+    app.run(function($q){
+        var deferred=$q.defer();
+        var promise=deferred.promise;
+
+        promise.then(function(response){
+            console.log("success:"+response);
+            return "wawa"; //传递给下一个then的success
+        },function(error){
+            console.log("error:"+error);
+            return "error"; //传递给下一个then的error
+        },function(value){
+            console.log("notify:"+value);
+        }).then(function(response){  //这里的response从上一个then的success而来
+            console.log("next success:"+response);
+        }).catch(function(e){
+            console.log(e);
+        }).finally(function(value){
+            console.log("finally:"+value);
+        });
+
+
+        deferred.resolve("haha");
+    });
+</script>
+</body>
+</html>

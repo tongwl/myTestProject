@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-src</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <img ng-src="{{img}}" alt="显示出错啦">
+    <a href="{{href}}">点击呀</a>
+</div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.img="http://img.lagou.com/thumbnail_300x300/i/image/M00/03/3B/Cgp3O1awdYKAaopbAABFI3RQsu4671.png";
+        $scope.href="http://www.baidu.com";
+    }]);
+</script>
+</body>
+</html>

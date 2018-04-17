@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if for练习</title>
+</head>
+<body>
+<input type="text" id="input1" onchange="checkInput()">
+<span id="tooltip"></span>
+<script>
+
+    //检查input的合法性
+    function checkInput(){
+        var input1=document.getElementById("input1");
+        var tooltip=document.getElementById("tooltip");
+
+
+        //下面判断input1是否为空
+        if(input==""||input==null){
+            tooltip.innerHTML="*不允许为空";
+            return;
+        }
+
+        //下面判断必须是数字和字母
+        if(!check(input1.val())){
+            tooltip.innerHTML="*必须是数字和字母的组合";
+            return;
+        }
+
+        //下面判断必须是>150
+        if(判断必须>150){
+            tooltip.innerHTML="*必须大于150";
+            return;
+        }
+
+        //所有条件都满足，才能执行
+        tooltip.style.display="none";
+
+
+        if(满足了不为空的条件){
+            if(满足了必须是字母和数字的条件){
+                if(满足>150){
+                    console.log(不满足必须>150，我要提醒给用户看);
+                }else{
+                    //我所有条件都满足了，可以进行提交了
+                }
+            }else{
+                console.log(不满足必须是字母和数字的条件，我要提醒给用户看);
+            }
+        }else{
+            console.log(不满足不为空条件，我要提醒给用户看);
+        }
+
+
+
+    }
+
+
+
+
+    //用于检查是否符合“必须是数字和字母的组合”
+    function check(str){
+        //正则表达式，用于判断是否符合数字和字母的组合
+        var regexp='^[a-zA-Z0-9]+$';
+        if(regexp.test(str)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+</script>
+</body>
+</html>

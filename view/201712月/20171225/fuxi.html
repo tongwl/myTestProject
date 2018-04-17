@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1 p:first-child ~ *{
+            color:#f00;
+        }
+    </style>
+</head>
+<body>
+    <p>1</p>
+    <div data-user-name="tongwl" id="d1">
+        <p>2</p>
+        <p>3</p>
+        <div>5</div>
+        <h1>6</h1>
+        <p>6</p>
+    </div>
+    选择器
+    #id
+    element
+    .class
+    select1,select2,selectN
+    parent>child
+    祖先 后代
+    prev+next
+    prev~nextSiblings
+
+    属性选择器
+    [attr]
+    [attr*=]
+    [attr~=value]
+    [attr^=value]
+    [attr$=value]
+    [attr|=value]
+
+    伪类选择器：
+    :first-child
+    :last-child
+    :nth-child
+    :nth-last-child
+    :first-or-type
+    :
+
+    jQuery选择器：
+    ：hidden
+    :visible
+
+
+
+    <script>
+        var $=2;
+        var jQuery=1;
+    </script>
+
+    <script>
+        console.log($,jQuery);
+    </script>
+    <script src="jquery.js"></script>
+<script>
+    /*console.log($('p'));
+    console.log($('p').length);
+    console.log($('p').get(0));
+    console.log($('p')[0]);
+    console.log($('p',document.getElementsByTagName('div')[0]));
+    console.log($('p',document.getElementsByTagName('div')[0]).length);
+    $(function(){
+        console.log("ready");
+    });
+
+    $("<h1>haha</h1>").appendTo($('div'));*/
+
+    //document.getElementById('d1').setAttribute("data-my-age",18);
+
+    //console.log(document.getElementById('d1').dataset);
+
+
+    //document.getElementById('d1').removeAttribute("data-my-age");
+
+    //$('#d1').removeData('data-my-age');
+
+    //$('#d1').data('data-my-age',18);
+    //$('#d1').removeData('data-user-name');
+    //console.log($('#d1').data());
+
+    //扩展jQuery的方法
+    /*jQuery.extend({
+        haha:function(){
+            console.log("haha");
+        },
+        hehe:function(){
+            console.log("hehe");
+        }
+    });
+
+    jQuery.haha();
+    jQuery.hehe();*/
+
+    /*jQuery.hahaha=function(){
+        console.log("hahaha");
+    }*/
+    //$.hahaha();
+
+    /*jQuery.fn.extend({
+        "haha":function(){
+            console.log(1111111111);
+        },
+        tongwl:"tongwl"
+    });
+
+    jQuery.prototype.extend({
+        mama:"mama"
+    });
+
+    jQuery.prototype.gggg="gggg";
+
+    console.log($('p').tongwl);
+    console.log($('p').mama);
+    console.log($('p').gggg);*/
+
+    //让出jQuery的使用权
+
+
+    //console.log($);
+    //console.log(jQuery);
+
+    //jQuery.noConflict(true);
+    //console.log($);
+    //console.log(jQuery);
+
+</script>
+</body>
+</html>

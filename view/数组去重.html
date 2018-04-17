@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,3,12,1,43,12,12,12,1];
+        arr.sort(function(a,b){return a-b;});
+
+        //方法1
+        for(var i=0;i<arr.length-1;i++) {
+            if (arr[i] === arr[i + 1]) {
+                arr.splice(i, 1);
+                i--;
+            }
+        }
+
+        console.log(arr);
+    </script>
+
+    <script>
+        var arr=[1,2,3,12,1,43,12,12,12,1];
+        var obj={};
+        var newArr=[];
+
+        //方法二
+        arr.forEach(function(val){
+            if(!obj[val]){
+                obj[val]=val;
+                newArr.push(val);
+            }
+        });
+
+        console.log(newArr);
+    </script>
+
+    <script>
+
+    </script>
+
+
+</body>
+</html>

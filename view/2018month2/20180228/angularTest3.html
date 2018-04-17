@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-app="app1">
+        <div x-ng-controller="ctrl">
+            {{username}}
+            <input type="checkbox" ng-model="show">
+            <span ng-show="show">显示</span>
+        </div>
+    </div>
+
+    <div ng-app="app2">
+        <div ng-controller="ctrl">
+            {{username}}
+        </div>
+    </div>
+
+    <script>
+        var app=angular.module("app1",[]);
+        app.controller("ctrl",["$scope",function($scope){
+            $scope.username="tongwl";
+        }]);
+
+        var app2=angular.module("app2",[]);
+        app2.controller("ctrl",["$scope",function($scope){
+            $scope.username="szz";
+        }]);
+
+        angular.element(document).ready(function(){
+            angular.bootstrap(document,["app2"]);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+<div test></div>
+<script>
+    var app=angular.module("app",[]);
+
+    app.directive("test",function(){
+        return {
+            restrict:"ECAM",
+            compile:function(elem,attrs){
+                console.log("compile");  //1st
+                return {
+                    pre:function(scope,elem,attr){
+                        console.log("pre");  //3th
+                    },
+                    post:function(scope,elem,attr){
+                        console.log("post"); //4th
+                    }
+                };
+            },
+            controller:function($scope){
+              console.log("ctrl");  //2nd
+            }
+        };
+    });
+</script>
+</body>
+</html>

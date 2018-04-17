@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <p id="p1">1111111111</p>
+        <div id="c1">divvvvvv</div>
+        <p id="p2">222222222222222</p>
+    </div>
+
+    <p id="p3" class="red" data-my-message="myMessage">33333333333</p>
+<script>
+
+    $('#p3').data('username','twl');
+
+    console.log($('#p3').data());
+
+
+    //console.log($('p').length);
+    //$('<p>33333333333</p>').appendTo($('#d1'));
+
+    //console.log($('p').get(0)==$('p')[0]);
+
+    //console.log($('p').index($('#p1')));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <title>响应式页面</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+        .container{
+            border:1px solid #000;
+        }
+
+        /*[class*=col-sm-]{
+            border:1px solid #f00;
+        }*/
+
+        #d1{
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-3">1111</div>
+            <div class="col-sm-6">2222</div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 col-sm-push-9">3333</div>
+            <div class="col-sm-9 col-sm-pull-3">4444444</div>
+        </div>
+    </div>
+
+    <h1>
+        1111111111111111111111111
+        <small>我是small</small>
+    </h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-justify">我在哪一边</div>
+        </div>
+    </div>
+    <div style="cursor:help;">我是内容</div>
+
+    <div class="text-uppercase">xiaoxie</div>
+    <div class="text-lowercase">XIAOXIE</div>
+    <div class="text-capitalize">tou daxie</div>
+
+    <div id="d1">PPPP</div>
+
+    <abbr title="">缩略语</abbr>
+
+    <abbr title="缩略语">sly</abbr>
+
+    <abbr title="缩略语">sly</abbr>
+
+    <abbr title="缩略语">sly</abbr>
+
+    <address>我是地址</address>
+    <blockquote>
+        sdfdsfsfsdf
+    </blockquote>
+
+<blockquote>sdfdfsdfsdfsd</blockquote>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="active">1111</th>
+                <th class="success">2222</th>
+                <th class="info">3333</th>
+                <th class="warning">4444</th>
+                <th class="danger">5555</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>343434</td>
+                <td>343434</td>
+                <td>343434</td>
+                <td>343434</td>
+                <td>343434</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>dfds</td>
+                <td>dfds</td>
+                <td>dfds</td>
+                <td>dfds</td>
+                <td>dfds</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <form>
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="text" class="form-control" id="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="uuu">uuu</label>
+                <input type="text" class="form-control" id="uuu">
+            </div>
+            <div class="form-group">
+                <label for="uuu">uuu</label>
+                <input type="text" class="form-control" id="uuu">
+            </div>
+        </form>
+
+    </div>
+
+    <div class="container">
+        <form  class="form-horizontal">
+            <div class="form-group">
+                <label for="aaa" class="col-sm-3 control-label">aaa</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="aaa">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        某某某曾经说过：
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet aspernatur blanditiis, consectetur cum cumque debitis exercitationem fugit ipsa magnam nisi possimus quod unde velit vero voluptas? Accusantium, quam.</blockquote>
+    </div>
+
+    <div>某某某曾经说过:<q>哈哈哈哈哈</q> </div>
+
+    <div>
+        键盘文本<kbd>quit</kbd>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-primary btn-xs">按钮</button>
+        <button type="button" class="btn btn-default btn-sm">按钮</button>
+        <button type="button" class="btn btn-success btn-md">按钮</button>
+        <button type="button" class="btn btn-info btn-lg">按钮</button>
+        <button type="button" class="btn btn-warning">按钮</button>
+        <button type="button" class="btn btn-danger">按钮</button>
+        <button type="button" class="btn btn-link">按钮</button>
+    </div>
+
+    <div class="text-primary">我是内容</div>
+    <div class="text-muted">我是内容</div>
+    <div class="text-success">我是内容</div>
+    <div class="text-info">我是内容</div>
+    <div class="text-warning">我是内容</div>
+    <div class="text-danger">我是内容</div>
+
+    <div class="container">
+        <div class="row bg-primary">我是内容</div>
+        <div class="row bg-success">我是内容</div>
+        <div class="row bg-info">我是内容</div>
+        <div class="row bg-warning">我是内容</div>
+        <div class="row bg-danger">我是内容</div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="dropdown">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    点击
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">121212</a>
+                    </li>
+                    <li>
+                        <a href="#">121212</a>
+                    </li>
+                    <li>
+                        <a href="#">121212</a>
+                    </li>
+                    <li>
+                        <a href="#">121212</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

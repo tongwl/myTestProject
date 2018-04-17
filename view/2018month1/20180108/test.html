@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*const x=1;
+    const answer=x>10?"大于10":"小于等于10";
+    console.log(answer);*/
+
+    /*let x= 1,y=2;
+    const haha={x,y};
+    console.log(haha);*/
+
+    /*function test(x,y){
+        return {x,y};
+    }
+
+    //console.log(test(1,22));
+
+    let obj={
+        method(){
+            console.log(1);
+        }
+    };
+
+    obj.method();*/
+
+
+    //var x= 1,y=2;
+    //var obj={x,y};
+    //console.log(obj);
+
+
+    /*var obj={
+        method(key){
+            return key+this.name;
+        },
+        name:"tongwl"
+    };
+
+    console.log(obj.method("wawa"));*/
+
+    //函数简写
+
+    /*var sayHello=name => console.log(name);
+    sayHello("wwaa");*/
+
+    /*//箭头函数1
+    var sayHello=name => name+" say hello";
+    console.log(sayHello("tongwl"));
+
+    //箭头函数返回一个对象，需要加一对括号
+    var getObj=username=>({username});
+    console.log(getObj("tongwl"));
+
+    //箭头函数2
+    var sayWhat=(name,what) => name+" say "+what;
+    console.log("zhenzhen","ll");
+
+    //箭头函数3
+    var sayWhy=(who,reason)=>{
+        who=who+" say ";
+        console.log(who+reason);
+    }
+    sayWhy("wawa","haha");*/
+
+    //箭头函数修复了this的指向
+    /*let username="tongwl";
+    let age=18;
+    let student={
+        username,
+        age,
+        sayHello:()=>{
+                console.log(this);
+                var haha=()=> this.age;
+                console.log(haha());
+                return haha();
+            },
+        sayWhy:function(){
+            let=sayH=()=> this.age;
+            return sayH();
+        }
+
+    }
+
+    console.log(student.sayWhy());*/
+
+
+    /*var obj = {
+        birth: 1990,
+        getAge: function () {
+            var b = this.birth; // 1990
+            var fn = () => new Date().getFullYear() - this.birth; // this指向obj对象
+            return fn();
+        }
+    };
+    console.log(obj.getAge());*/
+
+
+    //练习：
+    /*var name="tongwl";
+    var age=28;
+    var obj={name,age,sayHello:function(){
+        var test=function(){
+            return this.age;
+        };
+        return test();
+    }};
+
+    console.log(obj.sayHello());*/
+
+    /*var obj = {
+        birth: 1990,
+        getAge: function () {
+            var b = this.birth; // 1990
+            /!*var fn = function () {
+                return new Date().getFullYear() - this.birth; // this指向window或undefined
+            };*!/
+            var fn=()=>new Date().getFullYear() - this.birth;
+            return fn();
+        }
+    };
+    console.log(obj.getAge());*/
+
+
+    //var username="tongwl";
+    var obj={
+        username:"tongwl",
+        age:28,
+        sayHello:function(){
+            var who=function(){
+                return this.username;
+            }
+            return who();
+        }
+    };
+
+    //console.log(this.username);
+    console.log(obj.sayHello());
+
+
+    /*var getUser=()=> "tongwl";
+    console.log(getUser());*/
+
+    /*var getUser=username=> username;
+    console.log(getUser("tongwl"));*/
+
+    /*var getUser=(username,age) => username+":"+age;
+    console.log(getUser("tongwl",18));*/
+
+    /*let getUser=(username,age)=>{
+        console.log(username);
+        return age;
+    };
+
+    console.log(getUser("tongwl",19));*/
+
+    let getUser=(username,age)=>({username,age});
+    console.log(getUser("tongwl",18));
+
+
+
+
+
+</script>
+</body>
+</html>

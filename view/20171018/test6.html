@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=new Array(9);
+    for(var row= 1,len=a.length+1;row<len;row++){
+        a[row]=new Array(row);       //这里会出现死循环
+        console.log(a.length);
+    }
+
+</script>
+</body>
+</html>

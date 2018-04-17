@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*console.log([2,3].valueOf()=='2,3');
+
+    console.log([].toString()); //""
+
+
+    var obj={};
+    console.log(obj=="[object Object]");
+    console.log([].toString());
+    console.log(""==0);*/
+
+
+    var obj={};
+
+    obj.valueOf=function(){
+        return 22;
+    }
+
+    console.log(obj==22); //true
+
+</script>
+</body>
+</html>

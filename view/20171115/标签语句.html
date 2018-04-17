@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    computeSum:if(true){
+        var sum=0;
+        outerLoop:for(var i=0;i<10;i++){
+            innerLoop:for(var j=0;j<10;j++){
+                sum+=i+j;
+                if(j==2){
+                    break computeSum;
+                }
+            }
+        }
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    var obj={
+
+    };
+    Object.defineProperty(obj,"uname",{
+        value:"tongwl",
+        writable:true,
+        enumerable:true,
+        configurable:true
+    });
+    //Object.preventExtensions(obj);
+    //Object.seal(obj);
+    Object.freeze(obj);
+    console.log(Object.getOwnPropertyDescriptor(obj,"uname"));
+    //obj.uu=1;
+</script>
+</body>
+</html>

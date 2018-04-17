@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  publicFun(callback,c1,c2,c3,c4){
+        //假设这个是异步函数并执行
+        (function(){
+            //得到message
+            var message=1;
+            callback(message,c1,c2);
+        })();
+
+    }
+
+    function fun(message,a,b){
+        console.log(message+a+b);
+    }
+
+    //f1,f2,比较像的话你在外面可以封装
+    publicFun(fun,3,4);
+    publicFun(fun,5,6);
+
+</script>
+</body>
+</html>

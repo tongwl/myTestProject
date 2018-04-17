@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="d1" data-name="tongwl" data-my-age=18 data-myClassName="软件092"></div>
+    <script>
+        console.log(d1.dataset.myclassname);
+
+        sessionStorage.setItem("key","value");
+        sessionStorage.getItem("key");
+        console.log(sessionStorage.length);
+        sessionStorage.key(1)
+        sessionStorage.removeItem("key")
+        sessionStorage.clear()
+        document.cookie="key1=value1;key2=value2;";
+        console.log(document.cookie);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav></nav>
+    <header></header>
+    <section></section>
+<article></article>
+<aside></aside>
+<footer></footer>
+
+    <form id="testForm">
+        <input type="text" name="username">
+        <input type="email">
+        <input type="url">
+        <input type="number" min="0" max="100" step="5">
+        <input type="range" min="10" max="100" step="5">
+        <input type="date">
+        <input type="datetime">
+        <input type="datetime-local">
+        <input type="month">
+        <input type="week">
+        <input type="time">
+        <input type="search">
+        <input type="tel">
+        <input type="color">
+        <progress max="100" min="0" value="55"></progress>
+        <meter min="0" max="100" low="30" high="80" optimum="50" value="20"></meter>
+        <datalist id="dl">
+            <option>111111111</option>
+            <option>222222222</option>
+            <option>333333333</option>
+        </datalist>
+
+        <input type="text" list="dl">
+
+        <hgroup>
+            <h1>h1111111111111111111</h1>
+            <h2>h22222222222222222222222222222222222222</h2>
+            <h3>h33333333333333333333333333333333333333333333333333333333333</h3>
+            <h4>h444444444444444444444444444</h4>
+            <h5>h55555555555555555</h5>
+            <h6>h6666666666666666666666666</h6>
+        </hgroup>
+
+        <details>
+            <summary>我是摘要</summary>
+            <p>我是内容</p>
+            <h1>我也是内容</h1>
+        </details>
+
+        <figure>
+            <figcapition>title</figcapition>
+            <img src="test.jpg" alt="">
+        </figure>
+        
+
+    </form>
+    <input type="submit" value="tijiao" form="testForm">
+
+    <div data-my-name="tongwl" data-haClass="ruanjian" id="d11"></div>
+    <script>
+        console.log(d11.dataset);
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var worker=new Worker("worker.js");
+    worker.addEventListener("message",function(event){
+        event.preventDefault();
+        event.returnValue=false;
+        event.stopPropagation();
+        event.cancelBubble=true;
+        document.write(event.data);
+    },false);
+</script>
+</body>
+</html>

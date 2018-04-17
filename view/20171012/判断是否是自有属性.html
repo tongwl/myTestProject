@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name){
+        this.name=name;
+    }
+
+    Student.prototype.className="软件二班";
+
+    Student.prototype.hasOwnProperty=function(){
+        return false;
+    }
+
+    var lilei=new Student("lilei");
+
+    console.log(lilei.hasOwnProperty("name"));
+    console.log(lilei.hasOwnProperty("className"));
+
+    console.log({}.hasOwnProperty.call(lilei,"name"));
+    console.log({}.hasOwnProperty.call(lilei,"className"));
+
+</script>
+</body>
+</html>

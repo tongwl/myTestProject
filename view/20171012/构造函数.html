@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Student(){
+        this.value=2;
+
+        return {
+            name:"tongwl"
+        }
+    }
+
+    var lilei=new Student();
+    console.log(lilei.value);
+    console.log(lilei.name);*/
+
+    //工厂模式
+    function Bar(){
+        var value=1;
+        return {
+            method:function(){
+                return value;
+            }
+        };
+    }
+
+    Bar.prototype.foo="foo";
+
+
+    var bar=new Bar();
+    console.log(bar.method());
+    console.log(bar.foo);
+
+    var bar = Bar();
+    console.log(bar.method());
+    console.log(bar.foo);
+
+</script>
+</body>
+</html>

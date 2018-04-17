@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+        }
+
+        div#d1{
+            background-color:#f00;
+        }
+
+        div#d2{
+            background-color:#0f0;
+        }
+
+        img{
+            border:1px solid #00f;
+            margin:10px;
+        }
+        p{
+            background-color:#ff0;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+
+
+<p>111111111111111</p>
+<div id="d1"></div>
+<img src="../1.jpg" alt="" id="img1">
+<div id="d2"></div>
+<script>
+    console.log(window.getComputedStyle(img1).getPropertyValue("display"));
+</script>
+</body>
+</html>

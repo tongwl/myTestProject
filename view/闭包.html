@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+    <script>
+        function outerFn(){
+            var outerVar=0;
+            document.write("Outer function<br/>");
+
+            function innerFn1(){
+                outerVar++;
+                document.write("Inner function1\t");
+                document.write("outerVar = "+outerVar+"<br/>");
+            }
+
+            function innerFn2(){
+                outerVar+=2;
+                document.write("Inner function2\t");
+                document.write("outerVar = "+outerVar+"<br/>");
+            }
+
+            return {"fn1":innerFn1,"fn2":innerFn2};
+        }
+
+        var fnRef=outerFn();
+        fnRef.fn1();
+        fnRef.fn2();
+        fnRef.fn1();
+
+        var fnRef2=outerFn();
+        fnRef2.fn1();
+        fnRef2.fn2();
+        fnRef2.fn1();
+
+
+        /*
+            Outer function
+            Inner function1 outerVar = 1
+            Inner function2 outerVar =3
+         Inner function2 outerVar =4
+
+        *
+        * */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width:400px;
+            height:400px;
+            border:1px solid #f00;
+        }
+
+        .parent{
+            width: 200px;
+            height:200px;
+            border:1px solid #0f0;
+        }
+
+        .child{
+            width:100px;
+            height:100px;
+            border:1px solid #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer" id="outer">
+        <div class="parent" id="parent2">
+            <div class="child" id="child"></div>
+        </div>
+    </div>
+    <script>
+        outer.addEventListener("click",fun,true);
+        parent2.addEventListener("click",fun,true);
+        child.addEventListener("click",fun,true);
+
+        function fun(event){
+            if(this.className=="child"){
+                event.stopPropagation();
+            }
+            console.log(this);
+        }
+
+
+        console.log(event.stopPropagation());
+
+    </script>
+</body>
+</html>

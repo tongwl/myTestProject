@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+<body ng-controller="ctrl">
+    <ng-form name="testForm" novalidate >
+        <input type="text" name="ttt" ng-model="mingcheng" required>
+        <span ng-if="testForm.ttt.$dirty&&testForm.ttt.$error.required">我是必须的</span>
+
+        <input type="email" name="email" ng-model="emal2">
+        <span ng-if="testForm.email.$error.email">11111</span>
+
+        <input type="text" name="minLen" ng-model="minLen" ng-maxlength="5" >
+        <span ng-if="testForm.minLen.$invalid">超过没呀</span>
+
+        <input type="text" ng-pattern="/^[abc]*$/" name="abcc" ng-model="ddd">
+        <span ng-if="testForm.abcc.$error.pattern">12</span>
+
+        <input type="url" name="url" ng-model="url">
+        <span ng-if="testForm.url.$error.url">url验证</span>
+
+        <input type="number" name="num" ng-model="num" max="100" min="20">
+        <span ng-if="testForm.num.$error.min">超出最小啦</span>
+        <span ng-if="testForm.num.$error.max">超出最大啦</span>
+
+
+
+
+        <button type="button" ng-click="check()">点击我呀</button>
+    </ng-form>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",function($scope){
+
+        $scope.check=function(){
+            console.log($scope.testForm);
+        }
+
+
+    });
+</script>
+</body>
+</html>

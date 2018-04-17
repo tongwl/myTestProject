@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习3</title>
+    <style>
+        input:checked{
+            width:100px;
+            height:100px;
+        }
+
+        input:disabled{
+            border:1px solid #f00;
+        }
+
+        input:enabled{
+            border:1px solid #00f;
+        }
+
+        input:read-only{
+           border:1px solid #ff0;
+        }
+
+        input:required{
+            border:1px solid #f0f;
+        }
+
+        :read-write{
+            border:1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <input type="checkbox">
+        <input type="text" value="disabled" disabled>
+        <input type="text" required>
+        <input type="text" readonly>
+    </form>
+
+<div contenteditable="true">11</div>
+</body>
+</html>

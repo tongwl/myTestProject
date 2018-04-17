@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string方法复习</title>
+</head>
+<body>
+    <script>
+        //string方法的复习
+
+        var str="abc.12.1.12";
+        //string.charCodeAt(index) 在index位置的字符的utf码
+        //document.writeln(str.charCodeAt(0));
+
+        //从utf code码转换成字符
+        //document.writeln(String.fromCharCode(97));
+
+        //document.writeln(str.charAt(1));
+
+        //document.writeln(str.charAt(0));
+
+        //document.writeln(str.charAt(5)); //""空字符串
+
+        //document.writeln(typeof str.charAt(-1)); //""空字符串
+
+        //document.writeln(str.charAt(1));
+
+        //document.writeln(str.slice(-2,-1));
+        //document.writeln(str.substring(0,1));
+        //document.writeln(str.substr(1,2));
+
+        /*
+        str="http://www.baidu.com";
+
+        document.writeln(str.indexOf("/",6));
+        document.writeln(str.lastIndexOf("/",4));
+        document.writeln(str.search("//"));
+        */
+
+        /*
+        string.charAt(index)
+        string.indexOf(str,startIndex) //包含startIndex
+        string.lastIndexOf(str,endIndex)  //包含endIndex
+        string.search(regExp);
+
+        string.slice(start,end) //可以是负数
+        string.substring(start,end) //不可以数负数
+        string.substr(start,length);
+
+        string.concat(str1,str2,...);
+
+        string.split(str,length); //length表示数组的长度
+        */
+
+        var str="abcdefghabc";
+
+        console.log(str.replace(/[a]/,1));
+
+        //var arr=str.split(".",2);
+        //console.log(arr);
+        //console.log(str.concat("?cs=1"));
+
+    </script>
+</body>
+</html>

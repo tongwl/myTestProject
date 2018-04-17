@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <span>{{number+1}}</span>
+        <span>{{new Date().getTime()}}</span>
+        <span :class="colorRed">2323</span>
+
+        <span>121111111</span>
+        <form>
+            <input type="text" name="username">
+            <input type="password" name="pwd">
+            <button v-on:submit.prevent="submit2">点击</button>
+            <button type="button" @click="sayHello">hello</button>
+        </form>
+
+        <input type="text" v-model="message">
+        <span>{{message}}</span>
+        <span>{{reversedMessage}}</span>
+        <span>{{reverseMessage()}}</span>
+        <span>{{data}}</span>
+
+        <input type="text" v-model="changeName">
+        <input type="text" v-model="firstName">
+        <input type="text" v-model="lastName">
+        <button @click="change">点击呀</button>
+    </div>
+<script>
+
+    var x=1;
+    var app=new Vue({
+        el:'#d1',
+        data:{
+            number:3,
+            colorRed:'red',
+            message:"abcde",
+            firstName:"tong",
+            lastName:"wl",
+            changeName:null
+        },
+        methods:{
+            submit2:function(){
+                //console.log(111);
+            },
+            sayHello:function(){
+                console.log("hello");
+            },
+            reverseMessage:function(){
+                return this.message.split('').reverse().join('');
+            },
+            change:function(){
+                this.fullName=this.changeName;
+            }
+        },
+        computed:{
+            reversedMessage:function(){
+                console.log(1);
+                return this.message.split('').reverse().join('');
+            },
+            data:function(){
+                console.log(2);
+                return new Date().getTime();
+            },
+            fullName:{
+                get:function(){
+                    return this.firstName+this.lastName;
+                },
+                set:function(val){
+                    var names=val.split(" ");
+                    this.firstName=names[0];
+                    this.lastName=names[1];
+                }
+            }
+        }
+    });
+
+    //console.log(Object.getOwnPropertyDescriptor(app,'_data'));
+    //console.log(Object.getOwnPropertyDescriptor(app,"reversedMessage"));
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-selected</title>
+</head>
+<body>
+
+<input type="checkbox" ng-model="selected"> 选择宋真真
+<select name="" id="">
+    <option value="1">童威立</option>
+    <option value="2" ng-selected="selected">宋真真</option>
+    <option value="3">水试试</option>
+</select>
+
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+</script>
+</body>
+</html>

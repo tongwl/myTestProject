@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+    <input type="text" ng-model="username">
+    <hello-world name="username"></hello-world>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    //定义指令
+   app.directive("helloWorld",function(){
+       return {
+           restrict:"AE",
+           template:"<div>用户名：{{user}},<input type='text' ng-model='name'></div>",
+           priority:1,
+           terminate:true,
+           replace:true,
+           scope:{
+               name:"="
+           }
+       };
+   });
+
+</script>
+
+
+</body>
+</html>

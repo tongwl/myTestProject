@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <label for="success">成功</label>
+        <input type="checkbox" id="success" ng-model="success">
+        <div ng-cloak>
+            {{status}}
+        </div>
+        <button type="button" ng-click="change()">点击</button>
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope","$q",function($scope,$q){
+        $scope.success=true;
+        $scope.change=function(){
+            var deferred=$q.defer();
+            var promise=deferred.promise;
+            promise.then(function(success){
+                success+="you have passed the first then()";
+                $scope.status=success;
+                return success;
+            }, function (error) {
+                error+='failed but you have passed the first then()';
+                $scope.status=error;
+                return error;
+            }).then(function(success){
+                alert("Success:"+success);
+            }, function (error) {
+                alert("Error:"+error);
+            });
+
+            if($scope.success){
+                deferred.resolve("you are lucky");
+            }else{
+                deferred.reject("sorry,it lost");
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

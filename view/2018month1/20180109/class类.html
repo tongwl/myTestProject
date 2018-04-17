@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function Circle(radius){
+        this.radius=radius;
+        Circle.circleMade++;
+    }
+
+    Circle.draw=function(circle,canvas){
+        //canvas绘制代码
+    }
+
+    Object.defineProperty(Circle,"circleMade",{
+        set:function(val){
+            this._count=val;
+        },
+        get:function(){
+            return !this._count?0:this._count;
+        }
+    });
+
+    Circle.prototype={
+        area:function(){
+            return Math.pow(this.radius,2)*Math.PI;
+        }
+    };
+
+    Object.defineProperty(Circle.prototype,"radius",{
+        set:function(radius){
+
+        }
+    });*/
+
+    /*var obj={
+        xing:"tong",
+        _mz:"",
+        set xingming(_val){
+            this._mz=this.xing+_val;
+        },
+        get xingming(){
+            return _mz;
+        }
+    };
+
+    obj.xingming="wl";
+    console.log(obj);*/
+
+    class Student{
+        constructor(username){
+            this.username=username;
+        }
+
+        sayBye(){
+            console.log(this.username);
+        }
+
+        static sayHello(){
+            console.log(this.a);
+        }
+    }
+
+    Student.a=1;
+    var lilei=new Student("lilei");
+
+    lilei.sayBye();
+
+</script>
+</body>
+</html>

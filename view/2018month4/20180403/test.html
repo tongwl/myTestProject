@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        table{
+            width:500px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        $('tr td').click(function(){
+            var me =this;
+            if ($(this).html()==''){  //如果当前是空值，那么获取到其他的最大值后在加1就是自己的值
+                var max=0;
+                $('tr td').each(function(){
+                    if(me!=this){
+                      max < Number($(this).html()) && (max =Number($(this).html()));
+                    }
+                });
+                $(this).html(max+1);
+            }else{//如果当前有值了
+                var _init=Number($(this).html());
+                $(this).html(null);
+
+                //原来比我大的全部减1
+                $('tr td').each(function(){
+                    if(me!=this){
+                        Number($(this).html()) >_init && ($(this).html($(this).html()-1));
+                    }
+                });
+
+            }
+        });
+    </script>
+</body>
+</html>

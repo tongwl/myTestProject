@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <ng-include src="'test.html'"></ng-include>
+
+    <script>
+        var app=angular.module("app",[]);
+
+        app.run(["$templateCache",function($templateCache){
+            $templateCache.put('test.html','<b>我是加粗的</b>');
+        }]);
+
+    </script>
+</body>
+</html>

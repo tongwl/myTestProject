@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            width: 500px;
+            height:500px;
+            border:1px solid #f00;
+        }
+
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="" id="img1" width="100"/>
+
+<div id="d1"></div>
+<script>
+    var srcObj=null;
+    img1.ondragstart=function(){
+        srcObj=this;
+        //console.log("begin");
+    }
+
+    img1.ondrag=function(){
+        //console.log("dragging");
+    }
+
+    img1.ondragend=function(){
+        //console.log("dragend");
+    }
+
+    d1.addEventListener("dragenter",function(){
+        //console.log("enter");
+    });
+
+    d1.addEventListener("dragover",function(event){
+        //console.log("over");
+        event.preventDefault();
+    });
+
+    d1.addEventListener("dragleave",function(){
+        //console.log("leave");
+    });
+
+    /*d1.addEventListener("drop",function(){
+        console.log("drop");
+    });*/
+
+    d1.ondrop=function(){
+        console.log(1);
+    }
+
+
+</script>
+</body>
+</html>

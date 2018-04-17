@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //Array有个方法叫some，我模拟它做个someT,功能类似
+        Array.prototype.someT=function(fun){
+            for(var i=0;i<this.length;i++){
+                if(fun(this[i],i,this)){
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        var arr=['man','man','woman','man','man'];
+
+
+        var bl=arr.someT(function(val,idx,arr){
+            return val=="woman";
+        });
+
+        arr.someT();
+        arr2.someT();
+        arr3.someT();
+        arr4.someT();
+
+
+
+    </script>
+</body>
+</html>

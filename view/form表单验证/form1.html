@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input.ng-dirty.ng-invalid-required{
+            border:1px solid #f00;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<form ng-controller="ctrl"  name="createForm" novalidata>
+    <p>
+        <input type="text" name="user" ng-model="user" required>
+        <span ng-if="createForm.user.$dirty&&createForm.user.$error.required">*请输入用户名</span>
+    </p>
+    <p>
+        <input type="email" name="email" ng-model="email2">
+        <span ng-if="createForm.email.$error.email">非法邮箱</span>
+    </p>
+
+    <p ng-if="createForm.$pristine">我是纯洁的，表单没验证之前</p>
+    <p ng-if="createForm.$dirty">我已经进行了检查</p>
+    <p ng-if="createForm.$valid">表单验证通过</p>
+    <p ng-if="createForm.$invalid">表单验证不通过</p>
+</form>
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+
+    app.controller("ctrl",["$scope",function($scope){
+
+    }]);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+module.exports="It works from run2.js";

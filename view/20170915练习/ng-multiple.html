@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-multiple</title>
+</head>
+<body>
+<input type="checkbox" ng-model="multiple"> multiple
+<select ng-multiple="multiple">
+    <option value="1">111</option>
+    <option value="2">222</option>
+    <option value="3">333</option>
+    <option value="4">444</option>
+</select>
+
+<input type="checkbox" ng-checked="multiple">
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        html{
+            font-size:13px;
+        }
+
+        body{
+            font-size:18px;
+        }
+
+        div{
+            font-size:15px;
+        }
+
+        p{
+            line-height:2rem;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>1111111111111111111</p>
+</div>
+
+<script>
+
+    //获取body的css属性：font-size
+    console.log(window.getComputedStyle(document.documentElement).getPropertyValue('font-size'));
+    console.log(window.getComputedStyle(document.getElementsByTagName('p')[0]).getPropertyValue('line-height'));
+
+    console.log();
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+    <div ng-controller="parent">
+        <input type="text" ng-model="username">
+        <hello username2="{{username}}"></hello>
+    </div>
+    <script type="text/ng-template" id="/hello.html">
+        <input type="text" ng-model="username2">
+    </script>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    //定义指令
+    var ctrl=app.controller("parent",["$scope",function($scope){
+        $scope.username="tongwl";
+    }]);
+
+    app.directive("hello",function(){
+        return {
+            restrict:"EA",
+            template:'<input type="text" ng-model="username2">',
+            //templateUrl:'/hello.html',
+            priority:1,
+            terminate:true,
+            replace:true,
+            scope:{
+                username2:"="
+            }
+        };
+    });
+
+</script>
+
+
+</body>
+</html>

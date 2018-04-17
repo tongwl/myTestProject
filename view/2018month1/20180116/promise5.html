@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<script>
+
+    $.when(
+            $.ajax({
+                url:"1.json",
+                success:function(response){
+                    console.log("我先执行");
+                    console.log(response);
+                }
+            }),
+            $.ajax({
+                url:"2.json",
+                success:function(response){
+                    console.log("我再执行");
+                }
+            }),
+            $.ajax({
+                url:"3.json",
+                success:function(response){
+                    console.log("我继续执行");
+                }
+            })
+    ).done(function(response,response2,response3){
+        console.log("上面3个都已经成功，我就调用");
+        console.log(response);
+        console.log(response2);
+        console.log(response3);
+    }).fail(function(reason){
+        console.log("上面3个只要有一个错了，我就调用");
+    });
+
+
+    /*var def=$.ajax({
+        method:"GET",
+        url:"1.json",
+        success:function(response){
+            console.log(1);
+        },
+        error:function(reason){
+            console.log(reason);
+        }
+    });
+
+    def.done(function(response){
+        $.ajax({
+           type:"GET",
+            url:"2.json",
+            success:function(response){
+                console.log(2);
+            }
+        });
+    }).fail(function(reason){
+        console.log(reason);
+    }).done(function(){
+        console.log(3);
+    });
+
+
+    def.done(function(){
+        console.log(1);
+    }).done(function(){
+        console.log(2);
+    }).done(function(){
+        console.log(3);
+    }).done(function(){
+        console.log(4);
+    }).done(function(){
+        console.log(4);
+    }).done(function(){
+        console.log(5);
+    }).done(function(){
+        console.log(6);
+    }).done(function(){
+        console.log(7);
+    }).done(function(){
+        console.log(8);
+    });*/
+
+
+</script>
+</body>
+</html>

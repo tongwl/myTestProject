@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function helloWorld(ready){
+        return new Promise(function(resolve,reject){
+            if(ready){
+                resolve("已经解决了");
+            }else{
+                reject("未解决");
+            }
+        });
+    }
+
+    helloWorld(true).then(function(response){
+        console.log(response);
+        return response;
+    },function(reason){
+        console.log(reason);
+    }).then(function(response){
+        console.log(response);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+    <script>
+        //var str="hehehedaHEHE";
+        //console.log(str.charAt(-1));//空字符
+        //console.log(str.charAt(0));//t
+        //console.log(str.indexOf("st",-1));
+        //console.log(str.indexOf("tt",0));
+        //console.log(str.lastIndexOf("st",6));
+        //console.log(str.lastIndexOf("he",2));
+        //console.log(str.search(/[E]/i));
+        //console.log(str.toLowerCase());
+        //console.log(str.toUpperCase());
+        //console.log(str.concat("abc","def","heha"));
+        //console.log(str.split("e",2));
+        //console.log(str.slice(0,1));
+        //console.log(str.slice(-1));
+        //console.log(str.slice(-2));
+        //console.log(str.substring(-1));
+        //console.log(str.substr(-2,1));
+
+        //str="yangwendashabi";
+        //console.log(str.replace('a',1));
+        //console.log(str.replace(/a/g,1));
+
+        var arr=[1,2,3,4,5];
+
+
+        //zhenzhen
+
+        var cs=window.location.search;//获取参数字符串：?code=1&haha=1
+        if(!cs){ //如果不存在参数 null undefined ""
+            //那就不是微信登录
+        }else{//存在参数，下面解析字符串
+            //先删除最前面的问号
+            var newCs=cs.substr(1);
+
+            //用&符号分割出数组
+            var arr=newCs.split('&');
+
+            var codeValue;//用于保存code的值
+
+            //你可以用for循环遍历
+            //遍历这个数组，因为数组里面的每一对都是 key1=value1  这种格式的字符串，我们要取到key1，判断是否是"code",然后再取到value1的值
+            arr.some(function(val){
+                //将key1=value1变成数组
+                var nextCs=val.split('=');
+
+                //判断key1是否是code,如果是，则codeValue等于value1,结束
+                if(nextCs[0]==="code"){
+                    codeValue=nextCs[1];
+                    return true;
+                }
+            });
+
+
+        }
+
+    </script>
+</body>
+</html>

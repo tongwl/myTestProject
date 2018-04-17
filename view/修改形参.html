@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    test(1);
+    function test(a){
+        console.log(a); //输出1
+        console.log(arguments[0]); //输出1
+
+        //修改a
+        a=2;
+        console.log(a); //输出2
+        console.log(arguments[0]);//输出2
+
+
+        //修改arguments[0]
+        arguments[0]=3;
+        console.log(a); //输出3
+        console.log(arguments[0]);//输出3
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function keys(o){
+        if(typeof o !=="object") throw TypeError();
+        var result=[];
+        for (var prop in o){
+            if(o.hasOwnProperty(prop)){
+                result.push(prop);
+            }
+        }
+        return result;
+    }
+</script>
+</body>
+</html>

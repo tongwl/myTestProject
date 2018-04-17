@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>some</title>
+</head>
+<body>
+    <script>
+
+        var arr=['man','man','woman','man','man'];
+
+        var bl=arr.some(function(val,idx,arr){
+            console.log(val);
+            return val=="woman";  //这里是个true的时候，就不再往下遍历了，bl就是true,表示存在some woman的值，除非都是false，我才遍历完
+        });
+
+
+
+    </script>
+</body>
+</html>

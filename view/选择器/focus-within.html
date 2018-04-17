@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>within</title>
+    <style>
+        div{
+            height:200px;
+        }
+
+
+
+        div:first-child{
+            background:#ff3;
+        }
+
+        div:nth-last-child(1){
+            background:#3ff;
+        }
+
+
+        div:focus-within{
+            background:#ccc;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <input type="text">
+    </div>
+
+    <div class="d2">
+        <input type="text" name="" id="">
+    </div>
+</body>
+</html>

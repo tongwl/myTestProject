@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(mingzi,age){
+        this.name=mingzi;
+        this.age=age;
+    }
+
+    Student.prototype.className="软件二班";
+
+    var lilei=new Student("lilei",18);
+
+    /*for(var prop in lilei){
+        console.log(prop);
+    }*/
+
+    //console.log(Array.isArray(Object.keys(lilei)));
+
+    //console.log(Object.prototype);
+
+    //console.log(Object.prototype.hasOwnProperty("__proto__"));
+    //console.log(lilei.hasOwnProperty("__proto__"));
+    //console.log(Object.getOwnPropertyNames(lilei));
+
+    var a=[];
+    console.log(Object.getOwnPropertyNames([]));
+
+
+</script>
+</body>
+</html>

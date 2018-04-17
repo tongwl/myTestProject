@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+
+<div ng-controller="ctrl">
+    <input type="text" ng-model="username">
+    <button type="button" ng-click="sayHello()">点击呀</button>
+    <span>{{value2}}</span>
+    <hello-world say-what="sayHello()" value2="value2"></hello-world>
+</div>
+
+
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.controller('ctrl',function($scope){
+        $scope.sayHello=function(){
+            $scope.value2=$scope.username;
+        }
+    });
+
+    //定义指令
+    app.directive("helloWorld",function(){
+        return {
+            restrict:"AE",
+            template:"<div><span>{{value2}}</span><button type='button' ng-click='sayWhat()'>点击呀</button></div>",
+            priority:1,
+            terminate:true,
+            replace:true,
+            scope:{
+                value2:"=",
+                sayWhat:"&"
+            }
+        };
+    });
+
+
+</script>
+
+
+</body>
+</html>

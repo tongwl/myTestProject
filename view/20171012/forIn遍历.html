@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name){
+        this.name=name;
+    }
+
+    Student.prototype.grade="092级";
+
+    var lilei=new Student("lilei");
+    lilei.className="软件工程092";
+
+    for(var key in lilei){
+        console.log(key);
+    }
+
+
+</script>
+</body>
+</html>

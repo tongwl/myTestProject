@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<form id="testForm">
+    <input type="text" name="haha">
+    <input type="text" name="hehe">
+    <button type="button">tijiao</button>
+</form>
+<input type="text" name="he" form="testForm">
+
+<script>
+    $('button').click(function(){
+        console.log($('#testForm').serialize());
+    });
+
+</script>
+</body>
+</html>

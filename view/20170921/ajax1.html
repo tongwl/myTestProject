@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="d1">aaaaa</div>
+    <button type="button" id="btn1">点击添加</button>
+<script>
+    function getXMLHttpRequest(){
+        if(window.ActiveXObject){
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        }else if(window.XMLHttpRequest){
+            return new XMLHttpRequest();
+        }else{
+            return null;
+        }
+    }
+
+    var btn1=document.getElementById('btn1');
+    btn1.onclick=function(){
+        var xhr=getXMLHttpRequest();
+        var d1=document.getElementById("d1");
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status>=200&&xhr.status<300){
+                    var data=JSON.parse(xhr.responseText);
+                    d1.innerHTML=data.data.id;
+                }
+            }
+        }
+
+        xhr.open("GET","http://192.168.127.47:8084/api/v1/view/navigators/namespace?namespace=ns1",false);
+        xhr.send(null);
+    }
+
+
+
+
+</script>
+</body>
+</html>

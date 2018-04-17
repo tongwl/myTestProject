@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var xhr=new XMLHttpRequest();
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            console.log(xhr.status);
+            console.log(xhr.statusText);
+            console.log(xhr.responseText);
+            console.log(xhr.getResponseHeader("Date"));
+        }
+    }
+    xhr.open("GET","http://192.168.127.63:30080/api/v1/alerts?format=summary");
+    xhr.send(null);
+
+</script>
+</body>
+</html>

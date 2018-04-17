@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+</head>
+<body>
+
+    <a ui-sref="part1({age:18})">go</a>
+    <a ng-href="{{$state.href('part1')}}">go 2</a>
+    <a ui-sref="app">go to app</a>
+    <a ui-sref="ngResource">ngResource</a>
+    <a ui-sref="bootstrap">bootstrap</a>
+    <a ui-sref="jquery">jquery</a>
+    <a ui-sref="location">location</a>
+
+    <div ui-view>
+
+    </div>
+
+    <script>
+        var app=angular.module("myApp",["ui.router","oc.lazyLoad"]);
+        app.constant("APP_REQUIRES",{
+            "jquery":["bower_components/jquery/dist/jquery.js"],
+            "ngDialog":[
+                "bower_components/ng-dialog/js/ngDialog.js",
+                "bower_components/ng-dialog/css/ngDialog.css",
+            ],
+            "ngResource":["bower_components/angular-resource/angular-resource.js"],
+            "bootstrap":[
+                "bower_components/bootstrap/dist/css/bootstrap.css",
+                "bower_components/bootstrap/dist/js/bootstrap.js"
+            ]
+        });
+
+        app.provider("helper",["APP_REQUIRES",function(appRequires){
+            var _resolveFor=function(){
+                var _args=arguments;
+                return {
+                    deps:["$ocLazyLoad","$q",function($ocLazyLoad,$q){
+                        let promises=$q.when(0);
+
+                        for(let i=0;i<_args.length;i++){
+                            if(appRequires[_args[i]]){
+                                promises.then(function(){
+                                    $ocLazyLoad.load(appRequires[_args[i]]);
+                                });
+                            }
+                        }
+
+                        //return promises;
+                    }]
+                };
+            }
+            return {
+                resolveFor:_resolveFor,
+                $get:function(){
+                    return {
+                        //resolveFor:_resolveFor
+                    };
+                }
+            };
+        }]);
+
+        app.config(["$stateProvider","$urlRouterProvider","helperProvider","$ocLazyLoadProvider",function($stateProvider,$urlRouterProvider,helper,$ocLazyLoadProvider){
+
+            $ocLazyLoadProvider.config({
+                'debug':true,
+                'events':true,
+                modules:[/*{
+                    name:"ngResource",
+                    files:[
+                        "bower_components/angular-resource/angular-resource.js"
+                    ]
+                }*/]
+            });
+
+            $urlRouterProvider.otherwise("/part1/");
+
+            $stateProvider.state("app",{
+                url:"/app",
+                templateUrl:"app.html",
+                abstract:false
+            }).state("part1",{
+                url:"/part1/:age",
+                templateUrl:"part1.html",
+                controller:"part1Ctrl",
+                params:{
+                    username:"tongwl"
+                }
+            }).state("jquery",{
+                url:"/url",
+                templateUrl:"url.html",
+                resolve:helper.resolveFor("jquery","ngDialog")
+                /*{
+                    de2323ps:["$ocLazyLoad",function($ocLazyLoad){
+                        $ocLazyLoad.load(["bower_components/jquery/dist/jquery.js"]).then(function(response){
+                            console.log(response);
+                        });
+                        return $ocLazyLoad.load(["bower_components/jquery/dist/jquery.js"]);
+                    }]
+                }*/
+            }).state("ngResource",{
+                url:"/resource",
+                templateUrl:"resource.html",
+                resolve:{
+                    deps:["$ocLazyLoad","APP_REQUIRES",function($ocLazyLoad,appRequires){
+                        $ocLazyLoad.inject(['ngResource']);
+                        return $ocLazyLoad.load(appRequires['ngResource']);
+                    }]
+                },
+                controller:["$scope","deps","$resource",function($scope,deps,$resource){
+                    $resource("package.json").get(function(res){
+                        console.log(res);
+                    });
+                }]
+            }).state("bootstrap",{
+                url:"/bootstrap",
+                templateUrl:"bootstrap.html",
+                controller:["$scope","$ocLazyLoad","APP_REQUIRES","helper",function($scope,$ocLazyLoad,appRequires,helper){
+                    console.log(helper.resolveFor);
+                    //console.log(helper);
+                    //helper.resolveFor(["jquery","bootstrap"]);
+                    /*$ocLazyLoad.load(appRequires["jquery"].concat(appRequires["bootstrap"]),{
+                        serie:true
+                    });*/
+
+                    $scope.$on("ocLazyLoad.fileLoaded",function(){
+                        console.log("完成");
+                    });
+                }]
+            }).state("location",{
+                url:"/location",
+                templateUrl:"location.html",
+                controller:"locationCtrl"
+            });
+        }]);
+
+        app.run(["$rootScope","$state",function($rootScope,$state){
+            $rootScope.goto=function(){
+
+            }
+        }]);
+
+        angular.element(document).ready(function(){
+            angular.bootstrap(document,["myApp"]);
+        });
+
+        app.controller("part1Ctrl",["$stateParams",function($stateParams){
+            console.log($stateParams);
+        }]);
+
+        app.controller("locationCtrl",["$scope","$location",function($scope,$location){
+            //console.log($location.absUrl());
+            //console.log($location.protocol());
+            //console.log($location.port());//端口
+            //console.log($location.host());
+            //console.log($location.url());
+            //console.log($location.path());
+            //console.log($location.search());
+            //console.log($location.hash());
+
+            //跳转
+            $scope.goto=function(){
+                //$location.path("/part1/100");
+                //$location.url("/part1/100");
+                //$location.hash("essdf");
+                $location.path("/part1/100").replace();
+            }
+
+        }]);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <span v-bind:title="message">鼠标悬停</span>
+        <span v-if="seen">看见的么</span>
+        <ul>
+            <li v-for="todo in todos">{{todo.text}}</li>
+        </ul>
+
+        <input type="text" v-model="message">
+
+        <button v-on:click="reverseMessage">逆转消息</button>
+        <ul>
+            <li>sdfsdfsdfsfsd</li>
+            <todo-item></todo-item>
+            <todo-item2 :todo="tongwl"></todo-item2>
+        </ul>
+    </div>
+
+
+
+    <button type="button" id="btn">点击</button>
+
+    <script>
+        Vue.component("todo-item",{
+            template:"<li>这是一个代办项</li>"
+        });
+
+        Vue.component("todo-item2",{
+            props:["todo"],
+            template:"<li>{{todo}}</li>"
+        });
+
+        var app=new Vue({
+            el:"#app",
+            data:{
+                message:"abcde",
+                seen:false,
+                todos:[
+                    {text:'学习js'},
+                    {text:'学习Vue'},
+                    {text:"整个牛项目"}
+                ]
+            },
+            methods:{
+                reverseMessage:function(){
+                    this.message=this.message.split('').reverse().join('')
+                }
+            }
+        });
+
+        btn.addEventListener("click",function(){
+            app.message="wawa";
+        },false);
+
+
+    </script>
+
+</body>
+</html>

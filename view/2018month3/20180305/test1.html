@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>指令</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <my-test>
+            <span>我会不会被替换就看replace</span>
+        </my-test>
+    </div>
+<script>
+    var app=angular.module("app",[]);
+
+    app.directive("myTest",[function(){
+        return {
+            restrict:"ECAM",
+            //template:"<b>just test</b>",
+            templateUrl:"/test.html",
+            replace:false,
+            priority:1,
+            terminal:true,
+            transclude:true
+        };
+    }]);
+
+    app.controller("ctrl",["$scope",function($scope){
+
+    }]);
+</script>
+
+<script type="text/ng-template" id="/test.html">
+    <div>
+        <div>我会替换</div>
+        <ng-transclude>
+            我里面的内容
+        </ng-transclude>
+    </div>
+</script>
+</body>
+</html>

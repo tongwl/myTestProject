@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p ng-style="{color:'red',backgroundColor:'#0f0'}">ppppp</p>
+    <div ng-controller="ctrl">
+        <input type="text" ng-model="user">
+        <ul>
+            <li ng-switch="user">
+                <span ng-switch-when="zhenzhen">真真</span>
+                <span ng-switch-when="tongwl">童威立</span>
+                <span ng-switch-default>我是其他人</span>
+            </li>
+        </ul>
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.user="zhenzhen";
+    }]);
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" name="sliceName" id="sliceName">
+    <button type="button" id="btn">点击添加</button>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        //点击事件
+        $('#btn').click(function(){
+            /*$.ajax({
+                type:"POST",
+                url:"http://10.84.1.179:8080/api/v1/resources/slices",
+                data:JSON.stringify({
+                    "name": $('#sliceName').val(),
+                    "cpu": 6,
+                    "memory": 16
+                }),
+                contentType:"application/json",  //告诉服务器，你得按照json的解析方式解析我
+                cache:false,
+                beforeSend:function(xhr){ //设置请求头
+                    xhr.setRequestHeader("Authorization","Basic YWRtaW46RHREcmVhbUAwMjA5");
+                },
+                success:function(data,status,jqXHR){
+                    console.log(status);
+                    console.log(data);
+                },
+                error:function(xml,status,errorThrown){
+                    console.log(status);
+                    console.log(xml);
+                }
+            });*/
+
+            var param=$('#sliceName').val();
+            param=encodeURIComponent(param);
+            console.log(param);
+            $.ajax({
+                type:"PUT",
+                url:"http://192.168.127.135:8080/api/v1/resources/slices/"+param,
+                data:JSON.stringify({
+                    "cpu": 1,
+                    "memory": 1
+                }),
+                contentType:"application/json",  //告诉服务器，你得按照json的解析方式解析我
+                cache:false,
+                beforeSend:function(xhr){ //设置请求头
+                    xhr.setRequestHeader("Authorization","Basic YWRtaW46RHREcmVhbUAwMjA5");
+                },
+                success:function(data,status,jqXHR){
+                    console.log(status);
+                    console.log(data);
+                },
+                error:function(xml,status,errorThrown){
+                    console.log(status);
+                    console.log(xml);
+                }
+            });
+
+
+            /*$.ajax({
+                type:"GET",
+                url:"http://10.84.1.179:8080/api/v1/resources/hosts",
+                cache:false,
+                beforeSend:function(xhr){ //设置请求头
+                    xhr.setRequestHeader("Authorization","Basic YWRtaW46RHREcmVhbUAwMjA5");
+                },
+                contentType:"application/json",  //告诉服务器，你得按照json的解析方式解析我
+                success:function(data,status,jqXHR){
+                    console.log(status);
+                    console.log(data);
+                },
+                error:function(xml,status,errorThrown){
+                    console.log(status);
+                    console.log(xml);
+                }
+            });*/
+
+            //原生ajax请求  XMLHttpRequest
+
+            /*var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){//响应完成
+                    if(xhr.status==200){
+                        console.log(xhr.responseText);
+                    }else{
+                        console.log("error");
+                    }
+                }
+            };
+
+            var addr=encodeURIComponent("http://192.168.127.65:8080/watchman-server/resources/slices");
+            console.log(addr);
+            xhr.open("POST",addr);
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.setRequestHeader("Authorization","Basic YWRtaW46RHREcmVhbUAwMjA5");
+            xhr.send(JSON.stringify({
+                "name": $('#sliceName').val(),
+                "cpu": 6,
+                "memory": 16
+            }));*/
+
+
+        });
+    </script>
+</body>
+</html>

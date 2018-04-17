@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function replacer(match,$1,$2,$3,index,string){
+            return [$1,$2,$3].join('-');
+        }
+
+        var newString='abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w*])/,replacer);
+        console.log(newString);
+
+        var str="Twas the night before Xmas...";
+        var newStr=str.replace(/xmas/i,'tongwl');
+        console.log(newStr);
+
+
+        var re=/apples/ig;
+        var str="Apples are round,and apples are juicy";
+        var newStr=str.replace(re,"oranges");
+        console.log(newStr);
+
+
+        var re=/(\w+)\s(\w+)/;
+        var str="John Smith";
+        var newStr=str.replace(re,"$2,$1");
+        console.log(newStr);
+
+
+        function changeStr(str){
+            var reg=/[A-Z]/g;
+            return str.replace(reg,function(match){
+                return "-"+match.toLowerCase();
+            });
+        }
+
+        console.log(changeStr("tongWeiLi"));
+
+
+        var arr=['man','man','woman','man','man'];
+
+        //是否存在一个woman
+        var bl=arr.some(function(val){
+            console.log(val);
+            return val=='woman';
+        });
+
+        console.log(bl);
+
+
+
+
+
+
+
+
+        arr.some(function(val){
+            console.log(val);
+            if(val==2){
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

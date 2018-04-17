@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+<div ng-controller="parent">
+    <!--外部scope-->
+    <p>父scope：<input type="text" ng-model="input"></p>
+
+    <!--内部隔离scope-->
+    <!--注意这里，因为是双向绑定，所以这里不要“{{}}”这个符号-->
+    <my-directive my-text="input"></my-directive>
+
+</div>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    var ctrl=app.controller("parent",["$scope",function($scope){
+        $scope.input="tongwl";
+    }]);
+
+    //定义指令
+    app.directive('myDirective', function () {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<p>自定义指令scope：<input type="text" ng-model="myText"></p>',
+            scope: {
+                myText: '=' // 这里改成了双向绑定
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+
+<hello>
+    <div>我会不会被替代啊</div>
+</hello>
+
+
+<script type="text/ng-template" id="hello.html">
+    <div>
+        <div>我会怎么样</div>
+        <ng-transclude>
+            会不会被替换
+        </ng-transclude>
+    </div>
+</script>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.controller('ctrl',function($scope){
+
+    });
+
+    app.directive("hello",function(){
+        return {
+            restrict:"AE",
+            templateUrl:"hello.html",
+            priority:1,
+            terminal:false,
+            replace:true,
+            scope:false,
+            transclude:true
+        };
+    });
+
+</script>
+
+
+</body>
+</html>

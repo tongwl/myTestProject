@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hello-world name="tongwl"></hello-world>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.directive("helloWorld",[function(){
+        return {
+            restrict:"EA",
+            template:function(ele,attr){
+                console.log(ele);
+                console.log(attr);
+                return "<h2>"+attr.name+"</h2>";
+            }
+        };
+    }]);
+</script>
+</body>
+</html>

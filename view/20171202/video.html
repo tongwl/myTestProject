@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <video id="v1" src="1.mp4"poster="1.jpg" controls muted preload="metadata" loop></video>
+    <script>
+        var video=document.getElementById("v1");
+        video.onpause=function(){ //
+            console.log(video.paused);
+        }
+
+        video.onplay=function(){
+            console.log(video.paused);
+        }
+
+        video.onplaying=function(){
+            console.log("playing");
+        }
+    </script>
+</body>
+</html>

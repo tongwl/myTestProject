@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .first{
+            color:#0f0;
+        }
+
+        .other{
+            color:#00f;
+        }
+
+        .last{
+            color:#f00;
+        }
+    </style>
+</head>
+<body>
+<ul ng-controller="ctrl">
+    <li ng-repeat="value in students" ng-class="{last:$last,first:$first,other:$middle}">{{value}}</li>
+</ul>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.students=["twwww","dddddd","dddddddssdsd"];
+    }]);
+</script>
+</body>
+</html>

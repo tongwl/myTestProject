@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex圣杯布局</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:content-box;
+        }
+
+        body{
+            display:flex;
+            flex-direction:column;/*header、section、footer纵向显示*/
+        }
+
+        header,footer{
+            flex-grow:0; /*项目放大比例，默认为0*/
+            flex-shrink:0;/*项目缩小比例，默认为1*/
+            flex-basis:50px;
+            background:#3f3f3f;
+        }
+
+        section{
+            display:flex;
+            flex:1;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <section>
+        <div class="content"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+    <footer></footer>
+</body>
+</html>

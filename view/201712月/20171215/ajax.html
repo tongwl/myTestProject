@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        var lastModified=null;
+        btn.addEventListener("click",function(){
+            //兼容ie
+            var xhr=null;
+            if(window.XMLHttpRequest){
+                xhr=new XMLHttpRequest();
+            }else{
+                //加入弄ie6
+                xhr=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xhr.addEventListener("readystatechange",function(){
+                console.log(xhr.readyState);
+                console.log(xhr.status);
+                if(xhr.readyState==3){
+                    //xhr.abort();
+                }
+                if(xhr.readyState==4){
+                    console.log(xhr.getAllResponseHeaders());
+                    lastModified = xhr.getResponseHeader("Last-Modified");
+
+                    console.log(lastModified);
+                }
+            });
+            xhr.open("GET","http://192.168.127.122:8084/app/i18n/en.json",true);
+            xhr.setRequestHeader("If-Modified-Since",lastModified);
+            xhr.send(null);
+        },false);
+
+
+
+    </script>
+</body>
+</html>

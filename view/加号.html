@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加号</title>
+</head>
+<body>
+    <script>
+        //console.log(+new Date());
+        var s1="01";
+        var s2="1.1";
+        var s3="z";
+        var b=false;
+        var f=1.1;
+        var o={
+            valueOf:function(){
+                return -1;
+            }
+        }
+        console.log(+s1);
+        console.log(+s2);
+        console.log(+s3);
+        console.log(+b);
+        console.log(+f);
+        console.log(+o);
+
+        console.log(-new Date());
+
+
+        var num=1;
+        console.log(num++); //1
+        console.log(++num); //3
+    </script>
+</body>
+</html>

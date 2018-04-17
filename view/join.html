@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+    <script>
+
+        Array.prototype.join=function(){
+            var str="";
+            if(typeof arguments[0]==="undefined"){//当没有传进来实参的时候，默认用逗号连接
+                for(var i=0;i<this.length;i++){
+                    str+=this[i]+",";
+                }
+            }else{
+                for(var i=0;i<this.length;i++){
+                    str+=this[i]+arguments[0];
+                }
+            }
+            return str.slice(0,str.length-1);
+        }
+
+        var arr=[1,2,3,4,5];
+        console.log(arr.join());//默认以逗号连接
+        console.log(arr.join(""));//无缝连接
+        console.log(arr.join("@"));
+    </script>
+</body>
+</html>

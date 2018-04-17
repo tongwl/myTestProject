@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试flex布局</title>
+    <link rel="stylesheet" href="css/testFlex.css">
+</head>
+<body>
+<div style="display: flex">
+    <div class="box">
+        <div class="item"></div>
+    </div>
+    <br>
+    <div class="box" style="justify-content: center">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:flex-end;">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:flex-end;align-items: center">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:flex-end;align-items: flex-end">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:center;align-items: flex-end">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="align-items: flex-end">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="align-items: center">
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content: center; align-items: center;flex: 0.5">
+        <div class="item"></div>
+    </div>
+</div>
+<div style="display: flex">
+    <div class="box" style="justify-content:space-between">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:space-between;flex-direction: column">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:space-between;align-items: flex-end">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content:space-between;flex-direction: column;align-items: center">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="box" style="align-items: center">
+        <div class="item" style="align-self: flex-start"></div>
+        <div class="item"></div>
+    </div>
+    <div class="box" style="justify-content: space-between">
+        <div class="item"></div>
+        <div class="item" style="align-self: flex-end"></div>
+    </div>
+</div>
+
+<div style="display: flex">
+    <div class="box">
+        <div class="item"></div>
+        <div class="item" style="align-self: center"></div>
+        <div class="item" style="align-self: flex-end"></div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: center">
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: center">
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box" style="flex-wrap: wrap;align-content: space-between">
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div style="display: flex;flex-basis: 100%;justify-content: space-between">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex;margin:5px">
+    <div style="flex: 1;background-color: grey;height: 30px"></div>
+</div>
+<div style="display: flex;margin:5px">
+    <div style="flex: 0.5;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.5;margin:5px;background-color: grey;height: 30px"></div>
+</div>
+<div style="display: flex;margin:5px">
+    <div style="flex: 0.33;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.33;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.33;margin:5px;background-color: grey;height: 30px"></div>
+</div>
+<div style="display: flex;margin:5px">
+    <div style="flex: 0.25;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.25;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.25;margin:5px;background-color: grey;height: 30px"></div>
+    <div style="flex: 0.25;margin:5px;background-color: grey;height: 30px"></div>
+</div>
+<h3>圣杯布局</h3>
+<div style="display: flex;flex-direction: column;height: 500px;width: 100%;background-color: #0f74a8">
+    <div style="flex: 1;background-color:yellowgreen">
+        我是header
+    </div>
+    <div style="display:flex; flex: 1;flex-basis: 70%;  background-color:#0f74a8">
+        <div style="border: solid 1px red;flex: 0 0 12em">
+            我是左边框
+        </div>
+        <div style="border: solid 1px red;flex-basis: 100%">
+            我是主内容
+        </div>
+        <div style="border: solid 1px red;flex: 0 0 12em">
+            我是右边框
+        </div>
+    </div>
+    <div style="flex: 1;background-color:yellowgreen">
+        我是footer
+    </div>
+</div>
+<div style="display: flex">
+    <button>提示</button>
+    <input type="text" style="flex: 1">
+</div>
+
+<h3>没有设置flex的属性</h3>
+<div>
+    <img style="float:left;border: solid 1px grey" src="images/1.jpg">
+    <div style="background-color: yellow;width: 300px;">
+        这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+        这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+        这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+        这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突.
+    </div>
+</div>
+<h3>设置了flex的属性,float:left失效;增加一层容器即可脱离flex容器约束</h3>
+<div style="display: flex;
+            flex-direction: row;
+            flex-wrap: wrap">
+    <div>
+        <img style="float: left" src="images/1.jpg">
+        <div style="background-color: yellow;width: 300px;">
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突。
+            这个是一些文字，目的是验证flex与float属性冲突。这个是一些文字，目的是验证flex与float属性冲突.
+        </div>
+    </div>
+</div>
+
+<h3>经典居中对齐</h3>
+<div style="width: 400px;height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2e9ad0">
+    <div style="background-color: #0000cc;width: 200px;height: 200px"></div>
+</div>
+
+</body>
+</html>

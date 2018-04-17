@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+
+    </div>
+
+<script>
+    var app=angular.module("app",[]);
+
+    app.config(["myProviderProvider",function(myProvider){
+        myProvider.setUrl("test.json");
+    }]);
+
+    app.provider("myProvider",function(){
+        var url= null;
+        var test={"a":1,"b":2};
+
+        this.setUrl=function(_url){ //给config设置
+            url=_url;
+        }
+
+        this.$get=function($http,$q){ //在这里注入就可
+            return {
+                getUrl:function(){
+                    var deferred=$q.defer();
+                    $http({
+                        method:"GET",
+                        url:url
+                    }).success(function(response){
+                        deferred.resolve(response);
+                    }).error(function(error){
+                        deferred.reject("error");
+                    });
+                    return deferred.promise;
+                }
+            };
+        }
+    });
+
+    app.controller("ctrl",["$scope","myProvider",function($scope,myProvider){
+        myProvider.getUrl().then(function(response){
+            console.log(response);
+        },function(error){
+            console.log("error"+1111);
+        });
+    }]);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj={
+            uname:"tongwl",
+            age:18
+        }
+
+        var obj2=Object.create(obj,{
+            className:{
+                value:"软工092",
+                writable:true,
+                enumerable:true,
+                configurable:true
+            }
+        });
+
+        console.log(Object.getOwnPropertyDescriptor(obj2,"className"));
+        Object.freeze(obj2);
+        console.log(Object.getOwnPropertyDescriptor(obj2,"className"));
+
+        /*console.log(obj2.uname);
+        console.log(Object.keys(obj2));
+        console.log(Object.getOwnPropertyNames(obj2));*/
+    </script>
+</body>
+</html>

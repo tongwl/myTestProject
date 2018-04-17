@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    var obj={};
+    Object.defineProperty(obj,"_name",{
+        value:"tongweili",
+        writable:false,
+        enumerable:false,
+        configurable:false
+    });
+
+    //writable和 set get不能同时设置，存取器属性没有writable这个属性描述符
+    Object.defineProperty(obj,"uname",{
+        enumerable:true,
+        configurable:false,
+        set:function(_value){
+            this._name=_value;
+        },
+        get:function(){
+            return this._name;
+        }
+    });
+
+    console.log(obj.uname);
+    Object.defineProperty(obj,"uname",{
+       get:function(_value){
+           return "haha";
+       }
+    });
+
+    console.log(Object.getOwnPropertyDescriptor(obj,"uname"));
+</script>
+</body>
+</html>

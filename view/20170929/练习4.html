@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.run(["$rootScope","$q",function($rootScope,$q){
+
+        console.log($q.defer()===$q.defer());
+
+
+        var deferred=$q.defer();
+        var promise=deferred.promise;
+
+        promise.then(function(response){
+            console.log("success1:"+response.name);
+            return $q.reject("aaaaaaaaaaa");
+        },function(error){
+            console.log("error");
+        },function(notice){
+            console.log(notice);
+        }).then(function(response){
+            console.log(response);
+        },function(error){
+            console.log(error);
+        },function(notice){
+
+        });
+
+
+        deferred.notify("注意啦");
+        deferred.resolve({name:"tongwl"});
+
+    }]);
+</script>
+</body>
+</html>

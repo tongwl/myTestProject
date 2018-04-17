@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<input type="text" onclick="show(this,event)">
+<input type="button" text="点击" id="btn">
+<script>
+    function show(me,event){
+        console.log(me);
+        console.log(this);
+        console.log(event);
+    }
+    
+    console.log(btn.attachEvent);
+</script>
+</body>
+</html>

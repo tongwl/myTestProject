@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>响应式页面</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <style>
+        .container{
+            border:1px solid #000;
+        }
+
+        .tongwl{
+            width:780px;
+            height:200px;
+            background:#f00;
+            margin: 0 auto;
+        }
+
+        @media(min-width:992px){
+            .tongwl{
+                width:970px;
+                background:#0f0;
+            }
+        }
+
+        @media(min-width:1200px){
+            .tongwl{
+                width:1170px;
+                background: #00f;
+            }
+        }
+
+        @media(min-width:1600px){
+            .tongwl{
+                width:1500px;
+                background:#ff0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped" style="width:20%"></div>
+        </div>
+
+        <div class="clearfix">
+            <div class="pull-left">我在左边</div>
+            <div class="pull-right">我在右边</div>
+        </div>
+
+
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                我是按钮
+                <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu">
+                <li><a href="#">我是内容</a></li>
+                <li><a href="#">我是内容</a></li>
+                <li><a href="#">我是内容</a></li>
+                <li><a href="#">我是内容</a></li>
+                <li><a href="#">我是内容</a></li>
+                <li><a href="#">我是内容</a></li>
+                <li>我是内容</li>
+                <li>我是内容</li>
+                <li>我是内容</li>
+                <li>我是内容</li>
+                <li>我是内容</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+
+
+
+        <div class="pull-left">我在左边</div>
+        <div class="pull-right">我在右边</div>
+
+        <span class="close">&times;</span>
+
+        <div style="width:500px;" class="center-block">我是中间的</div>
+
+        <div class="row bg-primary">我是北京</div>
+        <div class="row bg-success">我是背景</div>
+        <div class="row bg-info">我是背景</div>
+        <div class="row bg-warning">我是背景</div>
+        <div class="row bg-danger">我是背景</div>
+
+        <span class="text-primary">我是内容</span>
+        <span class="text-muted">我是内容</span>
+        <span class="text-success">我是内容</span>
+        <span class="text-info">我是内容</span>
+        <span class="text-warning">我是内容</span>
+        <span class="text-danger">我是内容</span>
+
+        <div class="alert alert-success">我是错误的</div>
+        <div class="alert alert-info">我是错误的</div>
+        <div class="alert alert-warning">我是错误的</div>
+        <div class="alert alert-danger">我是对的</div>
+
+
+        <span class="label label-primary">我是内容</span>
+        <span class="label label-default">我是内容</span>
+        <span class="label label-success">我是内容</span>
+        <span class="label label-info">我是内容</span>
+        <span class="label label-warning">我是内容</span>
+        <span class="label label-danger">我是内容</span>
+
+        <button class="btn btn-primary">娃娃</button>
+        <button class="btn btn-default">娃娃</button>
+        <button class="btn btn-success">娃娃</button>
+        <button class="btn btn-info">娃娃</button>
+        <button class="btn btn-warning">娃娃</button>
+        <button class="btn btn-danger">娃娃</button>
+        <button class="btn btn-link">娃娃</button>
+
+        <button class="btn btn-lg">我是内容</button>
+        <button class="btn btn-md">我是内容</button>
+        <button class="btn btn-sm">我是内容</button>
+        <button class="btn btn-xs">我是内容</button>
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="password" class="col-md-3 control-label">密码</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="password">
+                </div>
+            </div>
+            
+            <div class="form-group has-success">
+                <label class="col-md-3 control-label">用户名</label>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-addon">个</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        input-group
+        input-group-addon
+        input-group-btn
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="username2">用户名</label>
+                <input type="text" class="form-control" id="username2">
+                <label for="username2">用户名</label>
+                <input type="text" class="form-control" id="username2"><label for="username2">用户名</label>
+                <input type="text" class="form-control" id="username2">
+
+            </div>
+        </form>
+
+        <div class="form-group">
+            <label for="username">姓名</label>
+            <input type="text" id="username" class="form-control">
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th class="active">标题</th>
+                <th class="success">标题</th>
+                <th class="info">标题</th>
+                <th class="warning">标题</th>
+                <th class="danger">标题</th>
+                <th>标题</th>
+            </tr>
+            <tr>
+                <td>111</td>
+                <td>111</td>
+                <td>111</td>
+                <td>111</td>
+                <td>111</td>
+                <td>111</td>
+            </tr>
+        </table>
+
+        <div class="row">
+            <div class="col-sm-6">小</div>
+            <div class="col-sm-6">小2</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">我在中间</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-md-push-9">我在右边</div>
+            <div class="col-md-9 col-md-pull-3">我在左边</div>
+        </div>
+
+        <hgroup>
+            <h1>h11111111111111111</h1>
+            <h2>h222222222222222222222</h2>
+            <h3>h33333333333333333333333333333333333333333</h3>
+        </hgroup>
+
+        <p>14px 1.428</p>
+        <p>14px 1.428</p>
+
+        <div class="row text-left">
+            我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿我在那儿
+        </div>
+
+        <div class="row text-capitalize">
+            xdasdfasdfsdf sdfsd
+        </div>
+
+        <abbr title="啥意思">我就是</abbr>
+        <address>地址</address>
+        <blockquote>引用一大段文本</blockquote>
+        <q>引用一小段文本</q>
+
+        <ul>
+            <li>12111</li>
+            <li>12111</li>
+        </ul>
+
+        <ol>
+            <li>2323</li>
+            <li>2323</li>
+            <li>2323</li>
+        </ol>
+
+
+        <pre>
+            <code>
+                +function ($) {
+                'use strict';
+                var version = $.fn.jquery.split(' ')[0].split('.')
+                if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+                throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+                }
+                }(jQuery);
+            </code>
+        </pre>
+
+        <kbd>Esc</kbd>
+        <var>x</var>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr1 = [{id: 12,name: 20}, {id: 13,name: 30}];
+    var arr2 = [{id: 12,title: 500}, {id: 13,title: 666}];
+
+    for(var i=0;i<arr1.length;i++){
+        for(var j=0;j<arr2.length;j++){
+            if(arr1[i].id===arr2[j].id){
+                arr1[i].title=arr2[j].title;
+                break;
+            }
+        }
+    }
+    console.log(arr1);
+</script>
+</body>
+</html>

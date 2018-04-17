@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <child v-bind="todo"></child>
+    </div>
+    <script>
+
+        var todo={
+            text:"checkbox",
+            checked:true
+        };
+
+        Vue.component('child',{
+            template:"<span>{{todo.text}}</span>",
+            props:['todo.text']
+        });
+
+        var app=new Vue({
+            el:"#d1",
+            data:{
+                todo
+            }
+        });
+    </script>
+</body>
+</html>

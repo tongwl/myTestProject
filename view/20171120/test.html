@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+                var resources=response.data.sliceRelation;
+                var _maxCPU=-1; //存储可以设置的最大CPU
+                var _maxMemory=-1; //存储可以设置的最大memory
+                resources.forEach(function(val){
+                    //计算"最小分片个数"的最大值
+                    //leftCPU：除去其他slice分走的CPU后所剩下可以给该分片分配的CPU值
+                    //minSum：所有使用该slice的min(最小分片个数)总和
+                    //Math.floor(leftCPU/minSum)：可以对该slice设置的最大的CPU值
+                    //同理leftMemory
+                    var minSum=0; //存储分片是slice.name的min之和
+                    var leftCPU=val.maxCPU;
+                    var leftMemory=val.maxMemory;
+                    val.longService.forEach(function(val2){
+                        if(val2.slice===slice.name){
+                            minSum+=val2.min; //计算使用该分片的min之和
+                            if(_maxCPU < 0){
+                                _maxCPU=Math.floor(val.maxCPU/val2.max);
+                            }else{
+                                _maxCPU > Math.floor(val.maxCPU/val2.max) && (_maxCPU=Math.floor(val.maxCPU/val2.max));  //计算使用该分片的max的可用最大cpu
+                            }
+
+                            if(_maxMemory < 0){
+                                _maxMemory=Math.floor(val.maxMemory/val2.max);
+                            }else{
+                                _maxMemory > Math.floor(val.maxMemory/val2.max) && (_maxMemory = Math.floor(val.maxMemory/val2.max));//计算使用该分片的max的可用最大memory
+                            }
+                        }else{
+                            leftCPU-=val2.min*sliceObject[val2.slice].cpu;
+                            leftMemory-=val2.min*sliceObject[val2.slice].memory;
+                        }
+
+                    });
+
+                    if(_maxCPU < 0){
+                        _maxCPU=Math.floor(leftCPU/minSum);
+                    }else{
+                        _maxCPU > Math.floor(leftCPU/minSum) && (_maxCPU=Math.floor(leftCPU/minSum));
+                    }
+
+                    if(_maxMemory < 0){
+                        _maxMemory=Math.floor(leftMemory/minSum);
+                    }else{
+                        _maxMemory > Math.floor(leftMemory/minSum) && (_maxMemory=Math.floor(leftMemory/minSum));
+                    }
+                });
+                //存储最大CPU和最小CPU
+                $scope.maxCPU1 = _maxCPU;
+                $scope.maxMemory1 = _maxMemory;
+
+</script>
+
+</body>
+</html>

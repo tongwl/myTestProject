@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<input type="text" sz="dfd" id="ipt"  class="aaaa"  checked="haha">
+<script>
+    //console.log(ipt.getAttribute("class"));
+
+    /*console.log(Object.isExtensible(ipt));
+
+    if(key =="className"){
+       // console.log(key);
+    }
+    for(var key in ipt){  // for...in这个方法是遍历ipt以及原型链上的自己定义的属性
+
+        //console.log(key);
+
+        if(ipt.hasOwnProperty(key)){ //这个方法是判断key是不是ipt的自有属性
+            console.log(key);  //发现ipt一个自有属性都没有!!!!!!!!!!!!!!!!!!!
+        }
+    }
+
+    Object.isExtensible(obj) //true:表示能扩展，false:不能扩展
+
+    var obj={};
+    Object.preventExtensions(obj);
+    obj.haha="name";
+    console.log(obj);*/
+
+    /*console.log(Object.isExtensible(ipt));
+    ipt.aaaaa=1;
+    console.log(Object.isExtensible(ipt));
+    console.log(ipt.hasOwnProperty("aaaaa"));  //判断aaaaa是否是自有属性
+    for(var key in ipt){
+        //console.log(ipt.hasOwnProperty("aaaaa"));  //判断aaaaa是否是自有属性
+        //console.log("=======================================");
+        //console.log(key);  //打印出原型链上所有可以遍历的属性
+    }*/
+
+    /*console.log(Object.isExtensible(ipt));
+
+
+    ipt.aaaaa=1;
+
+    jQuery.prop=function(key){
+        return this[key];
+    }*/
+    console.log(ipt.__proto__);
+
+</script>
+</body>
+</html>

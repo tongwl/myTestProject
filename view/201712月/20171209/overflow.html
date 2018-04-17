@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ddd{
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <span id="ddd"></span>
+
+    <script>
+        console.log(window.getComputedStyle(document.getElementById("ddd")).getPropertyValue("display"));
+        console.log(window.getComputedStyle(document.getElementById("ddd")).getPropertyValue("overflow"));
+    </script>
+</body>
+</html>

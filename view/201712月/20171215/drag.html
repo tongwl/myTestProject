@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="1.jpg" alt="" id="img1">
+<div style="width: 400px;height:400px;border:1px dashed #f00;" id="d1"></div>
+<script>
+    img1.addEventListener("dragstart",function(event){
+        event.dataTransfer.setData("text/html","wawawaw");
+        console.log("start...");
+    });
+
+    img1.addEventListener("drag",function(){
+        console.log("is drag...");
+    });
+
+    img1.addEventListener("dragend",function(){
+        console.log("end...");
+    });
+
+    d1.addEventListener("dragenter",function(){
+        console.log("enter....");
+    });
+
+    d1.addEventListener("dragover",function(event){
+        event.preventDefault();
+        event.returnValue=false;
+        console.log("over...");
+    });
+
+    d1.addEventListener("dragleave",function(event){
+        console.log("levae");
+    });
+
+    d1.addEventListener("drop",function(event){
+        console.log("haha");
+        console.log(event.dataTransfer.getData("text/html"));
+    },false);
+
+
+
+
+</script>
+</body>
+</html>

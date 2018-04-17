@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <input type="text" ng-model="name">
+        <input type="text" ng-repeat="stu in students" ng-model="stu.name">
+        <button type="button" ng-click="add()">添加</button>
+    </div>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",function($scope,$interval){
+
+        $scope.students=[{name:"tongwl",age:18},{name:"zhenzhen",age:16}];
+
+        $scope.$watch("name",function(_new,_old){
+            console.log(_new);
+        });
+
+        /*$scope.$watch("students",function(_new,_old){
+            console.log(_new);
+        });*/
+
+        /*window.setInterval(function(){
+            console.log($scope.students);
+        },3000);*/
+
+        $scope.$watchCollection("students",function(_new){
+            console.log(_new);
+        },true);
+
+        $scope.add=function(){
+            $scope.students.push({name:"ss",age:22});
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="d1">
+    <span v-bind:title="sayHello()">我是内容</span>
+    <span v-bind:title="tongwl">我是谁</span>
+    <span>{{tongwl}}</span>
+    <span v-bind:title="null">null</span>
+    <span v-bind:title="undefined">undefined</span>
+    <span v-bind:title="number">number</span>
+    <span v-bind:title="true">true</span>
+    <span v-if="exist">我存在吗</span>
+
+    <button id="btn"></button>
+</div>
+<script>
+
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            username:"tongwl",
+            sayHello:function(){
+                return this.username+" say hello";
+            },
+            tongwl:{},
+            null:null,
+            undefined:undefined,
+            number:12,
+            true:true,
+            exist:true
+        }
+    });
+
+    btn.addEventListener("click",function(){
+
+    },false);
+
+
+
+</script>
+</body>
+</html>

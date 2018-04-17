@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转</title>
+</head>
+<body>
+<a href="#" id="go" style="border-top:1px solid #f00;margin-top:2000px;display: inline-block;">跳转</a>
+<p style="margin-top:2000px;">hhh</p>
+<script>
+
+    void();
+
+    go.onclick=function(e){
+        e.preventDefault();
+        //location.assign("locationTo.html");
+        //location.replace("locationTo.html");
+        //location.reload(false);
+        //location="#";
+        //location.search="?uname=tongwl";
+        location.assign("locationTo.html");
+        console.log();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/link.css" id="rel1">
+    <style>
+        div{
+            width:25%;
+            float:left;
+            height:200px;
+            opacity:0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="blue"></div>
+    <div class="green"></div>
+    <div class="pink"></div>
+
+    <button type="button" id="change">一键换成红蓝绿粉</button>
+    <button type="button" id="change2">一键换成灰灰灰灰</button>
+    <script>
+
+        //id唯一，可以直接拿来用，相当于document.getElementById('#change')
+        change.onclick=function(){
+            rel1.setAttribute("href","../css/link.css");
+        }
+
+        change2.onclick=function(){
+            rel1.setAttribute("href","../css/link3.css");
+        }
+    </script>
+</body>
+</html>

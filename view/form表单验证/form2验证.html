@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form ng-controller="formCtrl" name="testForm" invalidate>
+    <input type="text" name="name" ng-model="name" required>
+    <span ng-if="testForm.name.$error.required">显示呀</span>
+    <button type="button" ng-click="showMe()">点击</button>
+</form>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("formCtrl",["$scope",function($scope){
+        $scope.showMe=function(){
+            console.log($scope.testForm.name.$error);
+        }
+    }]);
+</script>
+</body>
+</html>

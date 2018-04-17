@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Human{
+        constructor(username){
+            this.username=username;
+        }
+
+        sleep(){
+            console.log(this.username+" is sleeping");
+        }
+    }
+
+    /*let lilei=new Human("lilei");
+    lilei.sleep();*/
+
+
+    class Boy extends Human{
+        constructor(username,age){
+            super();  //此句子很重要，继承必须
+            this.username=username;
+            this.age=age;
+        }
+
+        info(){
+            console.log(this.username+" is "+this.age+" years old");
+        }
+    }
+
+    let lily=new Boy("lily",12);
+    //lily.info();
+
+    lily.sleep();
+    //console.log(lily.__proto__.__proto__);
+
+</script>
+</body>
+</html>

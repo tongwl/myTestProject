@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hello-world></hello-world>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.directive("helloWorld",function(){
+        return {
+            restrict:"AE",
+            templateUrl:"/text.html"
+        };
+    });
+
+    app.run(["$templateCache",function($templateCache){
+        $templateCache.put("/text.html","<h3>h33333333333333333</h3>");
+    }]);
+
+</script>
+</body>
+</html>

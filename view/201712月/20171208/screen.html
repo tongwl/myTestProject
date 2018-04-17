@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(screen.width);
+    console.log(screen.height);
+    console.log(screen.availWidth);
+    console.log(screen.availHeight);
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.clientHeight);
+
+    document.onclick=function(event){
+        console.log(event.screenX);
+        console.log(event.screenY);
+        console.log(event.clientX);
+        console.log(event.clientY);
+    }
+</script>
+</body>
+</html>

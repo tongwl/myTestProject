@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(mz,age){
+        this.mz=mz;
+        this.age=age;
+    }
+
+    Student.prototype.className="软工092";
+    var lilei=new Student("lilei",18);
+    Object.defineProperties(lilei,{
+        "sg":{
+            value:"170",
+            writable:true,
+            enumerable:true,
+            configurable:true
+        },
+        'tz':{
+            value:"120",
+            set
+        }
+    });
+
+    console.log(Object.getOwnPropertyDescriptor(lilei,"tz"));
+    console.log(Object.keys(lilei));
+
+
+</script>
+</body>
+</html>

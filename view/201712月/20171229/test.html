@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var jQuery=1;
+    </script>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            position:relative;
+            padding:0;
+            margin:0;
+        }
+        .red{
+            color:#f00;
+        }
+
+        .blue{
+            color:#00f;
+        }
+        div{
+            width:200px;
+            height:100px;
+            padding-left:100px;
+            border-left:50px solid #f00;
+            margin-left:200px;
+            background:#ff6;
+            margin-top:1000px;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <!--<div id="d1">
+        <p id="p1">111111111</p>
+        <span id="s1">sssssssssssss</span>
+        <p id="p2">222222222222</p>
+    </div>
+
+    <div id="p3" class="red" data-tongwl="tongwl"><span>s22222222</span><div>p454657656654</div></div>
+    <input type="text"  id="t1">
+    <button type="button" id="btn">点击我</button>-->
+
+    <script>
+        console.log($('div').width()); //200
+        console.log($('div').innerWidth());  //300
+        console.log($('div').outerWidth());  //350
+        console.log($('div').outerWidth(true));  //550
+//        $(window).on('scroll',function(event){
+//            console.log(document.getElementsByTagName('div')[0].scrollTop);
+//            //console.log(event.scrollTop==$(window).scrollTop());
+//            //console.log($(window).scrollTop());
+//        });
+
+        //console.log($('div').offset());
+        //console.log($('div').position());
+
+
+        /*console.log($('#p3').css('color'));
+
+
+        $('#btn').on('click',function(){
+            //console.log(t1.value);
+            //console.log($('#t1').val());
+            /!*!//$('#p3').addClass('red');
+            //$('#p3').removeClass('red');
+            /!*$('#p3').toggleClass('red');
+            console.log($('#p3').hasClass('red'));*!/
+            console.log($('#p3').html());
+            /!*console.log(p3.innerHTML);*!/
+            console.log($('#p3').text());
+            console.log(p3.innerText);
+            console.log(p3.textContent);*!/
+        });*/
+
+        /*$('#t1').prop('checked',true);
+        $('#t1').removeProp('checked');
+        console.log(t1.getAttribute("checked")); //232323
+        console.log(t1.checked); //true
+        console.log($('#t1').attr('checked')); //checked
+        console.log($('#t1').prop('checked')); //true*/
+
+
+
+        /*console.log($);
+        console.log(jQuery);*/
+        //var ye=jQuery.noConflict(true);
+        //console.log(ye);
+        /*console.log($);
+        console.log(jQuery);*/
+
+        /*console.log($('p','div'));
+        $(function(){
+            console.log(2);
+        });*/
+
+        //$('<span>span</span>').appendTo('#d1');
+
+        //console.log($('p').length);
+
+        //console.log($('p').get(0));
+        //console.log($('p').eq(0));
+        //console.log($('p')[0]);
+
+        //console.log($('#p2').index('p'));
+
+        //console.log(p3.dataset.tongwl);
+        /*$('#p3').data("key1","value1");
+        console.log($("#p3").data());
+        $('#p3').removeData("key1");
+        console.log($("#p3").data());*/
+
+        /*jQuery.fn.extend({tongwl:"tongwl"});
+        console.log($('*').tongwl);*/
+
+        /*选择器：
+        element
+                .class
+                #id
+            ele1,ele2,eleN
+        *
+                    parent+child
+        祖先 后代
+        previous+next
+        previous~nextAll
+
+        属性选择器
+        [attr]
+        [attr=val]
+        [attr*=val]
+        [attr~=val]
+        [attr!=val]
+        [attr^=val]
+        [attr$=val]
+
+
+        :first-child
+        :last-child
+        :nth-child
+        :nth-last-child
+        :only-child
+        :empty
+
+
+        :first-of-type
+        :last-of-type
+        :nth-of-type
+        :nth-lat-of-type
+        :only-of-type
+
+
+        :link
+        :visited
+        :hover
+        :active
+        :focus
+
+
+        :checked
+        :enabled
+        :disabled
+        :required
+
+
+
+        :hidden
+        :visible*/
+
+    </script>
+</body>
+</html>

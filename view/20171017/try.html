@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*for(var i=0;i<5;i++){
+        (function(k){
+            setTimeout(function(){
+                console.log(k);
+            });
+        })(i);
+    }
+*/
+
+    for(let i=0;i<5;i++){
+        test(i);
+    }
+
+    function test(cs){
+        return function(){
+            console.log(cs);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

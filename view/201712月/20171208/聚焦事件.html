@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="ipt">
+<script>
+    ipt.addEventListener("focusin",function(){
+        console.log(111);
+    },false);
+
+    ipt.addEventListener("focusout",function(){
+        console.log(222);
+    });
+
+    document.addEventListener("wheel",function(){
+        console.log(2);
+    });
+</script>
+</body>
+</html>

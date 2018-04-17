@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>严格模式</title>
+</head>
+<body>
+<script>
+    var obj={
+        name:"tongwl"
+    }
+    console.time("begin");
+    with(obj){
+        for(var i=0;i<10000;i++){
+            var a=name;
+        }
+    }
+    console.timeEnd("begin");
+</script>
+</body>
+</html>

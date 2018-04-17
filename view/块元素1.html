@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>块元素</title>
+    <style>
+        .top{
+            height:100px;
+            background:#ff6;
+            display:inline-block;
+            float:left;
+        }
+        .bottom{
+            height:100px;
+            background:#f6f;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">1212</div>
+    <div class="bottom"></div>
+    <script>
+        var top1=document.getElementsByClassName("top")[0];
+        console.log(top1.ownerDocument.defaultView.getComputedStyle(top1).getPropertyValue("display"));
+        console.log(top1.ownerDocument.defaultView.getComputedStyle(top1).getPropertyValue("width"));
+        console.log(top1.ownerDocument.defaultView.getComputedStyle(top1).getPropertyValue("float"));
+    </script>
+
+</body>
+</html>

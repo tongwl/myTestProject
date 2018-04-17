@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl"></div>
+<script>
+    var app=angular.module("app",[]);
+    app.config(["myProviderProvider",function(myProvider){
+        myProvider.setUrl2("test.json");
+        myProvider.setUsername2("tongwl");
+    }]);
+
+    app.provider("myProvider",function(){
+        var url=null;
+        var username=null;
+
+
+        this.setUrl2=function(_url){
+            url=_url;
+        }
+
+        this.setUsername2=function(_username){
+            username=_username;
+        }
+
+        this.$get=["$http","$q",function($http,$q){
+            return {
+                getUser:function(){
+                    return username;
+                },
+                getDizhi:function(){
+                    var deferred=$q.defer();
+
+                    $http({
+                        method:"GET",
+                        url:url
+                    }).success(function(response){
+                        deferred.resolve(response);
+                    }).error(function(error){
+                        deferred.reject("error");
+                    });
+                    return deferred.promise;
+                }
+            };
+        }];
+    });
+
+    app.controller("ctrl",["$scope","myProvider",function($scope,myProvider){
+        console.log(myProvider.getUser());
+        myProvider.getDizhi().then(function(response){
+            console.log(response);
+        },function(error){
+            console.log("error"+error);
+        });
+    }]);
+</script>
+</body>
+</html>

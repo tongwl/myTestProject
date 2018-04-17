@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" id="btn">查看location</button>
+    <script>
+        console.log(location.href);
+        console.log(location.protocol); //协议名，带冒号
+        console.log(location.hostname); //主机名
+        console.log(location.port); //端口号
+        console.log(location.host); //主机名:端口号
+        console.log(location.origin); //协议名/主机名:端口号(只读，不可写)
+        console.log(location.pathname); //URL中部分路径(除去协议名/主机名:端口)，开头有个"/"
+        console.log(location.search); //参数，开头有个"?"
+        console.log(location.hash); //hash块，开头有个"#"
+        console.log(Object.getOwnPropertyDescriptor(location,"href"));
+    </script>
+</body>
+</html>

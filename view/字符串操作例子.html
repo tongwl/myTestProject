@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串操作</title>
+</head>
+<body>
+    <script>
+        /*
+        var str="1990.11.23";
+        var newStr=str.replace(/(\d{4})\.(\d{2})\.(\d{2})/g,"$1年$2月$3日"); //输出1990年11月23日
+        console.log(newStr);
+        */
+
+        var str="John Smith@#";
+        var reg=new RegExp("(\\w+)\\s(\\w+)","g");
+
+        //仅仅是将John Smith替换成了姓：Smith,名：John，@#并不会改变(消失)
+        var newStr=str.replace(reg,function(match,$1,$2,index,old){
+            console.log(match); //John Smith
+            console.log(old); //John Smith@#
+            return "姓："+$2+",名："+$1;
+        });
+        console.log(newStr); //姓：Smith,名：John@#
+    </script>
+</body>
+</html>

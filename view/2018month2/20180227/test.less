@@ -1,0 +1,19 @@
+@import-name:test2;
+
+body{
+  padding:0;
+  margin:0;
+  @{property}:@link-color;
+  background-@{property}:darken(@link-color,30%);
+
+  @link-color:red;
+  @property:color;
+
+  @color:color;
+  @a:color;
+
+  @property:@@a;
+
+}
+
+@import "@{import-name}";

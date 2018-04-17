@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl" ng-clock>
+        {{username}}
+    </div>
+<script>
+    var app=angular.module("app",[]);
+
+    app.controller("ctrl",["$scope",function($scope){
+        $scope.username="tong23wl";
+    }]);
+
+
+</script>
+</body>
+</html>

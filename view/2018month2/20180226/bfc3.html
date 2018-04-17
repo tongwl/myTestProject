@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        body > div{
+            float:left;
+        }
+
+        .left{
+            width:200px;
+            height:200px;
+            background:#ccf;
+        }
+
+        .right{
+            width:calc( 100% - 200px );
+            height:300px;
+            background:#fcc;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+</body>
+</html>

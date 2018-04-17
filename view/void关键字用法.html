@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>void关键字用法</title>
+</head>
+<body>
+    <h1 style="margin-bottom:2000px;">我是h1</h1>
+    <a href="javascript:void(0)" onclick="sayhello();return false;">咦</a>
+    <script>
+        function Student(name,age){
+            this.name=name;
+            this.age=age;
+            this.sayHello=function(){
+                console.log(this.name+":"+this.age);
+            }
+        }
+        var lilei=new Student("lilei",18);
+        lilei.sayHello();
+    </script>
+</body>
+</html>

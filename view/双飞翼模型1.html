@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼</title>
+    <style>
+        body{
+            min-width:550px;
+        }
+        .col{
+            position:relative;
+            float:left;
+            height:400px;
+        }
+
+        .container{
+            padding:0 190px;
+        }
+
+        .main{
+            width:100%;
+            background-color:#ccc;
+        }
+
+        .left{
+            width:190px;
+            margin-left:-100%;
+            left:-190px;
+            background:#00f;
+        }
+
+        .right{
+            width:190px;
+            margin-left:-190px;
+            right:-190px;
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main col">#main</div> <!--为了优先加载-->
+        <div class="left col">#left</div>
+        <div class="right col">#right</div>
+    </div>
+</body>
+</html>

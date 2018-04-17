@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>严格模式</title>
+</head>
+<body>
+<script>
+    function test(cs){
+        "use strict"
+        cs=3;
+        arguments[0]=100;
+        console.log(cs,arguments[0]);
+    }
+    test(2);
+</script>
+</body>
+</html>

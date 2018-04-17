@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        {{tongwl|uppercase}}
+        {{TONGWL|lowercase}}
+        {{doller|currency:"$":2}}
+        {{number|number:3}}
+        {{date|date:"yyyy-MM-dd HH:mm:ss"}}
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",function($scope){
+        $scope.tongwl="tongwl";
+        $scope.TONGWL="TOGNWL";
+        $scope.doller=34.4565;
+
+        $scope.number=11.55556;
+
+        $scope.date=new Date();
+    });
+</script>
+</body>
+</html>

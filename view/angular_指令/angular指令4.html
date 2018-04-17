@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <hello></hello>
+    <script type="text/ng-template" id="hello.html">
+        <div>
+            <div>d1</div>
+            <p>p1</p>
+            <h1>h1</h1>
+        </div>
+    </script>
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    //定义指令
+    app.directive("hello",function(){
+        return {
+            restrict:"E",
+            templateUrl:"hello.html",
+            //template:"<div>1</div>",
+            replace:true
+        };
+    });
+</script>
+
+
+</body>
+</html>

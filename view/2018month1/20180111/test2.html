@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="test3.js"></script>
+</head>
+<body>
+<script>
+    class People{
+        constructor(username,age){
+            this.username=username;
+            this.age=age;
+        }
+
+        static isPeople(canSpeak){
+            return canSpeak;
+        }
+
+        sayWord(word){
+            console.log(word);
+        }
+    }
+
+    class Student extends People{
+        constructor(username,age,className){
+            this.username=username;
+            this.age=age;
+            this.className=className;
+        }
+
+
+        static isStudent(canRead){
+            return canRead;
+        }
+
+        readBook(){
+            console.log(`${this.username} is reading book`);
+        }
+    }
+
+
+    var lilei=new Student("软件092");
+
+    console.log(lilei.__proto__);
+
+</script>
+</body>
+</html>

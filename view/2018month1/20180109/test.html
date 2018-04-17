@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let x= 1,y=2;
+     let obj={x,y};
+     console.log(obj);*/
+
+    /*function test(x,y){
+        return {x,y};
+    }
+
+    console.log(test(1,22));*/
+
+
+//    var obj={
+//        username:"tongwl",
+//        method(){
+//            console.log(this.username);
+//        }
+//    };
+//
+//    obj.method();
+    /*var user="tongwl";
+    var getUser=()=> user;
+    console.log(getUser());*/
+
+    /*var user="1tongwl";
+    var getUser=()=>console.log(user);
+    getUser();*/
+
+   /* var getUser=username=>console.log(username);
+    getUser(1);*/
+
+    /*var getUser =(user,age)=>console.log(user,age);
+    getUser(3,4);*/
+
+    /*var getUser=(user,age)=>({user,age});
+    console.log(getUser("tongwl",18));*/
+
+    /*var obj={
+        user:"tongwl",
+        sayHello:function(){
+            var say=function(){
+                return this.user;  //this指向的是window
+            }
+            return say();
+        }
+    };
+
+    console.log(obj.sayHello());*/
+
+
+    /*var obj={
+        user:"tongwl",
+        sayHello(){
+            var say=function(){
+                return this.user;  //this指向的是window
+            }
+            return say();
+        }
+    };
+
+    console.log(obj.sayHello());*/
+
+    var obj={
+        user:"tongwl",
+        sayHello(){
+            var say=()=>this.user; //this指向调用者(obj)
+            return say();
+        }
+    };
+
+    console.log(obj.sayHello());
+
+
+
+</script>
+</body>
+</html>

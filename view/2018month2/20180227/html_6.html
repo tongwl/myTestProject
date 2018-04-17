@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" id="btn">点击</button>
+    <script>
+        console.log(sessionStorage.getItem("username"));
+        sessionStorage.setItem("username",'tongwl');
+        /*sessionStorage.setItem("age",18);
+        sessionStorage.removeItem("age");
+        sessionStorage.clear();
+        for(let i=0;i<sessionStorage.length;i++){
+            console.log(sessionStorage.key(i));
+            console.log(sessionStorage.getItem(sessionStorage.key(i)));
+        }*/
+
+        btn.addEventListener("click",function(){
+            window.open("test1.html","_blank");
+        },false);
+    </script>
+</body>
+</html>

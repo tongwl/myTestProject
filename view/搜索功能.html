@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2000/REC-xhtml1-20000126/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>JS特效页面搜索功能并将搜索结果高亮显示</title>
+    <META name="Author" content="Sheneyan" />
+    <script type="text/javascript">
+        function encode(s){
+            return s.replace(/&/g,"&").replace(/</g,"<").replace(/>/g,">").replace(/([\\\.\*\[\]\(\)\$\^])/g,"\\$1");
+        }
+        function decode(s){
+            return s.replace(/\\([\\\.\*\[\]\(\)\$\^])/g,"$1").replace(/>/g,">").replace(/</g,"<").replace(/&/g,"&");
+        }
+        function highlight(s){
+            if (s.length==0){
+                alert('搜索关键词未填写！');
+                return false;
+            }
+            s=encode(s);
+            var obj=document.getElementsByTagName("body")[0];
+            var t=obj.innerHTML.replace(/<span\s+class=.?highlight.?>([^<>]*)<\/span>/gi,"$1");
+            obj.innerHTML=t;
+            var cnt=loopSearch(s,obj);
+            t=obj.innerHTML
+            var r=/{searchHL}(({(?!\/searchHL})|[^{])*){\/searchHL}/g
+            t=t.replace(r,"<span class='highlight'>$1</span>");
+            obj.innerHTML=t;
+            alert("搜索到关键词"+cnt+"处")
+        }
+
+        function loopSearch(s,obj){
+            var cnt=0;
+            if (obj.nodeType==3){
+                cnt=replace(s,obj);
+                return cnt;
+            }
+            for (var i=0,c;c=obj.childNodes[i];i++){
+                if (!c.className||c.className!="highlight")
+                    cnt+=loopSearch(s,c);
+            }
+            return cnt;
+        }
+
+        function replace(s,dest){
+            var r=new RegExp(s,"g");
+            var tm=null;
+            var t=dest.nodeValue;
+            var cnt=0;
+            if (tm=t.match(r)){
+                cnt=tm.length;
+                t=t.replace(r,"{searchHL}"+decode(s)+"{/searchHL}")
+                dest.nodeValue=t;
+            }
+            return cnt;
+        }
+    </script>
+    <style type="text/css">
+        .highlight{background:green;font-weight:bold;color:white;}
+    </style>
+</head>
+<body>
+<form onsubmit="highlight(this.s.value);return false;">
+    <p><input name="s" id="s" title="搜索内容："/><input type="submit" value="搜索"/></p>
+</form>
+<div id="content">
+    最近看不少人问这样的问题： <br />
+    无法访问局域网内其它电脑中的IIS，以前是可以的，重装了系统就不行了，自己可以访问，但别的电脑不行。看看IIS的IP设置，是192.168.*.*开头的。但为什么不能访问呢？ <br />
+    一个月前，我同事也遇到这样的问题。 <br />
+    搜遍整个FAQ,也没看到类似的回答。 <br />
+    我也问了他们，一般发生这种情况时操作系统是XP第二版。于时我就想到了，可能是安全性设置的问题，于时我在控制面版里找，终于找到了。
+    具体操作如下： <br />
+    1、打开控制面版 <br />
+    2、打开Windows防火墙 <br />
+    3、选择高级 <br />
+    4、在本地连接右边点“设置” <br />
+    5、在“WEB服务器”那项上打钩。 <br />
+    6、确定 <br />
+    OK，再次打开浏览器，输入IP地址，就可以看到网站了。 <br />
+
+    XP不属于服务器版本的系统，使用它调试会有一些麻烦，例如常常会发现局域网内的其它用户无法使用IP地址来访问本地的IIS网站，这里是由于的防火墙的原因。<br />
+
+    HTTP服务默认实用80端口，只需要在防火墙（特别注意系统自带的防火墙）中启用HTTP服务（80端口）就可以；如果使用其它的防火墙，也需要进行类似的操作。<br />
+
+</div>
+</body>
+</html>

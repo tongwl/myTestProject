@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[2,3,null,3,0,null,2];
+    var obj={};
+    var newArr=[];
+    arr.forEach(function(val){
+        if(!obj[val]){
+            newArr.push(val);
+            obj[val]=val;
+        }
+    });
+    console.log(newArr);
+</script>
+</body>
+</html>

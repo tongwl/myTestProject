@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict"
+    //创建对象的方式
+    //Object.create(prototype,descriptors)
+
+    function Student(){
+
+    }
+
+    Object.defineProperty(Student.prototype,"className",{
+        value:"ruanjian092",
+        writable:true
+    });
+
+    var lilei=new Student();
+    lilei.className="hahaha";
+    console.log(lilei.className);
+
+    Object.prototype.hasOwnProperty();
+    Object.prototype.propertyIsEnumerable();
+    console.log(Object.keys(对象名));
+
+
+
+    Object.prototype.isPrototypeOf(child)
+    Object.prototype.hasOwnProperty("")
+    Object.prototype.propertyIsEnumerable
+</script>
+</body>
+</html>

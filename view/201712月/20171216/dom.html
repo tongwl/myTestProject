@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color:#f00;
+        }
+
+        #blue{
+            background-color:#00f;
+        }
+    </style>
+</head>
+<body>
+    <p id="p2">22222222</p>
+    <div id="d1">
+        <p id="p1">1111111111</p>
+        <p id="child2">child</p>
+    </div>
+    <button type="btn" id="btn">点击</button>
+    <img src="2.jpg" id="img" alt="">
+    <img src="2.jpg" id="img2" alt="">
+    <form id="form1">
+        哈哈哈
+        <input type="text" value="dsfsdf">
+        wawawa
+        <div id="d11">
+            <span>aweawasddsa</span>
+        </div>
+    </form>
+
+    <label for="test1" id="label2">哈哈哈</label>
+    <input type="text" id="test1">
+    <input type="text" id="test2">
+    <button type="button" id="btn2" tabindex="23">change</button>
+
+    <ul id="ul">
+
+    </ul>
+    <script>
+
+        //form1.removeChild(d11);
+        /*var frag=document.createDocumentFragment();
+        for(var i=0;i<5;i++){
+            var newLi=document.createElement("li");
+            newLi.textContent=i;
+            frag.appendChild(newLi);
+        }
+        ul.appendChild(frag);*/
+
+        /*var newP=document.createElement("p");
+        var newContent=document.createTextNode("哈哈");
+        newP.appendChild(newContent);
+        //newP.textContent="hahaha";
+        document.body.appendChild(newP);*/
+
+        /*console.log(document.__proto__.__proto__);*/
+
+        //console.log(document.forms["form1"].textContent);
+        //console.log(document.forms["form1"].innerText);
+
+        //console.log(document.forms["form1"].textContent);
+        /*var attrNode=document.createAttribute("class"); //创建属性节点
+        attrNode.nodeValue="red"; //给属性赋值
+        btn.setAttributeNode(attrNode); //设置属性*/
+
+        //console.log(btn.getAttributeNode("type"));
+
+        //console.log(btn.attributes[0].name);
+        //console.log(btn.attributes[0].value);
+        //console.log(Object.prototype.toString.call(btn.attributes[0])); //Attr类，它的father直接就是Node类
+
+        /*console.log(btn.attributes);*/
+        /*console.log(btn.attributes.id);
+        console.log(btn.attributes.type);*/
+        /*console.log(typeof btn2.tabIndex);
+        btn2.addEventListener("click",function(){
+            label2.htmlFor="test2";
+        },false);*/
+
+        //p1.id="blue";
+        //p1.className="red";
+        //p1.setAttribute("class","red");
+        //console.log(d1.getAttribute("id"));
+        //console.log(document.body.children);
+        //console.log(document.body.parentElement);
+        //console.log(p2.previousSibling);
+
+        //console.log(document.body.__proto__);
+        //console.log(document.body.childNodes);
+
+        //console.log(btn.parentNode);
+        //console.log(document.documentElement.__proto__.__proto__.__proto__);
+        //console.log(document.__proto__.__proto__.__proto__);
+
+        //console.log(document.forms.form1);
+        //console.log(document.images.img1);
+
+
+        //console.log(document.getElementById("p0"));
+        //console.log(document.getElementsByTagName("p"));
+        /*var test=d1.querySelector("p");
+        var test2=document.getElementsByTagName('p');
+        console.log(test);
+        console.log(test2[0]);
+        btn.addEventListener("click",function(){
+            var newP=document.createElement("p");
+            var content=document.createTextNode("哈哈哈");
+            newP.appendChild(content);
+            document.body.insertBefore(newP,document.getElementById('p2'));
+            console.log(test);
+            console.log(test2[0]);
+        },false);*/
+
+        /*console.log(document.querySelectorAll('p'));
+        console.log(Array.isArray(document.querySelectorAll('p')));
+        console.log(Object.prototype.toString.call(document.querySelectorAll('p')));*/
+
+        /*console.log(document.getElementById("dsfsdfsddfsdf"));
+        console.log(d1.querySelectorAll('h1'));*/
+
+        /*var p1=document.getElementById('p1');
+        console.log(Node.prototype.isPrototypeOf(p1));*/
+
+        /*console.log(document.nodeType);
+        console.log(document.documentElement.nodeType);*/
+
+        /*console.log(document.__proto__.__proto__);
+        console.log(document.getElementsByTagName("P"));
+        console.log(document.getElementsByTagName("*")); //把所有元素都遍历出来
+        console.log(document.documentElement.__proto__.__proto__.__proto__);*/
+
+        //console.log(document.images);
+
+    </script>
+</body>
+</html>

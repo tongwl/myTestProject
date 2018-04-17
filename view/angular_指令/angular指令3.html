@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="h1" class="h2" hello title="我是第一个div"></div>
+
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    //定义指令
+    app.directive("hello",function(){
+        return {
+            restrict:"A",
+            template:function(elem,attrs){
+                return "<a href='#'>hello,"+attrs.title+"</a>";
+            },
+            replace:true,
+            priority:3,
+            terminate:true
+        };
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+<span sibling-one sibling-two></span>
+<script>
+    var app=angular.module("app",[]);
+
+    app.directive("siblingOne",function(){
+        return {
+            restrict:"EACM",
+            controller:function($scope){
+                $scope.username="tongwl";
+                this.getUsername=function(){
+                    return $scope.username;
+                }
+            }
+        };
+    });
+
+    app.directive("siblingTwo",function(){
+        return {
+            restrict:"EACM",
+            template:"<span>{{yonghuming}}</span>",
+            replace:false,
+            priority:0,
+            terminal:false,
+            require:"?^siblingOne",
+            link:function(scope,ele,attrs,ctrl){
+                scope.yonghuming=ctrl.getUsername();
+            }
+        };
+    });
+</script>
+</body>
+</html>

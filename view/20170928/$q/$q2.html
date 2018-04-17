@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" ng-model="checked">
+<input type="button" value="dianji" ng-click="change()">
+<script src="../../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.run(["$rootScope","$q",function($rootScope,$q){
+        $rootScope.change=function(){
+
+            var deferred=$q.defer();
+            var promise=deferred.promise;
+
+            promise.then(function(response){
+                alert("对了："+response);
+            },function(error){
+                alert("错了："+error);
+            },function(value){
+                console.log("注意："+value);
+            }).catch(function(error){
+                console.log("error");
+                console.log(error);
+            }).finally(function(){
+                console.log("final");
+            });
+
+            deferred.notify("正在解决...");
+
+            if($rootScope.checked){
+                deferred.resolve("解决啦");
+            }else{
+                deferred.reject("拒绝啦");
+            }
+
+
+        }
+    }]);
+</script>
+</body>
+</html>

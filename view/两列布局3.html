@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+
+        .father{
+            padding-left:210px;
+        }
+        .child1,.child2{
+            float:left;
+            height:200px;
+        }
+
+        .child1{
+            width:200px;
+            background:#f00;
+            margin-left:-200px;
+        }
+
+        .child2{
+            width:100%;
+            background:#ff0;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="child1"></div>
+        <div class="child2"></div>
+    </div>
+</body>
+</html>

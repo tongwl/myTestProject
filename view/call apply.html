@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call apply bind</title>
+</head>
+<body>
+<script>
+
+    function Student(uname){
+        this.uname=uname;
+    }
+
+    Student.prototype.sayHello=function(content1,content2){
+        console.log("hello,"+this.uname+content1+content2);
+    }
+
+    var fufu=new Student("zhenzhen");
+    fufu.sayHello("11","22");
+
+    console.log(toString.call(fufu));
+
+</script>
+</body>
+</html>

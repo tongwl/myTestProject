@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="testForm" novalidate>
+    姓名：<input type="text" name="username">
+    密码：<input type="password" name="pwd">
+</form>
+<input type="submit" value="提交" form="testForm">
+<button type="button" onclick="getSearch(event,this)">get search</button>
+
+<script>
+    function getSearch(e,dom){
+        console.log(e);
+        console.log(dom);
+        var search=location.search.slice(1);
+        var singles=search==""?[]:search.split("&");
+        for(var i= 0,len=singles.length;i<len;i++){
+            var single=singles[i].split("=");
+            console.log("key:"+single[0]+" , value:"+single[1]);
+        }
+    }
+</script>
+</body>
+</html>

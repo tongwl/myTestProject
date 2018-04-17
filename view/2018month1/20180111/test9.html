@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <button @click.prevent="wa">哇</button>
+        <button @click.prevent="haha('haha',$event)">哈哈</button>
+    </div>
+<script>
+    var app=new Vue({
+        el:"#d1",
+        data:{},
+        methods:{
+            wa(event){
+                console.log(event.target || event.srcElement);
+            },
+            haha(message,event){
+                console.log(message);
+                console.log(event.target || event.srcElement);
+            }
+        }
+    });
+</script>
+</body>
+</html>

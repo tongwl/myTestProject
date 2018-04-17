@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="height:2000px">
+    <form action="test.html" autocomplete="off">
+        <button type="button">提交</button>
+        <input type="text" tabindex="2">
+        <input type="radio" name="n1" value="1" tabindex="1">
+        <input type="radio" name="n1" value="2" tabindex="3">
+    </form>
+    <span>左&nbsp;&nbsp;&amp;amp;&copy;&yen;&lt;&gt;右</span>
+    <img src="../11.png" alt="error picture" title="鼠标移动上去显示">
+    <script>
+        /*console.log(document.defaultView);//获取window对象
+        console.log(document.defaultView);//获取window对象
+        console.log(document.defaultView);//获取window对象
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);//获取当前windowduixiang
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        console.log(document.defaultView);
+        var button=document.getElementsByTagName("button")[0];
+        console.log(button.ownerDocument);
+        console.log(button.ownerDocument.defaultView);
+        console.log(document.documentElement);
+        console.log(document.body);
+        console.log(document.head);*/
+        /*window.onscroll=function(){
+            console.log(document.body.scrollTop||document.documentElement.scrollTop);
+        }
+
+        console.log(window.getComputedStyle(document.body));
+        console.log(window.getComputedStyle(document.body).getPropertyValue("height"));
+
+        var arr=[];
+        console.log(window.toString.call(arr)); //[object Array]*/
+
+        var button=document.getElementsByTagName("button")[0];
+        button.onclick=function(){
+            var a=document.createElement("a");
+            a.setAttribute("href","http://www.baidu.com");
+            a.dataset.userName="zhenzhen";
+            a.dataset.sayHello="haha";
+            document.body.appendChild(a);
+            for(var key in a.dataset){
+                console.log("属性名："+key+",属性值："+ a.dataset[key]);
+            }
+        }
+    </script>
+</body>
+</html>

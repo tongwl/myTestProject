@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="test2.html" target="_blank">点我呀</a>
+    <button id="btn">点击</button>
+<script>
+        
+    btn.addEventListener("click",function(){
+        postMessage("内容","http://localhost:63342/project1/view/201712%E6%9C%88/20171228/test2.html");
+    },false);
+    /*document.domain="haha.com";
+    console.log(document.domain);*/
+</script>
+</body>
+</html>

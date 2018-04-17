@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    try{
+        var arr=[12,3,45];
+        if(arr.length>2){
+            throw new Error("我是message");
+        }
+        for(var i=0;i<arr.length+1;i++){
+            console.log(arr[i]);
+        }
+    }catch(e){
+        console.log(e.name);
+    }
+    finally{
+        //console.log("finally");
+    }
+</script>
+</body>
+</html>

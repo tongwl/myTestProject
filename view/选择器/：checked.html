@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:checked</title>
+    <style>
+        input[type="checkbox"]:checked{
+            background-color:#f00 !important;
+            border:1px solid #f00;
+            color:#f00;
+            width:100px;
+            height:200px;
+        }
+
+        input[type="text"]:disabled{
+            border:1px solid #f00;
+        }
+
+        input[type="text"]:enabled{
+            border:1px solid #0f0;
+        }
+
+        input[type="text"]:required{
+            border:1px solid #00f;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+
+    <input type="text" disabled>
+    <input type="text">
+    <input type="text" required>
+</form>
+</body>
+</html>

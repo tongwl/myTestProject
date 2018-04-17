@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div ng-controller="ctrl">
+        <ul>
+            <li ng-repeat="user in data" ng-repeat-finished>{{user.name}}</li>
+        </ul>
+    </div>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+
+    app.directive("ngRepeatFinished",["$timeout",function($timeout){
+        return {
+            restrict:"A",
+            template:"",
+            replace:false,
+            priority:1,
+            terminal:false,
+            link:function(scope,ele,attrs,ctrl){
+                if(scope.$last){
+                    scope.$emit("ngRepeatFinish","over");
+                }
+            }
+        };
+    }]);
+    app.controller("ctrl",["$scope",function($scope){
+
+        $scope.$on("ngRepeatFinish",function(event,data){
+            console.log(event);
+            console.log(data);
+        });
+
+        $scope.data=[{
+            name:"tongwl",
+            age:8
+        },{
+            name:"szz",
+            age:10
+        }];
+
+    }]);
+</script>
+</body>
+</html>

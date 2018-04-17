@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+       <custom-directive></custom-directive>
+    </div>
+    <script>
+        var app=angular.module('app',[]);
+
+        app.directive("customDirective",function(){
+            return {
+                restrict:"EACM",
+                template:"<child-directive></child-directive>",
+                replace:false,
+                priority:0,
+                terminal:false,
+                transclude:false,
+                link:function($scope,$element){
+                    console.log(1);
+                    $element.find('span').text('hello cnblogs');
+                }
+            };
+        });
+
+        app.directive("childDirective",function(){
+            return {
+                restrict:"EACM",
+                template:"<h1>hello xpy0928</h1>",
+                replace:true,
+                priority:0,
+                terminal:false,
+                transclude:false,
+                link:function(scope,ele,attrs){
+                    console.log(2);
+                    ele.replaceWith("<span>"+ele.text()+"</span>");
+                }
+            };
+        });
+
+        app.controller('ctrl',["$scope",function($scope){
+            console.log($scope);
+        }]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>link</title>
+    <link rel="stylesheet" href="../css/link.css">
+    <style>
+        @import "../css/link2.css";
+    </style>
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <p class="red">1</p>
+    <p class="blue">2</p>
+    <p class="green text-center">3</p>
+
+    <script>
+        var p=document.getElementsByClassName('red')[0];
+        //p.style.color="pink";
+
+        //$('.red').css('background-color','black');
+
+        //p.style.cssText="margin:0";
+
+
+        p.className="text-center";
+
+    </script>
+</body>
+</html>

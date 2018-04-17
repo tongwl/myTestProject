@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <style>
+        .red{
+            color:red;
+        }
+
+        .blue{
+            background-color:blue;
+        }
+
+        .borderR{
+            border-radius: 5px;
+        }
+
+        .borderQ{
+            border:3px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <p :class="{red:isRed,blue:isBlue}">哈哈哈哈</p>
+        <input type="text" v-model="username">
+        <input type="checkbox" v-model="isRed">是否红
+        <input type="checkbox" v-model="isBlue"> 是否绿
+        <!--<my-component :class="border"></my-component>-->
+        <p :style="{color:activeColor ,fontSize:fontSize+'px'}">sdsdsdddd{{fontSize}}</p>
+
+    </div>
+
+
+
+
+<script>
+
+
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            username:"tongwl",
+            isRed:true,
+            isBlue:true,
+            activeColor:'red',
+            fontSize:25
+        },
+        watch:{
+            username:function(_new,_old){
+                console.log(_new,_old);
+            }
+        }
+    });
+</script>
+</body>
+</html>

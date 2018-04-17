@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*"use strict"
+    var index=Math.pow(2,32);
+    var arr=[];
+    arr[index-2]=1;
+    console.log(arr);*/
+
+    /*var arr=new Array(3);
+    console.log(arr);
+
+    console.log("1" in arr);*/
+
+    /*var arr=[];
+    arr[-1.23]=0;
+    arr["1000"]=1;
+    arr[1.0000]=2;
+    console.log(arr);*/
+
+    /*var arr=[,,,];
+    console.log(0 in arr);*/
+
+    var arr=[,];
+    var arr2=[undefined];
+
+    console.log(0 in arr);  //稀疏数组，并不存在0索引
+    console.log(0 in arr2); //此数组包含一个值为undefined的元素
+
+</script>
+</body>
+</html>

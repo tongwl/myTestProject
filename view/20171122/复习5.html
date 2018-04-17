@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var classObj={
+        className:"软件092"
+    };
+
+    var twl=Object.create(classObj,{
+        uname:{
+            value:"tongwl",
+            writable:false,
+            enumerable:true,
+            configurable:false
+        },
+        age:{
+            value:18,
+            enumerable:false,
+            writable:true,
+            configurable:false
+        }
+    });
+
+    console.log(twl.className);
+</script>
+</body>
+</html>

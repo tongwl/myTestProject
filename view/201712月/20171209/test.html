@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" id="btn">点击</button>
+<script>
+    console.log(window.location==document.location);
+    console.log(location);
+    console.log(document.URL);
+    console.log("=========================");
+    console.log(location.href);
+    console.log(location.protocol);
+    console.log(location.hostname);
+    console.log(location.port);
+    console.log(location.host);
+    console.log(location.origin);
+    console.log(location.pathname);
+    console.log(location.search);
+    console.log(location.hash);
+    console.log("==============================");
+    console.log(navigator.appName);
+    console.log(navigator.appVersion);
+    console.log(navigator.userAgent);
+    console.log(navigator.platform);
+    console.log(navigator.geolocation);
+    console.log(navigator.cookieEnabled);
+    console.log(navigator.onLine);
+    console.log("=======================================");
+    console.log(screen.width);
+    console.log(screen.height);
+    console.log(screen.availWidth);
+    console.log(screen.availHeight);
+
+    console.log(document.documentElement.clientWidth);
+    console.log(document.documentElement.clientHeight);
+
+
+
+    btn.addEventListener("click",function(){
+        //window.location.assign("test2.html");
+        //window.location.replace("test2.html");
+        //window.location.reload(true);
+        //location.href=location.href;
+        //location=location;
+        //location="#";
+        //window.location.search="?uname=zhenzhen";
+        //console.log(window.history);
+        //history.go(0);
+        //history.back();
+        //history.forward();
+    },false);
+
+
+    document.addEventListener("click",function(event){
+        console.log(event.screenX);
+        console.log(event.screenY);
+        console.log(event.clientX);
+        console.log(event.clientY);
+    },false);
+
+</script>
+</body>
+</html>

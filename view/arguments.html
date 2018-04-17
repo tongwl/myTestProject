@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+<script>
+    function test(a){
+        a.name="zhenzhen"; //这里通过a地址找到对象，直接修改了对象内的属性
+    }
+
+    var a={
+        name:"tongwl"
+    };
+    test(a);
+    console.log(a); //改掉啦，name变成zhenzhen啦
+</script>
+
+</body>
+</html>

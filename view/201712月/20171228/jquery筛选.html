@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <p id="p1">111111</p>
+        <span id="s1">spanspanspan</span>
+        <p id="p2">2222222222</p>
+        <div id="d2">
+            <p id="p4">44444444444444</p>
+        </div>
+    </div>
+    <p id="p3">33333333333</p>
+<script>
+    //console.log(p1.parentNode);
+    //console.log(d1.childNodes);
+    //console.log(d1.firstChild);
+    //console.log(d1.lastChild);
+    //console.log(p1.nextSibling);
+    //console.log(p1.previousSibling);
+    //console.log(p1.parentElement);
+    //console.log(d1.children);
+    //console.log(d1.firstElementChild);
+    //console.log(d1.lastElementChild);
+    //console.log(p1.nextElementSibling);
+    //console.log(p2.previousElementSibling);
+    //console.log($('#s1').parent());
+    //console.log($('#s1').offsetParent());
+    //console.log(s1.offsetParent);
+    //console.log($('#d1').children());
+    //console.log($('#d1').find('#p4'));
+    /*console.log($('p').eq(0));
+    console.log($('p').first());
+    console.log($('p').last());*/
+
+    //console.log($('p').filter('#p4'));
+
+    //console.log($('#p4').is('p'));
+
+    //console.log($('div').has('p#p1'));
+
+    /*$.each([1,2,3,4,5,6,7],function(index,value){
+        console.log(index,value);
+    });*/
+
+    /*var newArr= $.map([1,2,3],function(value,index){
+        return value*2;
+    });
+    console.log(newArr);*/
+
+    //console.log($('div').not('#d2'));
+
+    //console.log($('p').slice(0,1));
+    //console.log($('p').slice(1,2));
+    //console.log($('p').add('div'));
+    console.log($('#d1').find('p').end());
+
+</script>
+</body>
+</html>

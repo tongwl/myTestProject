@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //遍历arr
+    function test(arr){
+        //for遍历
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]===3){
+                return i;  //返回值等于3的下标i
+            }
+        }
+    }
+
+    //遍历arr
+    function test(arr){
+        //forEach方法
+        arr.forEach(function(val,i){
+            if(val===3){
+                return i;
+            }
+        });
+    }
+
+    Array.prototype.forEach=function(fun){
+        fun();
+    }
+
+    test([1,2,3,4]);
+
+</script>
+</body>
+</html>

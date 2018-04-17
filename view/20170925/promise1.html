@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>promise1</title>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        <span for="success">成功</span>
+        <input type="checkbox" id="success" ng-model="success" ng-change="change()">
+        <input type="button" value="切换" ng-click="change2()">
+    </div>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("ctrl",["$scope","$q",function($scope,$q){
+        $scope.success=true;
+
+        $scope.change=function(){
+            var deferred=$q.defer(); //获取deferred对象
+            var promise=deferred.promise;
+            promise.then(function(response){
+                alert("Success:"+response);
+            },function(error){
+                alert("Fail:"+error);
+            });
+
+            if($scope.success){
+                deferred.resolve("you are lucky!");
+            }else{
+                deferred.reject("sorry,it lost!");
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

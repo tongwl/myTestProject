@@ -1,0 +1,36 @@
+.border{
+  border-width: 1px;
+  border-style: solid;
+  .red-color{
+    border-color: #f00;
+  }
+
+  .blue-color{
+    border-color: #00f;
+  }
+
+  .green-color{
+    border-color: #0f0;
+  }
+}
+
+.font-color{
+  .red{
+    color:#f00;
+  }
+
+  .blue{
+    color:#00f;
+  }
+
+  .green{
+    color:#0f0;
+  }
+}
+
+
+h2{
+  .border;
+  .border > .blue-color;
+  .font-color>.red;
+}

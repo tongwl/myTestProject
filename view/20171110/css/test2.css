@@ -1,0 +1,37 @@
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+.border .red-color {
+  border-color: #f00;
+}
+.border .blue-color {
+  border-color: #00f;
+}
+.border .green-color {
+  border-color: #0f0;
+}
+.font-color .red {
+  color: #f00;
+}
+.font-color .blue {
+  color: #00f;
+}
+.font-color .green {
+  color: #0f0;
+}
+h2 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00f;
+  color: #f00;
+}
+h2 .red-color {
+  border-color: #f00;
+}
+h2 .blue-color {
+  border-color: #00f;
+}
+h2 .green-color {
+  border-color: #0f0;
+}

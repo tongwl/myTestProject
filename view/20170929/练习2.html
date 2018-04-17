@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #city{
+            color:#ccc;
+        }
+    </style>
+</head>
+<body>
+<select id="select">
+    <option value="2">2</option>
+    <option value="" id="city">3</option>
+    <option value="4">4</option>
+</select>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+    //$('#city').attr("disabled","true");  //或则true
+
+    $('#select').change(function(){
+        console.log($("#select").val());
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="app1">
+        <div ng-controller="ctrl1">
+            <span>{{username}}</span>
+        </div>
+    </div>
+    <div id="app2" ng-app="app2">
+        <div ng-controller="ctrl2">
+            <span>{{age}}</span>
+        </div>
+    </div>
+<script>
+    var app1=angular.module("app1",[]);
+    app1.controller("ctrl1",function($scope){
+        $scope.username="tongwl";
+    });
+
+    var app2=angular.module("app2",[]);
+    angular.element(document).ready(function(){
+        angular.bootstrap(document.getElementById("app2"),["app2"]);
+    });
+
+    app2.controller("ctrl2",function($scope){
+        $scope.age=18;
+    });
+</script>
+</body>
+</html>

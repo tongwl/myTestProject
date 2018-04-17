@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            width:1200px;
+            border:10px solid #000;
+        }
+
+        .father:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .one{
+            width:500px;
+            height:500px;
+            float:left;
+            background-color:#f00;
+        }
+        .two{
+            width:500px;
+            height:300px;
+            float:left;
+            background:#0f0;
+        }
+        .three{
+            width:500px;
+            height:600px;
+            float:left;
+            background:#00f;
+        }
+        .four{
+            width:500px;
+            height:200px;
+            background:#ff0;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+    </div>
+</body>
+</html>

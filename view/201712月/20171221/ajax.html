@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var xhr=null;
+    if(window.XMLHttpRequest){
+        xhr=new XMLHttpRequest();
+    }else{
+        xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xhr.addEventListener("readystatechange",function(){
+        //console.log(xhr.readyState);
+        if(xhr.readyState==4){
+            //console.log(xhr.status);
+            console.log(xhr.getResponseHeader("Last-Modified"));
+            console.log(xhr.getAllResponseHeaders());
+        }
+    },false);
+
+    xhr.open("GET","http://192.168.125.66:30080/pages/front/app/img/logo.png",true);
+    xhr.setRequestHeader("If-Modified-Since","Thu, 21 Dec 2017 01:11:12 GMT");
+    xhr.send(null);
+</script>
+</body>
+</html>

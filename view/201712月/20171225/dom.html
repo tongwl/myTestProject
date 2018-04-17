@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+
+        body:before{
+            content: "";
+            display: table;
+        }
+        div{
+            position: relative;
+            height:200px;
+            background:#ff6;
+            margin-top:1000px;
+            border:1px solid #f00;
+        }
+        p{
+            position: absolute;
+            left:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <p id="p">111111111</p>
+    </div>
+    <script>
+        /*console.log($('p').position());
+        console.log(p.offsetLeft);
+        console.log(p.offsetTop);*/
+        window.addEventListener("scroll",function(){
+            console.log(document.body.scrollTop);
+            console.log($('body').scrollTop());
+        },false)
+
+
+    </script>
+</body>
+</html>

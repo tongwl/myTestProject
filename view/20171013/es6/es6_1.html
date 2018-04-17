@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*{
+        let a=10;   //仅仅在代码块中有作用
+        var b=1;
+
+        console.log(a,b);
+    }
+
+    console.log(b);
+    console.log(a);*/
+
+
+    //for 循环就很适合用let
+    /*for(let i=0;i<10;i++){
+        console.log(i);
+    }
+
+    console.log(i);*/
+
+    /*var a=[];
+    for(let i=0;i<10;i++){
+        a[i]=function(){
+            console.log(i);
+        }
+    }
+
+    a[6]();*/
+
+
+    /*for(let i=0;i<3;i++){  //()为父作用域
+        let i="a";         //{}内部为子作用域
+        console.log(i);
+    }*/
+
+    //let不会声明提前！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    /*console.log(a);
+    var a=1;
+
+    console.log(b);
+    let b=1;*/
+
+    //console.log(typeof a);
+
+
+    /*var a=1;
+    {
+        console.log(a);
+        let a=2;
+    }*/
+
+    {
+        var a=2;
+        let a=1;
+    }
+
+
+</script>
+</body>
+</html>

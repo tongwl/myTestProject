@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={};
+    Object.defineProperties(obj,{
+        uname:{
+            value:"tongwl",
+            writable:true,
+            enumerable:true,
+            configurable:true
+        },
+        sname:{
+            set:function(val){
+                this.uname=val;
+            },
+            get:function(){
+                return this.uname;
+            },
+            enumerable:false,
+            configurable:true
+        }
+    });
+
+    console.log(obj.uname);
+    console.log(obj.sname);
+    obj.sname="haha";
+    console.log(obj.uname);
+    console.log(obj.sname);
+
+</script>
+</body>
+</html>

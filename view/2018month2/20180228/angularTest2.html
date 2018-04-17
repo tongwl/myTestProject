@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        {{text2}}
+    </div>
+
+    <script>
+        var app=angular.module("myModule",[]);
+        app.controller("myCtrl",["$scope",function($scope){
+            $scope.text2="tongwl";
+        }]);
+
+
+        angular.element(document).ready(function(){
+            console.log(1);
+            angular.bootstrap(document,["myModule"]);
+        });
+
+    </script>
+</body>
+</html>

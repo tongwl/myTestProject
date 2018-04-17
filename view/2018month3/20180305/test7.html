@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <span ng-repeat-start="d in data track by $index">{{$index}}</span><b ng-repeat-end>{{$index}} </b>
+
+    <div ng-switch="username">
+        <span ng-switch-when="twl">童威立</span>
+        <span ng-switch-when="szz">宋真真</span>
+        <span ng-switch-default>其他</span>
+    </div>
+<script>
+    var app=angular.module("app",[]);
+    app.run(["$rootScope",function($rootScope){
+        $rootScope.data=[1,2,2,3,4,5];
+        $rootScope.username="twl点";
+    }]);
+</script>
+</body>
+</html>

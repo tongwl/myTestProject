@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" ng-click="v='/hehe.html'">点击显示</button>
+    <div ng-include="v"></div>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script>
+        var app=angular.module("app",[]);
+    </script>
+    <script type="text/ng-template" id="/hehe.html">
+        <p>pppppppppppp1111111111111111</p>
+    </script>
+</body>
+</html>

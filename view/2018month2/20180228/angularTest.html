@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <span ng-bind="counter"></span>
+        <button type="button" ng-click="add()">点击</button>
+    </div>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("myCtrl",["$scope",function($scope){
+            $scope.counter=1;
+
+            $scope.add=function(){
+                $scope.counter++;
+            }
+        }]);
+    </script>
+</body>
+</html>

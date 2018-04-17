@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <button @click.prevent="sayHello('hello')">hello</button>
+    </div>
+<script>
+    var app=new Vue({
+        el:"#d1",
+        data:{
+
+        },
+        methods:{
+            sayHello:function(message){
+                console.log(message);
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <span>{{total}}</span>
+        <child v-on:click.native="getTotal"></child>
+    </div>
+<script>
+    Vue.component("child",{
+        template:'<button v-on:click="incrementCounter">{{counter}}</button>',
+        data:function(){
+            return {
+                counter:0
+            }
+        },
+        methods:{
+            incrementCounter:function(){
+                this.counter++;
+                this.$emit('click');
+            }
+        }
+    });
+
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            total:0
+        },
+        methods:{
+            getTotal:function(){
+                this.total++;
+            }
+        }
+    });
+</script>
+</body>
+</html>

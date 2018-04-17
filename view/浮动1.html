@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .span1{
+            width:100px;
+            display:inline-block;
+            background:#f00;
+        }
+        .span2{
+            width:100px;
+            display:inline-block;
+            background:#0f0;
+        }
+    </style>
+</head>
+<body>
+    <span class="span1">1</span>
+    <span class="span2">2</span>
+    <script>
+        var span1=document.getElementsByTagName("span")[0];
+        console.log(span1.ownerDocument.defaultView.getComputedStyle(span1).getPropertyValue("display"));
+    </script>
+</body>
+</html>

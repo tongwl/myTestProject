@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$emit $broadcast</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="parent">
+        father: {{username}}
+        <div ng-controller="me">
+            me: {{username}}
+            <button type="button" ng-click="emit()">向parent传</button>
+            <button type="button" ng-click="broadcast()">向child传</button>
+            <div ng-controller="child">
+                child: {{username}}
+            </div>
+        </div>
+    </div>
+<script>
+    var app=angular.module("myApp",[]);
+
+    app.controller("parent",["$scope",function($scope){
+        //reserve from parent
+        $scope.$on("toParent",function(event,data){
+            console.log(event);
+            $scope.username=data;
+        });
+    }]);
+
+    app.controller("me",["$scope",function($scope){
+        $scope.username="tongwl";
+
+        //to parent
+        $scope.emit=function(){
+            $scope.$emit("toParent",$scope.username);
+        }
+
+        //to child
+        $scope.broadcast=function(){
+            $scope.$broadcast("toChild","changedName");
+        }
+
+    }]);
+
+    app.controller("child",["$scope",function($scope){
+        $scope.$on("toChild",function(event,data){
+            $scope.username=data;
+        });
+    }]);
+
+
+    angular.element(document).ready(function(){
+        angular.bootstrap(document,["myApp"]);
+    });
+
+</script>
+</body>
+</html>

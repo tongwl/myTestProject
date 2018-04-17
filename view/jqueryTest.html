@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="ddd"></div>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        function ajax(url,options){
+            // If url is an object, simulate pre-1.5 signature
+            if ( typeof url === "object" ) {
+                options = url;
+                url = undefined;
+            }
+
+            // Force options to be an object
+            options = options || {};
+
+            return options;
+        }
+
+        console.log(ajax("1212","3434"));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>directive</title>
+</head>
+<body>
+<span hello-world></span>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+    app.directive("helloWorld",[function(){
+        return {
+            restrict:"EA",
+            template:"<h1>11111111</h1>",
+            priority:"1",
+            terminate:false
+        };
+    }]);
+
+    app.directive("helloBug",[function(){
+        return {
+            restrict:"A",
+            templateUrl:"/helloBug.html",
+            priority:"2",
+            terminate:false
+        };
+    }]);
+
+</script>
+</body>
+</html>

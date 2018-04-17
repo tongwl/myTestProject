@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="d1">
+        <p>hehehe</p>
+    </div>
+    <p>hahah</p>
+    <button type="button" id="btn">添加</button>
+    <button type="button" id="btn2">添加2</button>
+    <script>
+        var ps=document.getElementsByTagName("p");
+        btn.addEventListener("click",function(){
+            var addP=document.createElement("p");
+            document.body.appendChild(addP);
+            console.log(ps);
+        },false);
+
+
+        var pp=document.querySelector("p");
+        btn2.addEventListener("click",function(){
+            var addP=document.createElement("p");
+        },false);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.js"],"names":[],"mappings":"AAAA,SAAQ,SAAR,QAAwB,YAAxB;AACA,QAAQ,GAAR,CAAY,SAAZ","file":"test-compiled.js","sourcesContent":["import {firstName} from 'profile.js';\r\nconsole.log(firstName);"]}

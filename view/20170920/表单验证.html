@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ng-form name="testForm">
+        <div>
+            <input type="text" name="name" ng-model="name" required>
+            <span ng-if="testForm.name.$dirty&&testForm.name.$error.required">我是必须的</span>
+        </div>
+
+        <div>
+            <input type="text" ng-pattern="/^[a-zA-Z0-9]*$/" name="className2" ng-model="className">
+            <span ng-if="testForm.className2.$dirty&&testForm.className2.$error.pattern">必须是数字字母</span>
+        </div>
+
+        <div>
+            <input type="email" name="email" ng-model="email">
+            <span ng-if="!testForm.email.$pristine&&testForm.email.$error.email">必须符合email格式</span>
+        </div>
+
+        <div>
+            <input type="url" name="url" ng-model="url">
+            <span ng-if="!testForm.url.$pristine&&testForm.url.$error.url">必须是url格式</span>
+        </div>
+
+        <div>
+            <input type="number" name="number" ng-model="number" min="10" max="100">
+            <span ng-if="!testForm.number.$pristine&&testForm.number.$error.min">小于最小值啦</span>
+            <span ng-if="testForm.number.$dirty&&testForm.number.$error.max">大于最大值啦</span>
+        </div>
+        
+        <div>
+            <input type="text" ng-minlength="">
+        </div>
+
+    </ng-form>
+<script src="../../bower_components/angular/angular.min.js"></script>
+<script>
+    var app=angular.module("app",[]);
+</script>
+</body>
+</html>

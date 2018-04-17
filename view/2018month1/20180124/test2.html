@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var worker=new Worker("test2.js");
+    /*window.setInterval(function(){
+        worker.postMessage(new Date().getTime());
+    },1000);*/
+
+    worker.addEventListener("message",function(event){
+        document.write(event.data);
+    },false);
+</script>
+</body>
+</html>

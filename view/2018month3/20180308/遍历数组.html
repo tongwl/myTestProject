@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[3,4,5,6,7,8,9];
+    /*arr.forEach((val,idx,arr)=>{
+        console.log(val);
+    });*/
+
+    //push 尾插入
+    //pull 尾取出
+    //unshift 头插入
+    //shift 头取出
+    //indexOf()
+    //lastIndexOf()
+    //sort()
+    //reverse
+    //join()
+    //slice
+    //splice
+
+    //some
+    //every
+    //forEach
+    //map
+    //filter
+    //reduce
+
+
+    //arr.push(10);
+    //arr.pop();
+    //arr.unshift("2");
+    //arr.shift();
+    //console.log(arr);
+
+    //console.log(arr.indexOf("5"));
+
+    //console.log(arr.lastIndexOf(6));
+
+    //var newArr=arr.splice(1,2);
+    //console.log(arr);
+    //console.log(newArr);
+
+    var arr=[1,2,3,4];
+    var newArr=arr.slice();
+    console.log(newArr); //[1,2,3,4]
+
+    var newArr2=arr.slice(NaN);
+    console.log(newArr2); //[1,2,3,4]
+
+    var newArr3=arr.slice(2,-2);
+    console.log(newArr3); //[]
+
+    var newArr4=arr.slice(0,-2);
+    console.log(newArr4);//[1,2]
+
+    var newArr5=arr.slice(-2);
+    console.log(newArr5); //[3,4]
+
+    var newArr6=arr.slice(-2,0);
+    console.log(newArr6); //[]
+
+    var newArr7=arr.slice(-2,-1);
+    console.log(newArr7); //[3]
+
+
+</script>
+</body>
+</html>

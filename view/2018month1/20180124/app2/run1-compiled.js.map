@@ -1,0 +1,1 @@
+{"version":3,"sources":["run1.js"],"names":[],"mappings":"AAAA,QAAQ,cAAR;AACA,IAAI,UAAQ,QAAQ,QAAR,CAAZ;AACA,SAAS,KAAT,CAAe,OAAf","file":"run1-compiled.js","sourcesContent":["require('./tongwl.css');\r\nvar content=require('./run2');\r\ndocument.write(content);"]}

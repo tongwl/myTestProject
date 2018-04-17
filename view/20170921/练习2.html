@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getXMLHttpRequest(){
+        if(window.ActiveXObject){
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        }else if(window.XMLHttpRequest){
+            return new XMLHttpRequest();
+        }else{
+            return null;
+        }
+    }
+
+    var xhr=new XMLHttpRequest();
+    xhr.open("GET","http://192.168.127.47:8084/api/v1/view/navigators/namespace?namespace=ns1",true);
+    xhr.send(null);
+
+    setTimeout(function(){
+        xhr.onreadystatechange=function(){
+            console.log(xhr.readyState);
+        }
+    },1000);
+
+
+
+
+
+
+</script>
+</body>
+</html>

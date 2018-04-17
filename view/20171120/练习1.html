@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    Student.prototype.className="软工092";
+
+    Object.defineProperty(Student.prototype,"grade",{
+        value:"大四",
+        enumerable:true
+    });
+
+    var lilei=new Student("lilei",18);
+
+    Object.defineProperty(lilei,"sex",{
+        value:"男",
+        enumerable:false
+    });
+
+    /*console.log("name" in lilei);
+    console.log("age" in lilei);
+    console.log("className" in lilei);
+    console.log("className2" in lilei);*/
+
+    //console.log(lilei.hasOwnProperty("name"));
+    //console.log(lilei.hasOwnProperty("className"));
+    //console.log(lilei.hasOwnProperty("sex"));
+    //console.log(lilei.propertyIsEnumerable("sex"));
+    /*console.log(lilei.hasOwnProperty("grade"));
+    console.log(lilei.propertyIsEnumerable("grade"));
+*/
+
+    console.log(Object.prototype);
+</script>
+</body>
+</html>

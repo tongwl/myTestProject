@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content=""/>
+    <style>
+        .parent{
+            overflow:hidden;/*为了清除浮动*/
+            padding:0 300px 0 100px;
+        }
+
+        .center{
+            float:left;
+            width:100%;
+            background:red;
+            height:100px;
+        }
+
+        .left{
+            float:left;
+            width:100px;
+            background:blue;
+            height:100px;
+            margin-left:-100%;
+            position:relative;
+            left:-100px;
+        }
+
+        .right{
+            float:left;
+            width:300px;
+            background:yellow;
+            height:100px;
+            margin-left:-300px;
+            position:relative;
+            right:-300px;
+        }
+
+        .footer{
+            height:50px;
+            background:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="center"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

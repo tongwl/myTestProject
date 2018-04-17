@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #target2{
+            width:500px;
+            height:500px;
+            border:1px dashed #f00;
+        }
+    </style>
+</head>
+<body>
+<img src="1.jpg" alt="" id="img1">
+<div id="target2"></div>
+<script>
+    img1.ondragstart=function(event){
+        event.dataTransfer.setData("text/html","value2");
+        console.log("start...");
+    }
+
+    img1.ondrag=function(){
+        console.log("drag...");
+    }
+
+    img1.ondragend=function(){
+        console.log("drag end...");
+    }
+
+    target2.ondragenter=function(){
+        console.log("enter");
+    }
+
+    target2.ondragover=function(event){
+        event.preventDefault();
+        event.returnValue=false;
+        console.log("over");
+    }
+
+    target2.ondragleave=function(){
+        console.log("leave...");
+    }
+
+    target2.ondrop=function(event){
+        console.log(event.dataTransfer.getData("text/html"));
+        console.log("drop");
+    }
+</script>
+</body>
+</html>

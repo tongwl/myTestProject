@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*localStorage.setItem("uname","tongwl");
+    console.log(localStorage.length);
+    for(var i= 0,len=localStorage.length;i<len;i++){
+        console.log(localStorage.key(i));  //通过索引获取到的是key名
+        console.log(localStorage.getItem(localStorage.key(i)));
+    }*/
+
+//    for(var i= 0,len=localStorage.length;i<len;i++){
+//        console.log(localStorage.key(i));
+//        console.log(localStorage.getItem(localStorage.key(i)));
+//    }
+
+    sessionStorage.setItem("name","tongwl");
+    sessionStorage.setItem("age",18);
+    console.log(sessionStorage.length);
+    console.log(sessionStorage.key(0));
+    console.log(sessionStorage.getItem("name"));
+    sessionStorage.removeItem("name");
+    console.log(sessionStorage.length);
+    sessionStorage.clear();
+    console.log(sessionStorage.length);
+</script>
+</body>
+</html>

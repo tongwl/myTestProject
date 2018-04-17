@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <input type="checkbox" v-model="user"> 是否为用户
+        <template v-if="user">
+            <label for="username">用户名</label>
+            <input type="text" id="username" placeholder="请输入你的用户名" key="username">
+        </template>
+        <template v-else>
+            <label for="password">密码</label>
+            <input type="text" id="password" placeholder="请输入你的密码" key="password">
+        </template>
+    </div>
+<script>
+
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            user:true
+        }
+    });
+
+</script>
+</body>
+</html>

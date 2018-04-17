@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style>
+        .parent{
+            width:1000px;
+            height:500px;
+            background:#ccc;
+            -webkit-writing-mode: vertical-rl; /* for browsers of webkit engine */
+            writing-mode: tb-rl; /* for ie */
+        }
+        .parent:before{
+            content:"";
+            display:table;
+        }
+        .left{
+            width:100px;
+            height:200px;
+            background:#f00;
+            margin-top:10%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left"></div>
+    </div>
+    <script>
+        var div=document.getElementsByTagName("div")[1];
+        var div2=document.getElementsByTagName("div")[0];
+        console.log("body的width是："+window.getComputedStyle(document.body).getPropertyValue("width"));
+        console.log("body的height是："+window.getComputedStyle(document.body).getPropertyValue("height"));
+        console.log("parent的width是："+window.getComputedStyle(div2).getPropertyValue("width"));
+        console.log("parent的height是："+window.getComputedStyle(div2).getPropertyValue("height"));
+        console.log("div的margin-top："+window.getComputedStyle(div).getPropertyValue("margin-top"));
+    </script>
+</body>
+</html>

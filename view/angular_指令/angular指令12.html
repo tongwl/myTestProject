@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>scope的使用</title>
+</head>
+<body>
+<input type="text" ng-model="parentName">
+<hello user-name="{{parentName}}"></hello>
+
+<script src="../js/angular.min.js"></script>
+<script>
+    var app=angular.module('app',[]);
+
+    app.directive("hello",function(){
+        return {
+            restrict:"AE",
+            template:"<p>我是{{childname}}</p>",
+            priority:0,
+            terminal:false,
+            replace:true,
+            scope:{
+                childname:"@userName"
+            }
+        };
+    });
+
+</script>
+
+
+</body>
+</html>

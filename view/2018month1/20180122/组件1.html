@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <my-component></my-component>
+        <my-component></my-component>
+        <my-component></my-component>
+    </div>
+<script>
+    var app=new Vue({
+        el:"#d1",
+        components:{
+            'my-component':{
+                template:'<button type="button" v-on:click="counter++">点击{{counter}}</button>',
+                data:function(){
+                    return {
+                        counter:1
+                    };
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

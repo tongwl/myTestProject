@@ -1,0 +1,14 @@
+.border {
+  border: 1px dashed #f00;
+}
+div {
+  color: #f00;
+}
+div h1 {
+  color: #00f;
+  background-color: #555555;
+}
+div h2 {
+  border: 1px dashed #f00;
+  background-color: #222222;
+}

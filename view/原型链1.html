@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        function Model(mingzi){
+            this.uname=mingzi;
+        }
+
+        Model.prototype.className="3班";
+        Model.prototype.sayHello=function(){
+            console.log(this.uname);
+            console.log(this.age);
+            console.log(this.hahaha);
+        }
+
+        var fufu=new Model("zhenzhen");
+
+
+        fufu.sayHello();
+        Model.prototype.sayHello();
+
+
+    </script>
+</body>
+</html>

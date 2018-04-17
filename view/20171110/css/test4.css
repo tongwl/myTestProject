@@ -1,0 +1,7 @@
+.red {
+  border: 1px solid #f00;
+}
+.blue,
+.red {
+  color: #00f;
+}

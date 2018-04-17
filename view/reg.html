@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reg</title>
+</head>
+<body>
+<script>
+    var reg=/[a-z]/;
+    //console.log(reg.test("1"));
+    //console.log(reg.test("ag"));
+
+
+
+    var reg=/ab*/g;
+    var str="abbcdefabh";
+    var myArray;
+    while((myArray=reg.exec(str))!==null){
+        console.log(myArray);
+        console.log(reg.lastIndex);
+    }
+
+</script>
+</body>
+</html>

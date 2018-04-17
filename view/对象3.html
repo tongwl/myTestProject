@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+
+    function Model(mingzi){
+        this.uname=mingzi;
+    }
+
+    var arr=[1,2];
+
+    Model.prototype.className="3班";
+
+
+    var fufu=new Model("zhenzhen");
+    console.log(fufu.uname);
+
+</script>
+</body>
+</html>

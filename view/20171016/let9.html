@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" class="btn">点击1</button>
+    <button type="button" class="btn">点击2</button>
+    <button type="button" class="btn">点击3</button>
+    <button type="button" class="btn">点击4</button>
+    <button type="button" class="btn">点击5</button>
+    <button type="button" class="btn">点击6</button>
+    <button type="button" class="btn">点击7</button>
+
+    <script>
+        var btns=document.querySelectorAll(".btn");
+        for(var i=0;i<btns.length;i++){
+            btns[i].onclick=function(){
+                console.log(i);
+            }
+        }
+        console.log();
+    </script>
+</body>
+</html>

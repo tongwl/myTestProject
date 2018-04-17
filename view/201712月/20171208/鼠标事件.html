@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" id="btn">点击</button>
+    <script>
+        btn.addEventListener("click",c,false);
+        function c(event){
+            console.log(event);
+        }
+
+        btn.addEventListener("contextmenu",function(){
+            console.log(1);
+        });
+
+        document.addEventListener("keydown",function(event){
+            console.log(event.keyCode);
+        },false);
+    </script>
+</body>
+</html>

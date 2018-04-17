@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽事件</title>
+</head>
+<body>
+<img src="1.jpg" id="img1">
+
+<div style="width:400px;height:400px;border:1px solid #000;" id="d1"></div>
+
+
+dragstart
+drag
+dragend
+
+
+dragenter
+dragover
+dragleave
+drop
+
+event.dataTransfer.setData("text/html","tongwl")
+event.dataTransfer.getData("text/html")
+
+<script>
+    img1.addEventListener("dragstart",function(event){
+        event.dataTransfer.setData("text/html","tongwl");
+        console.log("start");
+    },false);
+
+    img1.addEventListener("drag",function(){
+        console.log("draging...");
+    });
+
+    img1.addEventListener("dragend",function(){
+        console.log("drag end");
+    });
+
+
+    d1.addEventListener("dragenter",function(){
+        console.log("drag enter");
+    },false);
+
+    d1.addEventListener("dragover",function(event){
+        event.preventDefault();
+        event.returnValue=false;
+        console.log("drag over");
+    },false);
+
+    d1.addEventListener("dragleave",function(){
+        console.log("drag leave");
+    },false);
+
+
+    d1.addEventListener("drop",function(event){
+        console.log(event.dataTransfer.getData("text/html"));
+        console.log("drop");
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动识别背景颜色</title>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.adaptive-backgrounds.js"></script>
+</head>
+<body >
+    <div style=""><img src="../2.png" data-adaptive-background></div>
+    <script>
+        $(document).ready(function(){
+            $.adaptiveBackground.run();
+            var img1=document.getElementsByTagName("img")[0];
+            console.log(window.getComputedStyle(img1).getPropertyValue("width"));
+        });
+    </script>
+</body>
+</html>

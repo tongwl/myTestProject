@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        App.service('TabService', ["$rootScope", "$timeout", function ($rootScope, $timeout) {
+            var cbObj = null;
+            var initObj = null;
+            var service = {
+                register: function (callbackObj, _initObj) {
+                    cbObj = callbackObj;
+                    initObj = _initObj;
+                },
+                unregister: function (callbackObj, _initObj) {
+                    cbObj = callbackObj || null;
+                    initObj = _initObj || null;
+                },
+                initTab: function (timer) {
+                    if (initObj) {
+                        if (timer) {
+                            $timeout.cancel(timer);
+                        }
+                        initObj.initTabs();
+                    } else {
+                        timer = $timeout(function () {
+                            service.initTab(timer);
+                        }, 1000);
+                    }
+                },
+                addTab: function (tab, timer) {
+                    if (cbObj) {
+                        if (timer) {
+                            $timeout.cancel(timer);
+                        }
+                        cbObj.addTab(tab);
+                    } else {
+                        timer = $timeout(function () {
+                            service.addTab(tab, timer);
+                        }, 1000);
+                    }
+                },
+                removeTab: function (tab) {
+                    if (cbObj) {
+                        cbObj.removeTab(tab);
+                    }
+                },
+                targetTabParams: function (tab, settings) {
+                    if (!tab || !settings) {
+                        console.log("param uncompleted");
+                        return;
+                    }
+
+                    for (var key in settings) {
+                        tab[key] = settings[key];
+                    }
+                },
+                globalSettingByJson: function (settings, timer) {
+                    if (cbObj) {
+                        if (timer) {
+                            $timeout.cancel(timer);
+                        }
+                        if (angular.isObject(settings)) {
+                            cbObj.globalSetting(settings);
+                        }
+                    } else {
+                        timer = $timeout(function () {
+                            service.globalSettingByJson(settings, timer);
+                        }, 1000);
+                    }
+                },
+                globalSetting: function (key, value) {
+                    if (key) {
+                        this.globalSettingByJson({key: value})
+                    }
+                }
+            };
+
+            return service;
+        }]);
+
+    </script>
+</body>
+</html>

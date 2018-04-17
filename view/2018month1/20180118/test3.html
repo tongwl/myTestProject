@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+    <div id="d1">
+        <input type="text" v-model="username">
+        <my-component v-bind:myname="username"></my-component>
+    </div>
+<script>
+
+    Vue.component("my-component",{
+        template:"<h1>{{myname}}</h1>",
+        props:["myname"]
+    });
+
+    var app=new Vue({
+        el:"#d1",
+        data:{
+            username:null
+        }
+    });
+</script>
+</body>
+</html>

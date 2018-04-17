@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>continue例子</title>
+</head>
+<body>
+<script>
+    //计算数组的值
+    function computeSum(arr){
+        var sum=0;
+        for(var i=0;i<arr.length;i++){
+            if(isNaN(Number(arr[i]))) continue; //如果转换为NaN,则不进行计算
+            sum+=Number(arr[i]);
+        }
+        return sum;
+    }
+
+    console.log(computeSum([1,2,undefined,10]));
+</script>
+</body>
+</html>

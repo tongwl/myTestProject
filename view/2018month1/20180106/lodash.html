@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body>
+
+    <input type="text" id="sr">
+    <button type="button" id="btn">click</button>
+
+    <script>
+        btn.addEventListener("click", _.debounce(function(){
+            console.log(111);
+        },500));
+
+        sr.onkeyup= _.debounce(function(){
+            console.log(sr.value);
+        },1000);
+    </script>
+
+</body>
+</html>

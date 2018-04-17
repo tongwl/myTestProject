@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div ng-controller="ctrl">
+        {{username}}
+        <test></test>
+    </div>
+    <div ng-controller="testCtrl"></div>
+    <script>
+        var app=angular.module("app",[]);
+
+        app.directive("test",function(){
+            return {
+                restrict:"ECAM",
+                templateUrl:"/test.html",
+                replace:false,
+                priority:1,
+                terminal:true,
+                transclude:false,
+                scope:{},
+                controller:function($scope){
+                    $scope.change=function(){
+                        $scope.username="controller";
+                    }
+                },
+                require:"testCtrl",
+                link:function($scope,ele,attrs,ctrl){
+                    console.log(ctrl);
+                    $scope.age=ctrl.age;
+                    $scope.username="link";
+                }
+            };
+        });
+
+        app.controller("testCtrl",["$scope",function($scope){
+            $scope.age=18;
+        }]);
+
+        app.controller("ctrl",["$scope",function($scope){
+            $scope.username="tongwl";
+        }]);
+
+        app.run(["$templateCache",function($templateCache){
+            $templateCache.put("/test.html","<span>{{username}}:{{age}}</span><button type='button' ng-click='change()'>change</button>");
+        }]);
+
+    </script>
+</body>
+</html>

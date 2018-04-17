@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="submit" id="btn1">点击我呀</button>
+    <button type="submit" id="btn2">取消啊</button>
+<script>
+
+    var fun=function(){
+        console.log(1);
+    }
+
+    btn1.addEventListener("click",fun,false);
+    btn1.removeEventListener("click",fun);
+
+</script>
+</body>
+</html>

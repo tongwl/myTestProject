@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function test(){
+        "use strict"
+        try{
+            console.log(a);
+        }catch(e){
+            console.log(e.message);
+        }finally {
+            console.log("finally");
+        }
+    }
+    test();
+</script>
+</body>
+</html>

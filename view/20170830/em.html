@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            font-size:12px;
+        }
+
+        div{
+            width: 100px;
+            height:100px;
+            margin:20px;
+            background-color:#f6f;
+            border-radius:1em;
+        }
+    </style>
+</head>
+<body>
+    <span>1212</span>
+
+    <div></div>
+<script>
+    var body=document.body;
+    console.log(window.getComputedStyle(body).getPropertyValue("font-size"));
+
+    var span=document.getElementsByTagName("span")[0];
+    console.log(window.getComputedStyle(span).getPropertyValue("font-size"));
+
+    var div=document.getElementsByTagName("div")[0];
+    console.log(window.getComputedStyle(div).getPropertyValue("border-radius"));
+
+    var str="27.87%";
+    console.log(parseFloat(str)*0.01);
+</script>
+</body>
+</html>

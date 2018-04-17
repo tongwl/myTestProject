@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <ui-select ng-model="selected.value" multiple="" theme="bootstrap">
+            <ui-select-match>
+                <span ng-bind="$item"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="item in (items | filter:$select.search) track by $index">
+                <span ng-bind="item"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+<script src="../js/angular.min.js"></script>
+<script src="../js/select.js"></script>
+<script>
+    var app=angular.module('app',['ui.select']);
+    app.controller("myCtrl",["$scope",function($scope){
+        $scope.items=[1,2,3,4,5];
+        $scope.selected={value:$scope.items[0]};
+    }]);
+</script>
+</body>
+</html>

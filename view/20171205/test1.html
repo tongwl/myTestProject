@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj={};
+    Object.defineProperty(obj,"uname",{
+        value:"tongwl",
+        writable:true,
+        enumerable:true,
+        configurable:true
+    });
+
+    Object.defineProperties(obj,{
+        "className":{
+            value:"软工092",
+            writable:false,
+            enumerable:true,
+            configurable:true
+        },
+        sex:{
+            value:"nan",
+            writable:true,
+            enumerable:false,
+            configurable:true
+        }
+    });
+
+    for(var key in obj){
+        //console.log(key);
+    }
+
+    /*obj.uname="zhenzhen";
+    obj.className="22";
+    obj.sex="nv";
+    console.log(obj.uname);
+    console.log(obj.className);
+    console.log(obj.sex);*/
+
+    /*console.log(obj.hasOwnProperty("className"));
+    console.log(obj.hasOwnProperty("sex"));*/
+
+    /*console.log(obj.propertyIsEnumerable("className"));
+    console.log(obj.propertyIsEnumerable("clasName"));
+    console.log(obj.propertyIsEnumerable("sex"));*/
+
+
+    console.log(Object.keys(obj));
+    console.log(Object.getOwnPropertyNames(obj));
+
+    Object.create(prototype,descriptors);
+    Object.defineProperty(对象名，属性名，descriptor);
+    Object.defineProperties(对象名，descriptors);
+    Object.getOwnPropertyDescritor(对象名，属性名);
+    Object.setPrototypeOf(child,father)
+    Object.getPrototypeOf(child)
+    Object.keys(对象)
+    Object.getOwnPropertyNames
+
+    Object.prevetnExtensions()
+    Object.seal()
+    Object.freeze
+
+
+
+</script>
+</body>
+</html>

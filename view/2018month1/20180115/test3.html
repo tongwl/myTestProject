@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+箭头函数的this问题
+<script>
+    var a=1;
+    var obj={
+        a:100,
+        say1(){
+            console.log(this.a);
+        },
+        say2:function(){
+            console.log(this.a);
+        },
+        say3:()=>console.log(this.a)
+    };
+
+    obj.say1();
+    obj.say2();
+    obj.say3();
+</script>
+</body>
+</html>

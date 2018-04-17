@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<script>
+
+    var dtd= $.Deferred(); //创建一个Deferred对象
+
+    var wait=function(bl){
+
+        var work=function(bl){
+            alert("执行完毕");
+            if(bl){
+                dtd.resolve("解决了");
+            }else{
+                dtd.reject("我没有解决啊");
+            }
+
+        }
+
+        window.setTimeout(function(){
+            work(bl)
+        },5000);
+        return dtd;
+    }
+
+    $.when(wait(false)).done(function(response){
+        console.log(response);
+    }).fail(function(reason){
+        console.log(reason);
+    });
+
+    /*var dtd = $.Deferred(); // 新建一个deferred对象
+    var wait = function(dtd){
+        var tasks = function(){
+            alert("执行完毕！");
+            dtd.resolve(); // 改变deferred对象的执行状态
+        };
+        setTimeout(tasks,5000);
+        return dtd;
+    };
+
+    $.when(wait(dtd))
+            .done(function(){ alert("哈哈，成功了！"); })
+            .fail(function(){ alert("出错啦！"); });*/
+
+
+
+    /*var dtd= $.Deferred();  //新建一个deferred对象
+
+
+    var wait2=function(dtd){
+        dtd.resolve();
+        return dtd;
+    }
+
+
+    $.when(wait2(dtd)).done(function(){
+        console.log("success");
+    }).fail(function(reason){
+        console.log("error");
+    });*/
+
+
+    /*var allPromises= $.when($.ajax({
+                method:"GET",
+                url:"1.json",
+                success:function(){
+                    console.log(2);
+                }
+    }
+    ), $.ajax({
+        method:"GET",
+        url:"1.json",
+        success:function(r){
+            console.log(3);
+        }
+    }));
+
+    allPromises.done(function(response){
+        console.log("success");
+    }).fail(function(){
+
+    });*/
+
+
+
+
+    /*var def= $.ajax({
+        url:"12.json",
+        method:"GET",
+        success:function(response){
+            console.log(response);
+            //console.log(response);
+        }
+    });
+
+
+    def.done(function(){
+        console.log(2);
+    }).fail(function(){
+        console.log("error");
+    }).done(function(){
+        console.log(3);
+    }).fail(function(){
+        console.log("error2");
+    });*/
+
+    //console.log(def);
+</script>
+</body>
+</html>

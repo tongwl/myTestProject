@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav>我是导航栏</nav>
+    <header>我是头</header>
+    <aside>我是侧边栏</aside>
+    <section>我是主体
+        <acticle>我是文章</acticle>
+    </section>
+    <footer>我是尾部</footer>
+
+    <form id="form1" autocomplete="on">
+        <input type="text" name="username" required>
+    </form>
+
+    <button form="form1">提交</button>
+
+    <form id="form2">
+        <input type="text" required>
+        <input type="email">
+        <input type="url">
+        <input type="number" min="10" max="15" step="1">
+        <input type="range" min="10" max="20" step="5">
+        <input type="date">
+        <input type="time">
+        <input type="datetime">
+        <input type="datetime-local">
+        <input type="week">
+        <input type="month">
+        <input type="tel">
+        <input type="search">
+        <input type="color">
+        <button>提交</button>
+    </form>
+
+<datalist id="list1">
+    <option>11111</option>
+    <option>111114</option>
+    <option>1111331</option>
+    <option>111115</option>
+</datalist>
+
+    <input type="text" list="list1" autofocus placeholder="请输入">
+
+<progress value="50" min="10" max="100"></progress>
+<progress></progress>
+<meter value="50" min="0" max="50" low="20" high="40" optimum="30"></meter>
+
+<output>23232</output>
+
+<time datetime="20170122">情人节</time>
+<hgroup>
+
+</hgroup>
+
+<mark>biaoji</mark>
+
+<details>
+    <summary>我是摘要</summary>
+    <p>我是内容1</p>
+    <p>我是内容1</p>
+    <p>我是内容1</p>
+    <p>我是内容1</p>
+    <p>我是内容1</p>
+</details>
+
+
+
+<mark>我是标记</mark>
+<output>我是输出</output>
+<time datetime="20111111">情人节</time>
+
+
+<details>
+    <summary>我是摘要</summary><p>我是内容</p>
+</details>
+
+
+<figure>
+    <figcaption>我是caption</figcaption>
+</figure>
+
+
+<figure>
+    <figcaption>我是caption</figcaption>
+</figure>
+
+
+<video src="1.mp4" width="300" height="300" autoplay loop muted controls poster="1.jpg" preload="">
+    <source>
+</video>
+
+
+    <video id="video1" width="300" controls poster="1.jpg" muted loop autoplay preload="auto">
+        <source src="1.mp4" type="video/mp4"/>
+        <source src="1.ogg" type="video/ogg"/>
+    </video>
+
+
+    <button type="button" id="btn1">点击停止</button>
+
+    <script>
+        document.getElementById('video1').addEventListener("pause",function(){
+            console.log("pause");
+        },false);
+
+        document.querySelector('#video1').addEventListener("play",function(){
+            console.log("play");
+        });
+
+
+        document.querySelector('#video1').addEventListener("playing",function(){
+            console.log("playing");
+        });
+
+        btn1.addEventListener("click",function(){
+            video1.play();
+        },false);
+    </script>
+
+<strong>我是加粗的</strong>
+<em>我是斜体的</em>
+<p>html5已经废弃的标签：basefont、font big center s u frameset frame noframes</p>
+<p>html5已经废弃的标签：basefont、font、big、center、s、u、frameset frame noframes</p>
+<div contenteditable="true">编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+
+<div contenteditable="true">可编辑</div>
+
+
+<div contenteditable="true">可编辑</div>
+
+
+<div contenteditable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div contentediiable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div contenteditable="true">可编辑</div>
+
+<div data-my-name="tongwl" data-my-age="18" id="d1"></div>
+    <script>
+        console.log(d1.dataset);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="d1">
+        <ul>
+            <li v-for="(item,index) in items">
+                {{item.message}}
+                {{index}}
+            </li>
+        </ul>
+
+        <ol>
+            <li v-for="(value,key) in student">
+                {{value}} {{key}}
+            </li>
+        </ol>
+
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+        </ul>
+    </div>
+    <script>
+        var app=new Vue({
+            el:"#d1",
+            data:{
+                items:[
+                    {message:"Foo"},
+                    {message:"Bar"}
+                ],
+                student:{
+                    name:"tongwl",
+                    age:18
+                },
+                arr:[1,1,2,2]
+            }
+        });
+    </script>
+</body>
+</html>

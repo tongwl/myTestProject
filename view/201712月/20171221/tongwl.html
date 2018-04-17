@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <style>
+        .red{
+            color:#f00;
+        }
+    </style>
+</head>
+<div id="d1">2121212</div>
+<button type="button" id="btn">点击</button>
+<body>
+<script>
+    //$('#d1').attr('class','red').attr('title','哈哈哈');
+    $('#d1').attr({'class':'red','title':'哈哈哈哈哈哈'});
+
+    btn.addEventListener("click",function(){
+        console.log($('#d1').css('color'));
+        //$('#d1').removeAttr('class').css('color','#0f0');
+    },false);
+</script>
+</body>
+</html>

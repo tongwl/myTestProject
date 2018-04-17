@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #gradepa{
+            width:400px;
+            height:400px;
+            background: #f00;
+        }
+
+        #father{
+            width: 200px;
+            height: 200px;
+            background:#0f0;
+        }
+
+        #child{
+            width:100px;
+            height: 100px;
+            background:#00f;
+        }
+    </style>
+</head>
+<body>
+    <div id="gradepa">
+        <div id="father">
+            <div id="child"></div>
+        </div>
+    </div>
+
+    <script>
+        gradepa.addEventListener("click",common,false);
+        father.addEventListener("click",common,false);
+        child.addEventListener("click",common,false);
+        function common(event){
+            console.log(this);
+            event.stopPropagation();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(name,age){
+        this.name=name;
+        this.age=age;
+    }
+
+    Student.prototype.sayHello=function(){
+
+    }
+
+    var lilei=new Student("lilei",18);
+
+
+    Object.defineProperty(lilei,"name",{
+        enumerable:false
+    });
+
+    /*console.log("sayHello" in lilei);
+    console.log("name" in lilei);
+    console.log("age" in lilei);*/
+
+    console.log(lilei.hasOwnProperty("sayHello"));
+    console.log(lilei.hasOwnProperty("name"));
+    console.log(lilei.hasOwnProperty("age"));
+
+
+    console.log(lilei.propertyIsEnumerable("name"));
+
+
+</script>
+</body>
+</html>

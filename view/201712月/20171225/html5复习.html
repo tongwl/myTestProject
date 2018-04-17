@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <!--<!DOCTYPE html>
+    <meta  charset="utf-8"/>-->
+
+    <nav></nav>
+    <header></header>
+    <aside></aside>
+    <section></section>
+    <article></article>
+    <footer></footer>
+
+
+    <form id="form1" novalidate autocomplete="">
+        <input type="text" name="username">
+        <input type="email">
+        <input type="url">
+        <input type="tel">
+        <input type="number" min="1" max="100" step="5">
+        <input type="range" min="1" max="100" step="5">
+        <input type="date">
+        <input type="month">
+        <input type="week">
+        <input type="datetime">
+        <input type="time">
+        <input type="datetime-local">
+        <input type="search">
+        <input type="color">
+        <input type="text" list="menu" placeholder="请输入你需要输入的" autofocus>
+
+    </form>
+
+    <datalist id="menu">
+        <option>111111111</option>
+        <option>11111111221</option>
+        <option>1111111131</option>
+        <option>1111111411</option>
+    </datalist>
+
+    <datalist>
+        <option>1111111111111111111</option>
+        <option>1111111111111111112</option>
+        <option>1111111111111111113</option>
+        <option>1111111111111111114</option>
+        <option>1111111111111111115</option>
+    </datalist>
+
+
+    <datalist>
+        <option>2323</option>
+    </datalist>
+
+    <button form="form1">点击</button>
+
+    <progress min="1" max="100" value="50">我是进度条</progress>
+    <meter min="10" max="100" value="50" low="30" high="60" optimum="30"></meter>
+    <meter min="10" max="100" value="50" low="30" high="70" optimum="50"></meter>
+
+    <output>输出呀呀呀呀</output>
+
+    <hgroup>
+        <h1>我是一级目录</h1>
+        <h1>我是一级目录</h1>
+    </hgroup>
+
+    <mark>我是mark</mark>
+    <script>
+        //console.log($('#form1').attr('novalidate'));
+    </script>
+
+    <details>
+        <summary>我是摘要</summary>
+        <p>我是内容1</p>
+        <p>我是内容2</p>
+    </details>
+<figure>
+    <figcapition>title</figcapition>
+    <img src="1.jpg" alt="">
+</figure>
+
+
+    <video src="1.mp4" width="100" height="200" controls  autoplay loop muted preload="metadata" poster="1.jpg"></video>
+    <video width="100" controls>
+        <source src="1.mp4" type="video/mp4">
+        <source src="1.ogg" type="video/ogg">
+    </video>
+    <strong>bbbbbbbb</strong>
+    <em>xieti </em>
+
+<address>我是地址</address>
+<address>我是地址</address>
+<address>我是地址</address>
+<address>我是地址</address>
+<address>我是地址</address>
+<!--<font>我已经被废弃了</font>
+    <basefont/>
+<big>废弃</big>
+<center>废弃</center>
+<frameset>废弃</frameset>
+<u>废弃</u>
+<noframes>
+    <frame/>
+</noframes>-->
+
+<div contenteditable="true">我是可以编辑的</div>
+
+<p contenteditable="true">我是可以编辑的</p>
+<span contenteditable="true">我是可以编辑的</span>
+<h1 contenteditable="true">woshi keyi bianjide</h1>
+
+
+<div data-my-name="tongwl" data-myAge="8" id="d1"></div>
+
+    <script>
+        console.log(d1.dataset);
+    </script>
+
+</body>
+</html>

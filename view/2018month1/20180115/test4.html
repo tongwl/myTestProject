@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function animal(type='cat'){
+        return type;
+    }
+    console.log(animal(null));
+
+    function animal2(type){
+        return type || "cat";
+    }
+    console.log(animal2(""));
+</script>
+</body>
+</html>

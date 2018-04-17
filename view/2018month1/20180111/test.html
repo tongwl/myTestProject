@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+
+<script>
+
+    class Student{
+        constructor(username,age){
+            this.username=username;
+            this.age=age;
+        }
+
+
+        static isStudent(bl){
+            return bl;
+        }
+
+
+        getAge(){
+            return `${this.username} is ${this.age}`;
+        }
+
+    }
+
+    var lilei=new Student("lilei",18);
+
+
+
+    console.log(Student.isStudent(true));
+    console.log(lilei.username);
+    console.log(lilei.age);
+    console.log(lilei.getAge());
+
+
+    /*console.log(typeof xxxxx);
+
+    let xxxxx=1;*/
+
+    /*var btns=document.getElementsByTagName("button");
+    /!*for(var i=0;i<btns.length;i++){
+        +function(i){btns[i].onclick=function(event){
+            event.preventDefault();
+            event.returnValue=false;
+            alert(i);
+        }}(i);
+    }*!/
+
+    for(let i=0;i<btns.length;i++){
+        btns[i].onclick=function(event){
+            event.preventDefault();
+            event.returnValue=false;
+            alert(i+"a");
+        };
+    }*/
+
+
+    /*let x= 1,y=2;
+    console.log({x,y});*/
+
+    /*function test(x,y){
+        return {x,y,haha(){console.log(2)}};
+    }
+
+    console.log(test(5,6).haha());*/
+
+    /*var getUser=()=> "tongwl";
+    console.log(getUser());*/
+
+
+    /*var getUser=username=>username;
+    console.log(getUser("dsfsdf"));*/
+
+    /*var getUser = (username, age) =;>username+","+age;
+    console.log(getUser("tongwl",18));*/
+
+    /*var getUser=(username,age)=>({username,age});
+    console.log(getUser("tongwl",19));*/
+
+    /*var age=18;
+    var str=`tongwl is ${age}`;
+    console.log(str);*/
+
+    /*var obj={
+        username:"tongwl",
+        age:18
+    };
+
+    let{username,age}=obj;
+
+    console.log(username);
+    console.log(age);*/
+
+
+    /*var obj={
+        username:"tongwl",
+        age:18
+    };
+
+
+    let {user,age}=obj;
+
+    console.log(user);
+    console.log(age);*/
+
+
+    /*var obj={
+        username:"tongwl",
+        age:18
+    };
+
+    let {username,age}=obj;
+
+    console.log(username,age);*/
+
+    /*var aaaa=1;
+    let bbbb=2;
+    const cccc="tongwl";
+    /!*console.log(Object.getOwnPropertyDescriptor(window,"bbbb"));*!/
+    console.log(window.aaaa); //1
+    console.log(window.bbbb); //undefined
+    console.log(window.cccc); //undefined*/
+
+
+    /*{
+        let a=10;
+        var b=11;
+        const c=12;
+    }
+
+    console.log(c);*/
+
+
+    /*for(let i=0;i<10;i++){
+
+    }
+
+    console.log(i);*/
+
+
+
+</script>
+</body>
+</html>
